@@ -884,6 +884,60 @@ h2>span {
   background:#00000020;
 }
 
+.art-lead-flow {
+  background:radial-gradient(circle at 73% 45%,#d8ff6728,transparent 25%),linear-gradient(145deg,#111419,#07090b);
+  color:#f2f4ef;
+  border:1px solid #ffffff12;
+}
+
+.lead-flow-word {
+  position:absolute;
+  left:23px;
+  top:77px;
+  font-size:43px;
+  font-weight:650;
+  letter-spacing:-3px;
+}
+
+.lead-flow-word>span {
+  color:#83898e;
+}
+
+.lead-flow-signal {
+  position:absolute;
+  right:34px;
+  top:58px;
+  width:112px;
+  height:112px;
+  display:grid;
+  place-items:center;
+}
+
+.lead-flow-signal i {
+  position:absolute;
+  inset:0;
+  border:1px solid #d8ff6730;
+  border-radius:50%;
+}
+
+.lead-flow-signal i:nth-child(2) {
+  inset:22px;
+}
+
+.lead-flow-signal b {
+  position:relative;
+  z-index:1;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#d8ff67;
+  color:#10130b;
+  font-size:13px;
+  box-shadow:0 0 28px #d8ff6740;
+}
+
 .art-tact {
   background:#e9e6db;
   color:#252525;
@@ -1431,6 +1485,8 @@ textarea:hover,textarea:focus {
   justify-content:space-between;
   font-size:11px;
   color:#a2a2ab;
+  flex-wrap:wrap;
+  gap:12px 20px;
 }
 
 .contact-bottom>a {

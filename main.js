@@ -162,7 +162,7 @@ document.querySelector("#copy-brief").addEventListener("click", async () => {
   const brief = field.value.trim() || "Привет! Хочу обсудить с вами разработку проекта.";
   try {
     await navigator.clipboard.writeText(brief);
-    showToast("Скопировано. Вставьте текст в Instagram Direct.");
+    showToast("Скопировано. Отправьте текст удобным способом.");
   } catch {
     if (!field.value.trim()) field.value = brief;
     field.focus();

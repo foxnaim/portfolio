@@ -1,6 +1,6 @@
-# foxnaim
+# Ян Павлов / foxnaim
 
-> Портфолио independent full-stack разработчика. Разработка сайтов, CRM, SaaS, Telegram-ботов и AI-автоматизаций для бизнеса.
+> Портфолио Яна Павлова, independent full-stack разработчика. Разработка сайтов, CRM, SaaS, Telegram-ботов и AI-автоматизаций, которые помогают бизнесу получать заявки и экономить время.
 
 ## Основные страницы
 
@@ -17,5 +17,6 @@
 
 - [GitHub](https://github.com/foxnaim)
 - [Instagram](https://www.instagram.com/yan._.pavlov/)
+- [Telegram-канал Build with Yan](https://t.me/+cYtUBpTN-2FkZTky)
 
 Публичные описания не содержат выдуманных клиентов, показателей или гарантий результата. Технические детали проектов можно проверить в связанных GitHub-репозиториях.
