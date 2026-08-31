@@ -18,10 +18,16 @@ PAGES = {
         "kind": "Услуга 01",
         "title": "Разработка сайтов для бизнеса — Ян Павлов",
         "description": "Разработка адаптивных лендингов, корпоративных сайтов и интернет-магазинов. Продуманный интерфейс, высокая скорость и запуск под ключ.",
-        "h1": "Сайты, которые помогают бизнесу расти.",
+        "h1": "Разработка сайтов и интернет-магазинов.",
         "lead": "Создаю быстрые и понятные сайты: от посадочной страницы для новой услуги до интернет-магазина с каталогом и корзиной. Интерфейс работает на телефоне, планшете и большом экране.",
         "keywords": "разработка сайтов, создание сайта для бизнеса, заказать лендинг, корпоративный сайт, интернет-магазин, React, Next.js",
         "service": "Разработка сайтов и интернет-магазинов",
+        "best_for": [
+            "Нужно запустить новую услугу, продукт или компанию в интернете.",
+            "Старый сайт неудобен на телефоне, медленно загружается или плохо объясняет предложение.",
+            "Нужны каталог, корзина, формы заявок, аналитика или интеграции с рабочими сервисами.",
+        ],
+        "result": "Адаптивный сайт с понятной структурой, рабочими пользовательскими сценариями и исходным кодом. До запуска проверяются скорость, доступность ключевых действий и технические данные для поисковых систем.",
         "items": [
             ("Задача и структура", "Разбираем продукт, аудиторию и путь клиента до заявки или покупки."),
             ("Дизайн и разработка", "Собираю адаптивный интерфейс, компоненты и необходимые сценарии."),
@@ -38,10 +44,16 @@ PAGES = {
         "kind": "Услуга 02",
         "title": "Разработка CRM и SaaS-сервисов — Ян Павлов",
         "description": "CRM, личные кабинеты и SaaS-продукты под бизнес-процессы. Роли, аналитика, API, интеграции и безопасная работа с данными.",
-        "h1": "Система под ваш процесс, а не наоборот.",
+        "h1": "CRM, личные кабинеты и SaaS-сервисы.",
         "lead": "Проектирую CRM, личные кабинеты и SaaS-продукты, когда таблиц и переписок уже недостаточно. Объединяю интерфейс, серверную часть, базу данных и интеграции.",
         "keywords": "разработка CRM, CRM на заказ, разработка SaaS, личный кабинет, автоматизация бизнеса, NestJS, PostgreSQL",
         "service": "Разработка CRM и SaaS-систем",
+        "best_for": [
+            "Заявки, клиенты и отчёты разбросаны по таблицам, чатам и разным сервисам.",
+            "Команде нужны роли, статусы, история действий и единые правила работы с данными.",
+            "Нужно создать личный кабинет, внутреннюю систему или основу SaaS-продукта.",
+        ],
+        "result": "Единая система под согласованный бизнес-процесс: интерфейс для команды, API, база данных, роли и история изменений. Архитектура предусматривает добавление новых модулей и интеграций по мере развития продукта.",
         "items": [
             ("Модель процесса", "Фиксируем роли, данные, статусы и действия, которые должна поддерживать система."),
             ("MVP", "Сначала создаём рабочее ядро продукта, которым уже можно пользоваться и проверять гипотезы."),
@@ -58,10 +70,16 @@ PAGES = {
         "kind": "Услуга 03",
         "title": "AI-автоматизация и Telegram-боты — Ян Павлов",
         "description": "AI-агенты, Telegram-боты и API-интеграции для обработки заявок, поиска по документам и сокращения ручной работы.",
-        "h1": "Меньше ручной работы. Больше времени на главное.",
+        "h1": "AI-автоматизация и Telegram-боты.",
         "lead": "Автоматизирую повторяющиеся операции и подключаю AI там, где он даёт измеримую пользу: помогает искать информацию, обрабатывать обращения и связывать рабочие сервисы.",
         "keywords": "AI автоматизация бизнеса, разработка Telegram бота, AI помощник, интеграция API, автоматизация заявок, искусственный интеллект",
         "service": "AI-автоматизация и Telegram-боты",
+        "best_for": [
+            "Сотрудники вручную сортируют обращения, переносят данные или готовят однотипные ответы.",
+            "Нужен поиск и ответы по внутренним документам или базе знаний.",
+            "Сайт, CRM, Telegram и другие сервисы должны обмениваться данными и уведомлениями.",
+        ],
+        "result": "Проверенный на реальных примерах сценарий автоматизации с понятными границами. Решение подключается к нужным источникам, фиксирует ошибки и сохраняет возможность ручного контроля там, где он необходим.",
         "items": [
             ("Аудит рутины", "Находим повторяющиеся действия, цену ошибки и данные, с которыми уже работает команда."),
             ("Прототип", "Проверяем один полезный сценарий на реальных примерах до масштабной разработки."),
@@ -78,10 +96,16 @@ PAGES = {
         "kind": "Услуга 04",
         "title": "Разработка MVP: от идеи до запуска — Ян Павлов",
         "description": "Разработка MVP цифрового продукта: анализ задачи, прототип, full-stack разработка, тестирование и запуск первой рабочей версии.",
-        "h1": "Из идеи — в продукт, которым можно пользоваться.",
+        "h1": "Разработка MVP под ключ.",
         "lead": "Помогаю определить главное, собрать первую рабочую версию и подготовить её к запуску. Один разработчик отвечает за интерфейс, серверную часть, данные и интеграции.",
         "keywords": "разработка MVP, создать цифровой продукт, запуск стартапа, разработка web сервиса, full-stack разработчик, прототип продукта",
         "service": "Разработка MVP под ключ",
+        "best_for": [
+            "Идею нужно проверить рабочей версией до большой разработки.",
+            "Есть прототип, но не хватает frontend, backend, данных или интеграций для запуска.",
+            "Нужен один ответственный разработчик на весь технический цикл первой версии.",
+        ],
+        "result": "Первая версия с заранее согласованными функциями и критериями готовности. После запуска остаются исходный код, доступы, техническая основа для развития и список следующих улучшений.",
         "items": [
             ("Фокус", "Определяем аудиторию, ключевую проблему и критерии, по которым первая версия будет полезной."),
             ("Рабочая версия", "Создаю необходимый интерфейс, API, хранение данных и интеграции без лишних функций."),
@@ -164,7 +188,7 @@ def schema_base(url, title, description):
         "@context": "https://schema.org",
         "@graph": [
             {"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": title, "description": description, "inLanguage": "ru"},
-            {"@type": "Person", "@id": abs_url() + "#person", "name": PERSON_NAME, "alternateName": BRAND, "url": abs_url(), "image": abs_url("assets/portrait.png"), "sameAs": [CONFIG["github"], CONFIG["instagram"], CONFIG["telegram"]], "jobTitle": "Full-stack разработчик", "knowsAbout": ["TypeScript", "React", "Next.js", "Node.js", "NestJS", "CRM", "SaaS", "AI automation"]},
+            {"@type": "Person", "@id": abs_url() + "#person", "name": PERSON_NAME, "alternateName": BRAND, "url": abs_url(), "image": abs_url("assets/portrait.webp"), "sameAs": [CONFIG["github"], CONFIG["instagram"], CONFIG["telegram"]], "jobTitle": "Full-stack разработчик", "knowsAbout": ["TypeScript", "React", "Next.js", "Node.js", "NestJS", "CRM", "SaaS", "AI automation"]},
             {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Портфолио", "item": abs_url()}, {"@type": "ListItem", "position": 2, "name": title, "item": url}]},
         ],
     }
@@ -235,12 +259,14 @@ def service_page(slug, data):
     schema["@graph"].append({"@type": "Service", "@id": url + "#service", "name": data["service"], "description": data["description"], "provider": {"@id": abs_url() + "#person"}, "url": url})
     schema["@graph"].append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in data["faq"]]})
     cards = "".join(f'<article class="seo-card"><span class="number">0{i}</span><h3>{escape(title)}</h3><p>{escape(copy)}</p></article>' for i, (title, copy) in enumerate(data["items"], 1))
+    best_for = "".join(f"<li>{escape(item)}</li>" for item in data["best_for"])
     deliverables = "".join(f"<li>{escape(item)}</li>" for item in data["deliverables"])
     faq = "".join(f"<details><summary>{escape(q)}</summary><p>{escape(a)}</p></details>" for q, a in data["faq"])
     body = f'''<p class="breadcrumbs"><a href="../../">Главная</a> / Услуги / {escape(data['service'])}</p>
-    <section class="seo-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="../../contact/">Обсудить задачу</a><a class="seo-button" href="../../projects/">Посмотреть проекты</a></div></section>
-    <section class="seo-section"><h2>Как строится работа</h2><div class="seo-grid">{cards}</div></section>
-    <section class="seo-section"><h2>Что можно реализовать</h2><ul class="seo-list">{deliverables}</ul></section>
+    <section class="seo-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="#scope">Что входит в работу</a><a class="seo-button" href="../../projects/">Примеры решений</a></div></section>
+    <section class="seo-section"><h2>Когда это подходит</h2><ul class="seo-list">{best_for}</ul></section>
+    <section class="seo-section" id="scope"><h2>Как строится работа</h2><div class="seo-grid">{cards}</div></section>
+    <section class="seo-section"><h2>Что получает бизнес</h2><p>{escape(data['result'])}</p><h3>Что можно реализовать</h3><ul class="seo-list">{deliverables}</ul></section>
     <section class="seo-section seo-faq"><h2>Частые вопросы</h2>{faq}</section>'''
     return document(data["title"], data["description"], data["keywords"], url, 2, schema, body)
 
@@ -260,7 +286,7 @@ def projects_page():
             items.append(f'<a class="seo-project" href="{link}" rel="noopener"><span class="number">{project_number:02d}</span><div><h3>{escape(name)}</h3><p>{escape(copy)}</p><p class="seo-kicker">{escape(stack)}</p></div><span class="arrow">↗</span></a>')
             project_number += 1
         sections.append(f'<section class="seo-section project-group"><p class="seo-kicker">{escape(group_name)}</p><h2>{escape(group_name)}</h2>{"".join(items)}</section>')
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с определённым языком: исходники, отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../process/">Как я работаю</a></div></section>{"".join(sections)}<section class="seo-section"><h2>Есть задача для следующего проекта?</h2><p>Расскажите, что должно измениться для пользователя или бизнеса. Технологии и состав первой версии определим после задачи.</p><a class="seo-button primary" href="../contact/">Начать разговор</a></section>'''
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с определённым языком: исходники, отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../process/">Как я работаю</a></div></section>{"".join(sections)}<section class="seo-section"><h2>Как создаётся следующий проект</h2><p>Задача переводится в первую рабочую версию, этапы и критерии готовности. На отдельной странице описаны порядок работы, сроки и базовые условия.</p><a class="seo-button primary" href="../process/">Этапы и условия</a></section>'''
     return document(title, description, "портфолио разработчика, проекты Next.js, CRM, SaaS, TypeScript, React, NestJS", url, 1, schema, body)
 
 
@@ -287,7 +313,7 @@ def process_page():
         ("Запуск и передача", "Проверяю ключевые сценарии, размещаю продукт, передаю исходники и остаюсь на связи по найденным ошибкам."),
     ], 1))
     faq_html = "".join(f"<details><summary>{escape(q)}</summary><p>{escape(a)}</p></details>" for q, a in faq)
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Как я работаю</p><section class="seo-hero"><p class="seo-kicker">From idea to release</p><h1>{escape(PROCESS['h1'])}</h1><p class="seo-lead">{escape(PROCESS['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="../contact/">Обсудить задачу</a><a class="seo-button" href="../projects/">Посмотреть проекты</a></div></section><section class="seo-section"><h2>Четыре этапа</h2><div class="seo-grid process-grid">{steps}</div></section><section class="seo-section"><h2>Базовые условия</h2><div class="terms-grid"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача проекта</span></article></div><p class="terms-note">Обычно в согласованный объём входят две итерации правок и 14 дней исправления найденных ошибок после запуска. Это базовая схема: финальные условия зависят от задачи и фиксируются до старта.</p></section><section class="seo-section seo-faq"><h2>Частые вопросы</h2>{faq_html}</section>'''
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Как я работаю</p><section class="seo-hero"><p class="seo-kicker">From idea to release</p><h1>{escape(PROCESS['h1'])}</h1><p class="seo-lead">{escape(PROCESS['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="#stages">Перейти к этапам</a><a class="seo-button" href="../projects/">Посмотреть проекты</a></div></section><section class="seo-section" id="stages"><h2>Четыре этапа</h2><div class="seo-grid process-grid">{steps}</div></section><section class="seo-section"><h2>Базовые условия</h2><div class="terms-grid"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача проекта</span></article></div><p class="terms-note">Обычно в согласованный объём входят две итерации правок и 14 дней исправления найденных ошибок после запуска. Это базовая схема: финальные условия зависят от задачи и фиксируются до старта.</p></section><section class="seo-section seo-faq"><h2>Частые вопросы</h2>{faq_html}</section>'''
     return document(PROCESS["title"], PROCESS["description"], PROCESS["keywords"], url, 1, schema, body)
 
 
@@ -309,7 +335,7 @@ def main():
         write(f"{slug}/index.html", service_page(slug, data))
     write("projects/index.html", projects_page())
     write("process/index.html", process_page())
-    write("about/index.html", simple_page("about", ABOUT, f'''<section class="seo-profile" aria-label="Профиль разработчика"><img src="../assets/portrait.png" width="160" height="160" loading="lazy" decoding="async" alt="Ян Павлов, full-stack разработчик"><div><p class="seo-kicker">Independent developer</p><h2>{PERSON_NAME}</h2><p>{BRAND} · Разработка с 2017 года · Казахстан и удалённая работа.</p></div></section><section class="seo-section"><h2>От школьных скриптов до цифровых продуктов</h2><p>Интерес к разработке появился ещё в школе: начинал со скриптов и интерфейсов, затем перешёл к полноценным web-продуктам. Сейчас беру задачи целиком — от пользовательского сценария и frontend до API, базы данных и интеграций.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Берусь за разные направления, особенно когда заказчик открыт к идеям и умеет относиться к процессу с юмором.</p></section><section class="seo-section"><h2>Командный и продуктовый опыт</h2><p>Среди проектов, над которыми работал самостоятельно или с командами друзей: AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. В открытом каталоге собраны проекты, код и демонстрационные решения, которые можно проверить.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Открыть проекты</a><a class="seo-button" href="../process/">Как проходит работа</a></div></section><section class="seo-section"><h2>Работаю с продуктом целиком</h2><div class="seo-grid"><article class="seo-card"><span class="number">01</span><h3>Frontend</h3><p>Адаптивные интерфейсы на React и Next.js, понятные сценарии и внимание к скорости.</p></article><article class="seo-card"><span class="number">02</span><h3>Backend</h3><p>API на Node.js и NestJS, базы данных, авторизация, роли и бизнес-логика.</p></article><article class="seo-card"><span class="number">03</span><h3>Интеграции</h3><p>Telegram, внешние API, AI-сервисы, уведомления и автоматизация процессов.</p></article></div></section><section class="seo-section"><h2>Основной стек</h2><ul class="seo-list"><li>TypeScript и JavaScript</li><li>React и Next.js</li><li>Node.js и NestJS</li><li>PostgreSQL и MongoDB</li><li>REST API и WebSocket</li><li>Docker и GitHub Actions</li></ul><div class="seo-actions"><a class="seo-button primary" href="../contact/">Обсудить проект</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Открыть Build with Yan</a></div></section>'''))
+    write("about/index.html", simple_page("about", ABOUT, f'''<section class="seo-profile" aria-label="Профиль разработчика"><img src="../assets/portrait.webp" width="160" height="160" loading="lazy" decoding="async" alt="Ян Павлов, full-stack разработчик"><div><p class="seo-kicker">Independent developer</p><h2>{PERSON_NAME}</h2><p>{BRAND} · Разработка с 2017 года · Казахстан и удалённая работа.</p></div></section><section class="seo-section"><h2>От школьных скриптов до цифровых продуктов</h2><p>Интерес к разработке появился ещё в школе: начинал со скриптов и интерфейсов, затем перешёл к полноценным web-продуктам. Сейчас беру задачи целиком — от пользовательского сценария и frontend до API, базы данных и интеграций.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Берусь за разные направления, особенно когда заказчик открыт к идеям и умеет относиться к процессу с юмором.</p></section><section class="seo-section"><h2>Командный и продуктовый опыт</h2><p>Среди проектов, над которыми работал самостоятельно или с командами друзей: AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. В открытом каталоге собраны проекты, код и демонстрационные решения, которые можно проверить.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Открыть проекты</a><a class="seo-button" href="../process/">Как проходит работа</a></div></section><section class="seo-section"><h2>Работаю с продуктом целиком</h2><div class="seo-grid"><article class="seo-card"><span class="number">01</span><h3>Frontend</h3><p>Адаптивные интерфейсы на React и Next.js, понятные сценарии и внимание к скорости.</p></article><article class="seo-card"><span class="number">02</span><h3>Backend</h3><p>API на Node.js и NestJS, базы данных, авторизация, роли и бизнес-логика.</p></article><article class="seo-card"><span class="number">03</span><h3>Интеграции</h3><p>Telegram, внешние API, AI-сервисы, уведомления и автоматизация процессов.</p></article></div></section><section class="seo-section"><h2>Основной стек</h2><ul class="seo-list"><li>TypeScript и JavaScript</li><li>React и Next.js</li><li>Node.js и NestJS</li><li>PostgreSQL и MongoDB</li><li>REST API и WebSocket</li><li>Docker и GitHub Actions</li></ul><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Технический профиль на GitHub</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Открыть Build with Yan</a></div></section>'''))
     write("contact/index.html", simple_page("contact", CONTACT, f'''<section class="seo-section"><h2>Что написать в первом сообщении</h2><ul class="seo-list"><li>Чем занимается ваш бизнес или продукт</li><li>Какую задачу нужно решить</li><li>Кто будет пользоваться решением</li><li>Какие сервисы уже используются</li></ul><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">Написать в Instagram</a><a class="seo-button" href="../process/">Этапы и условия</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Канал Build with Yan</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">Открыть GitHub</a></div></section><section class="seo-section seo-faq"><h2>Перед началом</h2><details open><summary>Нужно ли готовое техническое задание?</summary><p>Нет. Достаточно своими словами описать проблему и желаемый результат. Структуру и технические детали можно определить вместе.</p></details><details><summary>Как формируются сроки и стоимость?</summary><p>После короткого брифа задача делится на этапы. Обычно проект занимает от одной недели до двух месяцев; точная оценка зависит от функций, интеграций и готовности контента.</p></details></section>'''))
     urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("projects"), abs_url("process"), abs_url("about"), abs_url("contact")]
     today = date.today().isoformat()

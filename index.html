@@ -33,8 +33,8 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/poster.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=6">
-  <script src="main.js?v=6" defer></script>
+  <link rel="stylesheet" href="styles.css?v=7">
+  <script src="main.js?v=7" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,7 +53,7 @@
         "name": "Ян Павлов",
         "alternateName": "foxnaim",
         "url": "https://foxnaim.github.io/portfolio/",
-        "image": "https://foxnaim.github.io/portfolio/assets/portrait.png",
+        "image": "https://foxnaim.github.io/portfolio/assets/portrait.webp",
         "jobTitle": "Full-stack разработчик",
         "sameAs": ["https://github.com/foxnaim", "https://www.instagram.com/yan._.pavlov/", "https://t.me/+cYtUBpTN-2FkZTky"],
         "knowsAbout": ["TypeScript", "React", "Next.js", "Node.js", "NestJS", "CRM", "SaaS", "AI automation"],
@@ -85,7 +85,7 @@
   </svg>
 
   <div class="bg" aria-hidden="true">
-    <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/poster.webp" tabindex="-1">
+    <video class="bg-video" muted loop playsinline preload="none" poster="assets/poster.webp" tabindex="-1">
       <source src="assets/background.mp4" type="video/mp4">
     </video>
     <div class="bg-shade"></div>
@@ -129,10 +129,10 @@
 
     <footer class="footer">
       <div class="services" aria-label="Чем я могу помочь">
-        <a href="services/web-development/" data-route="web" class="service anim" style="--d:.5s"><span class="service-symbol" aria-hidden="true">&lt;/&gt;</span><span class="service-copy"><strong>Сайты & магазины</strong><span>Впечатление, которое продаёт</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
-        <a href="services/crm-development/" data-route="systems" class="service anim" style="--d:.58s"><span class="service-symbol" aria-hidden="true">#</span><span class="service-copy"><strong>CRM & SaaS</strong><span>Бизнес в одной системе</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
-        <a href="services/ai-automation/" data-route="ai" class="service anim" style="--d:.66s"><span class="service-symbol" aria-hidden="true">*</span><span class="service-copy"><strong>AI & автоматизация</strong><span>Меньше рутины. Больше дела.</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
-        <a href="services/product-development/" data-route="launch" class="service anim" style="--d:.74s"><span class="service-symbol" aria-hidden="true">↗</span><span class="service-copy"><strong>От идеи до релиза</strong><span>Один разработчик. Весь цикл.</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/web-development/" data-route="web" class="service anim" style="--d:.5s"><span class="service-symbol" aria-hidden="true">&lt;/&gt;</span><span class="service-copy"><strong>Сайты и магазины</strong><span>Лендинги, каталоги и e-commerce</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/crm-development/" data-route="systems" class="service anim" style="--d:.58s"><span class="service-symbol" aria-hidden="true">#</span><span class="service-copy"><strong>CRM и SaaS</strong><span>Кабинеты, роли и бизнес-процессы</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/ai-automation/" data-route="ai" class="service anim" style="--d:.66s"><span class="service-symbol" aria-hidden="true">*</span><span class="service-copy"><strong>AI и автоматизация</strong><span>AI-агенты, Telegram и API</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/product-development/" data-route="launch" class="service anim" style="--d:.74s"><span class="service-symbol" aria-hidden="true">↗</span><span class="service-copy"><strong>MVP под ключ</strong><span>Прототип, разработка и запуск</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> Ян Павлов <span class="footer-divider">/</span> foxnaim</span>
@@ -150,7 +150,7 @@
     <div class="menu-sheet">
       <div class="menu-heading"><span>foxnaim / меню</span><button type="button" class="icon-button" data-close aria-label="Закрыть меню"><svg class="icon"><use href="#close"/></svg></button></div>
       <nav aria-label="Мобильная навигация"><a href="./" data-route="home">Главная <span>01</span></a><a href="projects/" data-route="work">Проекты <span>02</span></a><a href="about/" data-route="about">Обо мне <span>03</span></a><a href="contact/" data-route="contact">Контакт <span>04</span></a></nav>
-      <a class="button button-dark" href="contact/" data-route="contact">Обсудим ваш проект <svg class="icon"><use href="#arrow"/></svg></a>
+      <a class="button button-dark" href="process/">Этапы и условия <svg class="icon"><use href="#arrow"/></svg></a>
     </div>
   </dialog>
 
@@ -184,22 +184,22 @@
       </div>
       <p class="fineprint">На главной показана короткая подборка. Остальные решения, описания и ссылки собраны на отдельной странице проектов.</p>
       <a class="button button-secondary panel-cta" href="projects/">Открыть весь каталог <svg class="icon"><use href="#external"/></svg></a>
-      <a class="button button-primary panel-cta" href="contact/" data-route="contact">Создадим ваш следующий проект <svg class="icon"><use href="#arrow"/></svg></a>
+      <a class="button button-primary panel-cta" href="process/">Как проходит работа <svg class="icon"><use href="#arrow"/></svg></a>
     </div>
   </dialog>
 
   <dialog class="panel panel-about" id="about" aria-labelledby="about-title">
     <div class="panel-top"><span class="eyebrow">THE PERSON BEHIND THE CODE</span><button type="button" class="icon-button" data-close aria-label="Закрыть информацию обо мне"><svg class="icon"><use href="#close"/></svg></button></div>
     <div class="panel-body about-grid">
-      <div class="about-identity"><div class="identity-mark portrait-frame"><img src="assets/portrait.png" alt="Ян Павлов, full-stack разработчик" width="140" height="140" loading="lazy" decoding="async"></div><span class="identity-name">Ян Павлов</span><span class="identity-role">foxnaim · full-stack developer</span><span class="identity-status"><span class="status-dot"></span> Открыт к сотрудничеству</span></div>
-      <div class="about-copy"><p class="kicker">Привет, я Ян</p><h2 id="about-title">Превращаю идеи.<br><span>В работающие продукты.</span></h2><p>Увлекаюсь разработкой с 2017 года. Ещё в школе начал писать разные скрипты и собирать интерфейсы; сейчас создаю сайты, CRM, SaaS и AI-автоматизации.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Люблю разные интересные задачи и, если заказчик согласен, предлагаю собственные идеи для улучшения продукта и автоматизации.</p><p>Среди самостоятельных и командных проектов — AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. Особенно ценю заказчиков с чувством юмора и открытым диалогом.</p><div class="about-stack"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>NestJS</span><span>PostgreSQL</span><span>AI / API</span></div><p class="about-principle">Code it. Ship it. Improve it.</p><div class="about-links"><a class="text-link" href="process/">Как проходит работа <svg class="icon"><use href="#external"/></svg></a><a class="text-link" href="contact/" data-route="contact">Расскажите, что хотите создать <svg class="icon"><use href="#arrow"/></svg></a></div></div>
+      <div class="about-identity"><div class="identity-mark portrait-frame"><img src="assets/portrait.webp" alt="Ян Павлов, full-stack разработчик" width="140" height="140" loading="lazy" decoding="async"></div><span class="identity-name">Ян Павлов</span><span class="identity-role">foxnaim · full-stack developer</span><span class="identity-status"><span class="status-dot"></span> Открыт к сотрудничеству</span></div>
+      <div class="about-copy"><p class="kicker">Привет, я Ян</p><h2 id="about-title">Превращаю идеи.<br><span>В работающие продукты.</span></h2><p>Увлекаюсь разработкой с 2017 года. Ещё в школе начал писать разные скрипты и собирать интерфейсы; сейчас создаю сайты, CRM, SaaS и AI-автоматизации.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Люблю разные интересные задачи и, если заказчик согласен, предлагаю собственные идеи для улучшения продукта и автоматизации.</p><p>Среди самостоятельных и командных проектов — AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. Особенно ценю заказчиков с чувством юмора и открытым диалогом.</p><div class="about-stack"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>NestJS</span><span>PostgreSQL</span><span>AI / API</span></div><p class="about-principle">Code it. Ship it. Improve it.</p><div class="about-links"><a class="text-link" href="process/">Как проходит работа <svg class="icon"><use href="#external"/></svg></a><a class="text-link" href="contact/" data-route="contact">Контакт и первый шаг <svg class="icon"><use href="#arrow"/></svg></a></div></div>
     </div>
     <div class="about-footer"><span>Код — на GitHub. Процессы и запуски — в Build with Yan.</span><a href="https://t.me/+cYtUBpTN-2FkZTky" target="_blank" rel="noopener noreferrer">Открыть канал <svg class="icon"><use href="#external"/></svg></a><a href="https://www.instagram.com/yan._.pavlov/" target="_blank" rel="noopener noreferrer">@yan._.pavlov <svg class="icon"><use href="#external"/></svg></a></div>
   </dialog>
 
   <dialog class="panel panel-service" id="service" aria-labelledby="service-title">
     <div class="panel-top"><span class="eyebrow" id="service-index">WHAT I CAN BUILD</span><button type="button" class="icon-button" data-close aria-label="Закрыть описание услуги"><svg class="icon"><use href="#close"/></svg></button></div>
-    <div class="panel-body"><span class="detail-symbol" aria-hidden="true" id="service-symbol"></span><p class="kicker">От задачи — к решению</p><h2 id="service-title"></h2><p class="panel-intro" id="service-description"></p><ul class="deliverables" id="service-deliverables"></ul><div class="process-line"><span><i>01</i> Обсуждаем</span><span><i>02</i> Создаём</span><span><i>03</i> Запускаем</span></div><a class="button button-primary panel-cta" href="contact/" data-route="contact">Обсудить эту задачу <svg class="icon"><use href="#arrow"/></svg></a><p class="fineprint">Объём, сроки и стоимость согласуем после знакомства с задачей.</p></div>
+    <div class="panel-body"><span class="detail-symbol" aria-hidden="true" id="service-symbol"></span><p class="kicker">От задачи — к решению</p><h2 id="service-title"></h2><p class="panel-intro" id="service-description"></p><ul class="deliverables" id="service-deliverables"></ul><div class="process-line"><span><i>01</i> Задача</span><span><i>02</i> Разработка</span><span><i>03</i> Запуск</span></div><a class="button button-primary panel-cta" id="service-page-link" href="services/web-development/">Этапы и состав услуги <svg class="icon"><use href="#arrow"/></svg></a><p class="fineprint">На странице услуги — подходящие задачи, состав работы и частые вопросы.</p></div>
   </dialog>
 
   <dialog class="panel panel-contact" id="contact" aria-labelledby="contact-title">

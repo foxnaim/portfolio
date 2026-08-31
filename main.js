@@ -2,23 +2,23 @@
 
 const serviceContent = {
   web: {
-    index: "01 / WEBSITES & E-COMMERCE", symbol: "</>", title: "Сайт, который работает на вас.",
-    description: "Лендинг, корпоративный сайт или интернет-магазин. Помогу понятно рассказать о продукте и сделать путь от первого знакомства до заявки удобным.",
+    index: "01 / WEBSITES & E-COMMERCE", symbol: "</>", page: "services/web-development/", title: "Сайты и интернет-магазины.",
+    description: "Лендинги, корпоративные сайты, каталоги и e-commerce с адаптивным интерфейсом, формами и нужными бизнес-интеграциями.",
     items: ["Адаптивный интерфейс для телефона и большого экрана", "Каталог, фильтры, корзина и сценарий оформления заказа", "Формы заявок и интеграции с вашими сервисами", "Базовая SEO-подготовка и оптимизация загрузки"]
   },
   systems: {
-    index: "02 / CRM & SAAS", symbol: "#", title: "Порядок в бизнес-процессах.",
-    description: "Когда таблиц и переписок уже недостаточно, нужна система под ваш процесс. Создам рабочий инструмент для команды или основу нового SaaS-продукта.",
+    index: "02 / CRM & SAAS", symbol: "#", page: "services/crm-development/", title: "CRM, кабинеты и SaaS.",
+    description: "Внутренние системы для заявок, клиентов, ролей, статусов и аналитики. Интерфейс, API и база данных строятся под реальный процесс команды.",
     items: ["Личные кабинеты, роли и права доступа", "Заявки, клиенты, задачи и история взаимодействий", "Дашборды, отчёты и удобное управление данными", "API, база данных и интеграции с внешними системами"]
   },
   ai: {
-    index: "03 / AI & AUTOMATION", symbol: "*", title: "Рутину — автоматизации.",
-    description: "Найду, где AI и автоматизация будут полезны именно вашей задаче. Без AI ради AI: начинаем с процесса, который отнимает время.",
+    index: "03 / AI & AUTOMATION", symbol: "*", page: "services/ai-automation/", title: "AI-автоматизация и Telegram-боты.",
+    description: "AI-агенты, обработка обращений, поиск по документам, уведомления и API-интеграции для повторяющихся рабочих операций.",
     items: ["AI-помощники и поиск по вашим материалам", "Telegram-боты и уведомления о важных событиях", "Обработка, категоризация и маршрутизация данных", "Связка сайта, CRM и рабочих инструментов через API"]
   },
   launch: {
-    index: "04 / FROM ZERO TO LAUNCH", symbol: "↗", title: "Из «а что, если» — в продукт.",
-    description: "Есть идея, но пока нет технического задания? Помогу выделить главное, собрать первую версию и подготовить её к запуску.",
+    index: "04 / FROM ZERO TO LAUNCH", symbol: "↗", page: "services/product-development/", title: "MVP: от идеи до первой версии.",
+    description: "Прототип, frontend, backend, данные и запуск в одном цикле. Состав MVP определяется по задаче, аудитории и критериям готовности.",
     items: ["Обсуждаем задачу, аудиторию и критерии готовности", "Определяем состав MVP и согласуем этапы", "Создаём интерфейс, серверную часть и интеграции", "Проверяем сценарии, запускаем и передаём исходники"]
   }
 };
@@ -51,6 +51,7 @@ function renderService(route) {
   document.querySelector("#service-symbol").textContent = content.symbol;
   document.querySelector("#service-title").textContent = content.title;
   document.querySelector("#service-description").textContent = content.description;
+  document.querySelector("#service-page-link").href = content.page;
   const items = content.items.map(text => {
     const item = document.createElement("li");
     item.textContent = text;
@@ -175,7 +176,9 @@ const video = document.querySelector(".bg-video");
 const motionButton = document.querySelector(".motion-toggle");
 const motionLabel = document.querySelector(".motion-label");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-let userPaused = reduceMotion.matches;
+const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+const networkLimited = Boolean(connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType));
+let userPaused = reduceMotion.matches || networkLimited;
 
 function updateVideoControl() {
   const paused = video.paused || reduceMotion.matches;
@@ -188,7 +191,11 @@ function syncVideo() {
   if (reduceMotion.matches || userPaused || document.hidden) video.pause();
   else video.play().catch(() => updateVideoControl());
   motionButton.disabled = reduceMotion.matches;
-  motionButton.title = reduceMotion.matches ? "Анимация отключена в настройках вашего устройства" : "Фоновое видео без звука";
+  motionButton.title = reduceMotion.matches
+    ? "Анимация отключена в настройках вашего устройства"
+    : networkLimited && userPaused
+      ? "Видео не загружается для экономии трафика. Можно включить вручную"
+      : "Фоновое видео без звука";
   updateVideoControl();
 }
 
