@@ -23,10 +23,41 @@ const serviceContent = {
   }
 };
 
+const selectorRecommendations = {
+  web: {
+    label: "Сайт или интернет-магазин",
+    description: "Начать стоит со структуры предложения и одного главного пути: от первого экрана до заявки или покупки.",
+    page: "services/web-development/",
+    brief: "сайт, каталог или интернет-магазин"
+  },
+  crm: {
+    label: "CRM, кабинет или SaaS",
+    description: "Первая версия должна собрать роли, данные, статусы и одно действие, которое сейчас отнимает больше всего времени.",
+    page: "services/crm-development/",
+    brief: "CRM, личный кабинет или SaaS-систему"
+  },
+  ai: {
+    label: "AI-автоматизация или Telegram-бот",
+    description: "Лучший старт — один повторяющийся сценарий на реальных примерах с логами и возможностью ручного контроля.",
+    page: "services/ai-automation/",
+    brief: "AI-автоматизацию, интеграцию или Telegram-бота"
+  },
+  mvp: {
+    label: "Рабочий MVP",
+    description: "Нужно выделить основную гипотезу и собрать минимальный путь пользователя с интерфейсом, данными и критериями готовности.",
+    page: "services/product-development/",
+    brief: "первую версию нового продукта"
+  }
+};
+
+function documentPath(path) {
+  return window.location.protocol === "file:" && path.endsWith("/") ? `${path}index.html` : path;
+}
+
 const menu = document.querySelector("#mobile-menu");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = [...document.querySelectorAll(".nav-pill a")];
-const routeNames = new Set(["home", "work", "about", "contact", ...Object.keys(serviceContent)]);
+const routeNames = new Set(["home", "work", "about", "contact", "selector", ...Object.keys(serviceContent)]);
 const panels = [...document.querySelectorAll("dialog")];
 const silentCloses = new WeakSet();
 let activeDialog = null;
@@ -51,7 +82,7 @@ function renderService(route) {
   document.querySelector("#service-symbol").textContent = content.symbol;
   document.querySelector("#service-title").textContent = content.title;
   document.querySelector("#service-description").textContent = content.description;
-  document.querySelector("#service-page-link").href = content.page;
+  document.querySelector("#service-page-link").href = documentPath(content.page);
   const items = content.items.map(text => {
     const item = document.createElement("li");
     item.textContent = text;
@@ -172,6 +203,56 @@ document.querySelector("#copy-brief").addEventListener("click", async () => {
   }
 });
 
+const selectorGoalButtons = [...document.querySelectorAll("[data-selector-goal]")];
+const selectorTimeButtons = [...document.querySelectorAll("[data-selector-time]")];
+const selectorStage = document.querySelector("#selector-stage");
+const selectorResult = document.querySelector("#selector-result");
+const selectorResultTitle = document.querySelector("#selector-result-title");
+const selectorResultCopy = document.querySelector("#selector-result-copy");
+const selectorDetail = document.querySelector("#selector-detail");
+const selectorContact = document.querySelector("#selector-contact");
+let selectedGoal = "";
+let selectedTime = "Без жёсткого срока";
+
+function selectorBrief() {
+  if (!selectedGoal) return "";
+  const recommendation = selectorRecommendations[selectedGoal];
+  return `Привет! Хочу обсудить ${recommendation.brief}. Сейчас: ${selectorStage.value}. Желаемый срок: ${selectedTime}.`;
+}
+
+function updateSelector() {
+  if (!selectedGoal) return;
+  const recommendation = selectorRecommendations[selectedGoal];
+  selectorResult.hidden = false;
+  selectorResultTitle.textContent = recommendation.label;
+  selectorResultCopy.textContent = `${recommendation.description} Текущая готовность: ${selectorStage.value.toLowerCase()}. Ориентир по сроку: ${selectedTime.toLowerCase()}.`;
+  selectorDetail.href = documentPath(recommendation.page);
+}
+
+selectorGoalButtons.forEach(button => {
+  button.setAttribute("aria-pressed", "false");
+  button.addEventListener("click", () => {
+    selectedGoal = button.dataset.selectorGoal;
+    selectorGoalButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+    updateSelector();
+  });
+});
+
+selectorTimeButtons.forEach(button => {
+  button.setAttribute("aria-pressed", String(button.dataset.selectorTime === selectedTime));
+  button.addEventListener("click", () => {
+    selectedTime = button.dataset.selectorTime;
+    selectorTimeButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+    updateSelector();
+  });
+});
+
+selectorStage.addEventListener("change", updateSelector);
+selectorContact.addEventListener("click", () => {
+  const brief = selectorBrief();
+  if (brief) document.querySelector("#project-brief").value = brief;
+});
+
 const video = document.querySelector(".bg-video");
 const motionButton = document.querySelector(".motion-toggle");
 const motionLabel = document.querySelector(".motion-label");
@@ -179,6 +260,35 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 const networkLimited = Boolean(connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType));
 let userPaused = reduceMotion.matches || networkLimited;
+
+if (!reduceMotion.matches && !networkLimited) {
+  document.querySelectorAll(".project-preview").forEach(preview => {
+    const project = preview.closest(".project");
+    if (!project) return;
+    const art = project.querySelector(".project-art");
+    const play = () => preview.play().catch(() => {});
+    const stop = () => {
+      preview.pause();
+      preview.classList.remove("is-playing");
+      art.classList.remove("preview-active");
+    };
+    preview.addEventListener("playing", () => {
+      preview.classList.add("is-playing");
+      art.classList.add("preview-active");
+    });
+    project.addEventListener("pointerenter", play);
+    project.addEventListener("pointerleave", stop);
+    project.addEventListener("focusin", play);
+    project.addEventListener("focusout", event => { if (!project.contains(event.relatedTarget)) stop(); });
+  });
+}
+
+if (window.location.protocol === "file:") {
+  document.querySelectorAll('a[href$="/"]:not([data-route])').forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && !href.includes("://") && !href.startsWith("#")) link.setAttribute("href", `${href}index.html`);
+  });
+}
 
 function updateVideoControl() {
   const paused = video.paused || reduceMotion.matches;

@@ -146,6 +146,156 @@ PROJECT_GROUPS = {
     ],
 }
 
+CASES = {
+    "ai-lead-flow": {
+        "name": "AI Lead Flow",
+        "title": "AI Lead Flow — кейс AI-квалификации заявок",
+        "description": "Кейс интерактивного frontend-концепта AI Lead Flow: входящие заявки, lead score, приоритеты и подсказка следующего действия.",
+        "h1": "AI Lead Flow: от входящей заявки к следующему действию.",
+        "kind": "Concept · Live demo",
+        "summary": "Интерактивный frontend-концепт для команды продаж: заявки попадают в единый поток, получают демонстрационный lead score и понятный следующий шаг.",
+        "challenge": "Портфельная задача — показать, как интерфейс может помочь менеджеру быстрее увидеть сильные заявки в общем потоке. Реальные клиентские данные и backend в демонстрации не используются.",
+        "solution": "Собран сценарий от входящего обращения до карточки лида: источник, интерес, score, приоритет и рекомендуемое действие. Пользователь может пройти сценарий прямо в браузере и проверить логику интерфейса.",
+        "features": ["Единый inbox обращений", "Демонстрационный lead score", "Приоритет и статус заявки", "Подсказка следующего действия", "Адаптивный интерфейс", "Честная маркировка demo data"],
+        "stack": ["JavaScript", "HTML", "CSS", "Frontend concept"],
+        "live": "https://foxnaim.github.io/AI-Lead-Flow/",
+        "repo": "https://github.com/foxnaim/AI-Lead-Flow",
+        "preview": "ai-lead-flow",
+        "disclosure": "Это самостоятельный портфельный концепт. Backend, интеграция с CRM и реальные клиентские данные не подключены.",
+    },
+    "slotix-kz": {
+        "name": "Slotix KZ",
+        "title": "Slotix KZ — кейс онлайн-записи и мини-CRM",
+        "description": "Кейс Slotix KZ: интерактивный макет онлайн-записи для сервисного бизнеса, расписание, услуги и кабинет администратора.",
+        "h1": "Slotix KZ: онлайн-запись без звонков и переписок.",
+        "kind": "Booking concept · Live demo",
+        "summary": "Демонстрационное решение для салонов и сервисных компаний: клиент выбирает услугу, специалиста и время, а администратор видит записи в отдельном кабинете.",
+        "challenge": "Показать полный путь записи в одном интерфейсе: от выбора услуги до управления расписанием. Макет должен работать без регистрации и внешнего backend, чтобы его можно было сразу проверить.",
+        "solution": "Созданы клиентский сценарий бронирования и административная часть с услугами, расписанием, поиском и статусами. Демонстрационные изменения сохраняются локально в браузере.",
+        "features": ["Выбор услуги и специалиста", "Свободные временные слоты", "Подтверждение записи", "Поиск и статусы", "Управление услугами", "Локальное хранение demo data"],
+        "stack": ["JavaScript", "HTML", "CSS", "LocalStorage"],
+        "live": "https://foxnaim.github.io/Slotix-KZ/",
+        "repo": "https://github.com/foxnaim/Slotix-KZ",
+        "preview": "slotix",
+        "disclosure": "Это интерактивный портфельный макет. Оплата, уведомления и серверное хранение можно подключить в рабочей версии.",
+    },
+    "tazaorder": {
+        "name": "TazaOrder",
+        "title": "TazaOrder — кейс Telegram-магазина",
+        "description": "Кейс TazaOrder: Telegram-магазин для локальных брендов с каталогом, корзиной, оформлением заказа и историей покупок.",
+        "h1": "TazaOrder: магазин внутри Telegram.",
+        "kind": "Telegram commerce · Live demo",
+        "summary": "Интерактивный макет витрины для локальных брендов Казахстана: каталог, избранное, корзина, оформление и статусы заказов в формате Telegram Mini App.",
+        "challenge": "Показать, как магазин может работать внутри привычного мессенджера без отдельного мобильного приложения. Для портфолио требовался проверяемый клиентский сценарий и прозрачная атрибуция основы.",
+        "solution": "Открытый MIT-проект tma-shop адаптирован под портфельную концепцию TazaOrder: изменены позиционирование, визуальная система, каталог и пользовательские сценарии. Исходная лицензия и авторство сохранены в репозитории.",
+        "features": ["Каталог и категории", "Избранное и корзина", "Оформление заказа", "Статус доставки", "История покупок", "Telegram Mini App интерфейс"],
+        "stack": ["React", "TypeScript", "Telegram Mini Apps", "Drizzle"],
+        "live": "https://foxnaim.github.io/TazaOrder/",
+        "repo": "https://github.com/foxnaim/TazaOrder",
+        "preview": "tazaorder",
+        "disclosure": "Портфельная адаптация открытого MIT-проекта tma-shop. Атрибуция, лицензия и описание изменений находятся в репозитории.",
+    },
+    "tact": {
+        "name": "Tact",
+        "title": "Tact — кейс учёта рабочего времени",
+        "description": "Кейс Tact: учёт рабочего времени через Telegram и меняющиеся QR-коды, интерфейс команды, API и хранение данных.",
+        "h1": "Tact: учёт времени через Telegram и QR.",
+        "kind": "SaaS prototype · Source code",
+        "summary": "Прототип системы для команд и фрилансеров: отметка начала работы через Telegram или QR-код, таймер и данные для последующей аналитики.",
+        "challenge": "Объединить быстрый пользовательский сценарий и техническую основу продукта: интерфейс, API, роли и хранение данных должны развиваться как единая система.",
+        "solution": "Проект разделён на frontend и backend. Интерфейс отвечает за рабочие сценарии и аналитику, серверная часть — за пользователей, события и данные учёта.",
+        "features": ["Telegram-сценарий", "Меняющиеся QR-коды", "Таймер рабочего дня", "Интерфейс команды", "API и база данных", "Основа аналитики"],
+        "stack": ["Next.js", "NestJS", "PostgreSQL", "Telegram"],
+        "live": "",
+        "repo": "https://github.com/foxnaim/World-Time-Frontend",
+        "preview": "",
+        "disclosure": "В открытом доступе находится исходный код прототипа. Публичная production-демонстрация пока не размещена.",
+    },
+    "neuronotes": {
+        "name": "NeuroNotes",
+        "title": "NeuroNotes — кейс пространства для заметок",
+        "description": "Кейс NeuroNotes: прототип пространства для заметок и задач с поиском, тегами и интерфейсами будущих AI-функций.",
+        "h1": "NeuroNotes: рабочее пространство для идей и задач.",
+        "kind": "Productivity prototype · Source code",
+        "summary": "Прототип продукта, который объединяет заметки, задачи, теги и поиск в одном интерфейсе и оставляет основу для AI-функций.",
+        "challenge": "Собрать большое количество материалов в структуру, где пользователь быстро находит нужное и видит связь между заметками и задачами.",
+        "solution": "Создан интерфейс на Next.js с поиском, тегами, рабочими представлениями и компонентами для будущего AI-помощника. Код доступен для проверки в GitHub.",
+        "features": ["Заметки и задачи", "Поиск", "Теги и организация", "Адаптивный интерфейс", "Компоненты AI-функций", "Расширяемая структура"],
+        "stack": ["Next.js", "TypeScript", "React", "CSS"],
+        "live": "",
+        "repo": "https://github.com/foxnaim/NeuroNotes",
+        "preview": "",
+        "disclosure": "Это продуктовый прототип. Часть AI-возможностей представлена на уровне интерфейсов и требует подключения моделей и backend.",
+    },
+}
+
+PROJECT_META = {
+    "AI Lead Flow": ("ai-lead-flow", ["live", "ai", "business"]),
+    "Slotix KZ": ("slotix-kz", ["live", "business", "products"]),
+    "Tact": ("tact", ["business", "products", "open-source"]),
+    "Habit Tracker": ("", ["products", "open-source"]),
+    "Trial Admin Panel": ("", ["business", "open-source"]),
+    "Dynamic Form Constructor": ("", ["business", "open-source"]),
+    "NeuroNotes": ("neuronotes", ["ai", "products", "open-source"]),
+    "Dev-flow": ("", ["products", "open-source"]),
+    "feed Back": ("", ["products", "open-source"]),
+    "Chat": ("", ["products", "open-source"]),
+    "Study Hub": ("", ["products", "open-source"]),
+    "TazaOrder": ("tazaorder", ["live", "commerce", "products", "open-source"]),
+    "AI Trend Analytics": ("", ["ai", "products", "open-source"]),
+    "Weather App": ("", ["products", "open-source"]),
+    "Luki Lu Shop": ("", ["commerce", "open-source"]),
+    "BookForge": ("", ["products", "open-source"]),
+    "Imperial": ("", ["products", "open-source"]),
+}
+
+SOLUTIONS = [
+    ("Поток заявок", "Сайт или форма → квалификация → CRM → уведомление менеджеру. Подходит, когда обращения теряются между каналами.", "AI Lead Flow", "../cases/ai-lead-flow/", "../services/ai-automation/"),
+    ("Онлайн-запись", "Услуги, специалисты, свободное время, подтверждения и мини-CRM для сервисного бизнеса.", "Slotix KZ", "../cases/slotix-kz/", "../services/crm-development/"),
+    ("Telegram-магазин", "Каталог, корзина, заказы и повторные покупки внутри Telegram Mini App.", "TazaOrder", "../cases/tazaorder/", "../services/web-development/"),
+    ("Внутренняя CRM", "Клиенты, роли, статусы, история, отчёты и API в одной системе под процесс команды.", "CRM concept", "../services/crm-development/", "../services/crm-development/"),
+    ("AI-помощник по материалам", "Поиск по документам, подготовка ответов и передача сложных вопросов сотруднику.", "AI solution", "../services/ai-automation/", "../services/ai-automation/"),
+]
+
+ARTICLES = {
+    "crm-vs-excel": {
+        "title": "CRM или Excel: когда бизнесу нужна своя система",
+        "description": "Как понять, что таблиц уже недостаточно: признаки, минимальный состав CRM и безопасный переход без остановки работы.",
+        "h1": "CRM или Excel: когда пора переходить к системе.",
+        "lead": "Таблица отлично работает, пока процесс понятен одному человеку и ошибок немного. Проблемы начинаются, когда данные копируются, статусы расходятся, а история остаётся в чатах.",
+        "sections": [
+            ("Когда таблицы ещё подходят", ["Excel и Google Sheets не нужно заменять только ради модного интерфейса. Для небольшой базы, одного ответственного и простого отчёта таблица часто быстрее и дешевле отдельной разработки.", "Переход имеет смысл связывать с конкретной потерей: пропущенными заявками, повторным вводом данных, путаницей в доступах или временем на ручные отчёты."], ["Один ответственный за данные", "Небольшое количество записей", "Нет сложных ролей и согласований", "Отчёт можно собрать без копирования между файлами"]),
+            ("Пять признаков, что процесс вырос", ["Система становится полезной, когда проблема повторяется и её можно описать правилами. Главный сигнал — команда тратит время не на работу с клиентом, а на восстановление актуального состояния."], ["Одна заявка хранится сразу в нескольких местах", "Непонятно, кто и когда менял статус", "Руководитель собирает отчёт вручную", "Сотрудники видят данные, которые им не нужны", "Новые этапы процесса постоянно ломают таблицу"]),
+            ("Что должно войти в первую CRM", ["Первая версия не обязана повторять большую корпоративную CRM. Достаточно закрыть основной путь: создать клиента, назначить ответственного, изменить статус, сохранить историю и получить простой отчёт.", "Интеграции добавляются по приоритету. Сначала стоит подключать источник, который создаёт больше всего ручной работы: форму сайта, Telegram, почту или существующую базу."], ["Клиенты и заявки", "Роли и права", "Статусы и история", "Поиск и фильтры", "Один полезный отчёт", "Импорт и резервная копия"]),
+            ("Как перейти без остановки работы", ["Безопасный переход начинается с копии данных и тестовой группы. Команда проверяет основные сценарии параллельно со старым процессом, после чего фиксируется дата переключения.", "До разработки нужно определить владельца данных, правила обязательных полей и способ возврата к резервной копии. Это снижает риск сильнее, чем большое количество функций."], []),
+        ],
+    },
+    "mvp-timeline": {
+        "title": "Сроки разработки MVP: от недели до двух месяцев",
+        "description": "Из чего складывается срок MVP, какие функции оставить в первой версии и как разделить разработку на проверяемые этапы.",
+        "h1": "Сколько времени занимает MVP и что влияет на срок.",
+        "lead": "MVP — это рабочая первая версия для проверки главного сценария. Её срок определяет не количество идей, а граница между обязательными функциями и тем, что можно проверить позже.",
+        "sections": [
+            ("Три реалистичных формата", ["Небольшой проект с готовыми материалами можно выпустить за одну–две недели. Full-stack MVP с данными и авторизацией обычно требует нескольких этапов. Система с ролями, интеграциями и миграцией данных может занять до двух месяцев."], ["1–2 недели: лендинг, интерактивный прототип или один сценарий автоматизации", "3–5 недель: MVP с интерфейсом, API и базой данных", "До 2 месяцев: CRM, SaaS или автоматизация с ролями и интеграциями"]),
+            ("Что сильнее всего меняет оценку", ["Интеграция с внешним сервисом зависит не только от кода проекта: важны документация, доступы и ограничения API. Контент и согласования тоже влияют на календарный срок, даже если сама разработка уже готова."], ["Количество ролей и пользовательских сценариев", "Готовность текстов, изображений и структуры", "Авторизация, оплата и внешние API", "Импорт существующих данных", "Скорость обратной связи по демонстрациям"]),
+            ("Как определить состав первой версии", ["Для каждой функции полезно задать вопрос: без неё можно проверить основную гипотезу? Если да, функция переносится в следующий этап. Это не отказ от идеи, а способ раньше получить рабочий продукт.", "До старта фиксируются критерии готовности: какие действия пользователь должен пройти, какие данные сохраняются и что получает владелец продукта."], []),
+            ("Как не потерять качество из-за скорости", ["Короткий срок не отменяет адаптивность, проверку ключевых сценариев, резервное копирование и понятную передачу исходников. Экономить лучше на ширине первой версии, а не на надёжности её основных функций."], []),
+        ],
+    },
+    "telegram-automation": {
+        "title": "Автоматизация бизнеса через Telegram: полезные сценарии",
+        "description": "Какие процессы можно автоматизировать через Telegram-бота и Mini App, когда нужен backend и где оставить ручной контроль.",
+        "h1": "Что можно автоматизировать через Telegram.",
+        "lead": "Telegram удобен как точка входа: сотрудники и клиенты уже умеют им пользоваться. Но хороший бот начинается с процесса и данных, а не со списка команд.",
+        "sections": [
+            ("Сценарии для клиентов", ["Бот может принять заявку, уточнить обязательные данные и показать следующий шаг. Mini App подходит, если нужен каталог, расписание, корзина или более сложный интерфейс внутри Telegram."], ["Запись на услугу", "Каталог и оформление заказа", "Статус заявки или доставки", "Ответы по базе знаний", "Личный кабинет в формате Mini App"]),
+            ("Сценарии для команды", ["Внутренний бот полезен для быстрых действий и уведомлений: назначить ответственного, подтвердить заявку, получить сводку или отметить начало рабочего дня.", "Данные при этом должны храниться на backend или в CRM. Telegram остаётся интерфейсом, а не единственным местом хранения процесса."], ["Уведомления о новых лидах", "Согласование и смена статуса", "Отчёты по расписанию", "Учёт времени", "Поиск по внутренним материалам"]),
+            ("Когда обычной автоматизации достаточно", ["AI нужен там, где входные данные нельзя надёжно разобрать простыми правилами: свободный текст, документы или большое количество вариантов формулировок. Для фиксированных статусов, расчётов и маршрутов обычная логика дешевле и предсказуемее."], []),
+            ("Как запускать безопасно", ["Сначала выбирается один повторяющийся сценарий и набор реальных примеров. Для ошибок предусматривается журнал, повторная попытка и передача человеку.", "Секреты бота не хранятся во frontend, права проверяются на сервере, а важные действия требуют подтверждения. После проверки сценария можно добавлять новые команды и интеграции."], ["Один сценарий на старте", "Логи и обработка ошибок", "Ручной контроль для важных решений", "Раздельные права доступа", "Резервный способ выполнить действие"]),
+        ],
+    },
+}
+
 ABOUT = {
     "title": "Ян Павлов — full-stack разработчик, обо мне",
     "description": "Ян Павлов — full-stack разработчик сайтов, CRM, SaaS и AI-автоматизаций на TypeScript, React, Next.js, Node.js и NestJS.",
@@ -225,7 +375,7 @@ def head(title, description, keywords, url, depth, schema):
   <link rel="apple-touch-icon" href="{root}assets/apple-touch-icon.png">
   <link rel="manifest" href="{root}site.webmanifest">
   <link rel="preload" href="{root}fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{root}seo-pages.css">
+  <link rel="stylesheet" href="{root}seo-pages.css?v=6">
   <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')}</script>'''
 
 
@@ -234,13 +384,13 @@ def header(depth):
     return f'''<a class="skip-link" href="#content">К содержанию</a>
   <header class="seo-header"><div class="seo-header-inner">
     <a class="seo-brand" href="{root}"><img src="{root}assets/logo.svg" width="38" height="38" alt="">{BRAND}</a>
-    <nav class="seo-nav" aria-label="Основная навигация"><a href="{root}services/web-development/">Сайты</a><a href="{root}services/crm-development/">CRM & SaaS</a><a href="{root}services/ai-automation/">AI</a><a href="{root}projects/">Проекты</a><a href="{root}process/">Как работаю</a><a href="{root}about/">Обо мне</a><a href="{root}contact/">Контакт</a></nav>
+    <nav class="seo-nav" aria-label="Основная навигация"><a href="{root}services/web-development/">Сайты</a><a href="{root}services/crm-development/">CRM & SaaS</a><a href="{root}services/ai-automation/">AI</a><a href="{root}solutions/">Решения</a><a href="{root}projects/">Проекты</a><a href="{root}articles/">Материалы</a><a href="{root}about/">Обо мне</a><a href="{root}contact/">Контакт</a></nav>
   </div></header>'''
 
 
 def footer(depth):
     root = rel_root(depth)
-    return f'''<footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="{root}">Главная</a><a href="{root}process/">Как работаю</a><a href="{CONFIG['github']}" rel="noopener">GitHub</a><a href="{CONFIG['instagram']}" rel="noopener">Instagram</a><a href="{CONFIG['telegram']}" rel="noopener">Build with Yan</a></div></footer>'''
+    return f'''<footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="{root}">Главная</a><a href="{root}solutions/">Решения</a><a href="{root}process/">Как работаю</a><a href="{CONFIG['github']}" rel="noopener">GitHub</a><a href="{CONFIG['instagram']}" rel="noopener">Instagram</a><a href="{CONFIG['telegram']}" rel="noopener">Build with Yan</a></div></footer>'''
 
 
 def document(title, description, keywords, url, depth, schema, body):
@@ -283,11 +433,133 @@ def projects_page():
     for group_name, group_projects in PROJECT_GROUPS.items():
         items = []
         for name, copy, link, stack in group_projects:
-            items.append(f'<a class="seo-project" href="{link}" rel="noopener"><span class="number">{project_number:02d}</span><div><h3>{escape(name)}</h3><p>{escape(copy)}</p><p class="seo-kicker">{escape(stack)}</p></div><span class="arrow">↗</span></a>')
+            case_slug, categories = PROJECT_META.get(name, ("", ["products"]))
+            target_link = f"../cases/{case_slug}/" if case_slug else link
+            relation = "" if case_slug else ' rel="noopener"'
+            categories_value = " ".join(categories)
+            items.append(f'<a class="seo-project" href="{target_link}"{relation} data-categories="{categories_value}"><span class="number">{project_number:02d}</span><div><h3>{escape(name)}</h3><p>{escape(copy)}</p><p class="seo-kicker">{escape(stack)}</p></div><span class="arrow">↗</span></a>')
             project_number += 1
-        sections.append(f'<section class="seo-section project-group"><p class="seo-kicker">{escape(group_name)}</p><h2>{escape(group_name)}</h2>{"".join(items)}</section>')
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с определённым языком: исходники, отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../process/">Как я работаю</a></div></section>{"".join(sections)}<section class="seo-section"><h2>Как создаётся следующий проект</h2><p>Задача переводится в первую рабочую версию, этапы и критерии готовности. На отдельной странице описаны порядок работы, сроки и базовые условия.</p><a class="seo-button primary" href="../process/">Этапы и условия</a></section>'''
+        sections.append(f'<section class="seo-section project-group" data-project-group><p class="seo-kicker">{escape(group_name)}</p><h2>{escape(group_name)}</h2>{"".join(items)}</section>')
+    filters = ''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label}</button>' for key, label in [("all", "Все"), ("live", "Live Demo"), ("business", "Бизнес"), ("ai", "AI"), ("commerce", "Магазины"), ("products", "Продукты"), ("open-source", "Open Source")])
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с кодом: отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../solutions/">Готовые решения</a></div></section><section class="catalog-tools" aria-label="Фильтр проектов"><div class="catalog-filters">{filters}</div><p><span id="catalog-count">{len(projects)}</span> проектов</p></section>{"".join(sections)}<p class="catalog-empty" hidden>В этой категории пока нет проектов.</p><section class="seo-section"><h2>Как создаётся следующий проект</h2><p>Задача переводится в первую рабочую версию, этапы и критерии готовности. На отдельной странице описаны порядок работы, сроки и базовые условия.</p><a class="seo-button primary" href="../process/">Этапы и условия</a></section><script src="../catalog.js" defer></script>'''
     return document(title, description, "портфолио разработчика, проекты Next.js, CRM, SaaS, TypeScript, React, NestJS", url, 1, schema, body)
+
+
+def case_page(slug, data):
+    url = abs_url(f"cases/{slug}")
+    schema = schema_base(url, data["title"], data["description"])
+    schema["@graph"].append({
+        "@type": "SoftwareApplication",
+        "name": data["name"],
+        "description": data["summary"],
+        "url": data["live"] or data["repo"],
+        "applicationCategory": "WebApplication",
+        "author": {"@id": abs_url() + "#person"},
+    })
+    features = "".join(f"<li>{escape(item)}</li>" for item in data["features"])
+    stack = "".join(f"<span>{escape(item)}</span>" for item in data["stack"])
+    actions = []
+    if data["live"]:
+        actions.append(f'<a class="seo-button primary" href="{data["live"]}" rel="noopener">Открыть Live Demo</a>')
+    actions.append(f'<a class="seo-button" href="{data["repo"]}" rel="noopener">Посмотреть исходный код</a>')
+    preview = f'<figure class="case-visual"><img src="../../assets/previews/{data["preview"]}.webp" width="960" height="540" loading="eager" fetchpriority="high" alt="Интерфейс проекта {escape(data["name"], quote=True)}"></figure>' if data["preview"] else ""
+    body = f'''<p class="breadcrumbs"><a href="../../">Главная</a> / <a href="../../projects/">Проекты</a> / {escape(data['name'])}</p>
+    <section class="seo-hero case-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['summary'])}</p><div class="seo-actions">{"".join(actions)}</div></section>
+    {preview}
+    <section class="seo-section case-story"><div><p class="seo-kicker">Задача</p><h2>Что нужно было показать</h2><p>{escape(data['challenge'])}</p></div><div><p class="seo-kicker">Решение</p><h2>Как устроен концепт</h2><p>{escape(data['solution'])}</p></div></section>
+    <section class="seo-section"><h2>Что реализовано</h2><ul class="seo-list">{features}</ul></section>
+    <section class="seo-section"><h2>Технологии</h2><div class="case-stack">{stack}</div><aside class="case-disclosure"><strong>Статус проекта</strong><p>{escape(data['disclosure'])}</p></aside></section>
+    <section class="seo-section"><h2>Похожие решения</h2><p>Этот кейс показывает один конкретный сценарий. В каталоге решений собраны варианты для заявок, записи, торговли, CRM и AI-помощников.</p><div class="seo-actions"><a class="seo-button primary" href="../../solutions/">Открыть готовые решения</a><a class="seo-button" href="../../projects/">Все проекты</a></div></section>'''
+    return document(data["title"], data["description"], f"{data['name']}, кейс разработки, {', '.join(data['stack'])}", url, 2, schema, body)
+
+
+def solutions_page():
+    url = abs_url("solutions")
+    title = "Готовые решения для бизнеса — Ян Павлов"
+    description = "Готовые сценарии разработки: поток заявок, онлайн-запись, Telegram-магазин, внутренняя CRM и AI-помощник. Демонстрационные концепты и варианты запуска."
+    schema = schema_base(url, title, description)
+    schema["@graph"].append({"@type": "ItemList", "name": "Готовые цифровые решения", "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": abs_url(case_link.replace("../", ""))} for i, (name, copy, example, case_link, service_link) in enumerate(SOLUTIONS, 1)]})
+    cards = "".join(f'''<article class="solution-card"><span class="number">0{i}</span><p class="seo-kicker">{escape(example)}</p><h2>{escape(name)}</h2><p>{escape(copy)}</p><div class="solution-links"><a href="{case_link}">Пример решения ↗</a><a href="{service_link}">Что входит в разработку</a></div></article>''' for i, (name, copy, example, case_link, service_link) in enumerate(SOLUTIONS, 1))
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Готовые решения</p><section class="seo-hero"><p class="seo-kicker">Solutions library</p><h1>Не просто услуги. Понятные сценарии решения.</h1><p class="seo-lead">Ниже — заготовки под типовые задачи бизнеса. Это не готовые коробочные продукты и не чужие клиентские кейсы: каждый сценарий адаптируется под процесс, данные и пользователей конкретного проекта.</p><div class="seo-actions"><a class="seo-button primary" href="#solutions">Выбрать сценарий</a><a class="seo-button" href="../projects/">Посмотреть проекты</a></div></section><section class="solution-grid" id="solutions">{cards}</section><section class="seo-section"><h2>Как превратить сценарий в рабочий продукт</h2><p>Сначала фиксируется один основной путь пользователя. Затем определяются данные, роли и интеграции. После этого появляется первая версия, которую можно проверить до добавления остальных функций.</p><div class="seo-actions"><a class="seo-button primary" href="../process/#formats">Форматы и сроки</a><a class="seo-button" href="../contact/">Контакт</a></div></section>'''
+    return document(title, description, "готовые решения для бизнеса, CRM, онлайн-запись, Telegram-магазин, AI автоматизация", url, 1, schema, body)
+
+
+def articles_page():
+    url = abs_url("articles")
+    title = "Материалы о сайтах, CRM и автоматизации — Ян Павлов"
+    description = "Практические материалы Яна Павлова о разработке CRM, сроках MVP и автоматизации бизнеса через Telegram без лишней теории."
+    schema = schema_base(url, title, description)
+    cards = "".join(f'<a class="article-card" href="{slug}/"><p class="seo-kicker">Практический разбор</p><h2>{escape(data["title"])}</h2><p>{escape(data["description"])}</p><span>Читать материал ↗</span></a>' for slug, data in ARTICLES.items())
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Материалы</p><section class="seo-hero"><p class="seo-kicker">Notes & guides</p><h1>Практика разработки без бесконечных новостей.</h1><p class="seo-lead">Короткие разборы для владельцев продуктов и бизнеса: как выбрать первую версию, где нужна автоматизация и когда отдельная система действительно оправдана.</p></section><section class="article-grid">{cards}</section>'''
+    return document(title, description, "разработка CRM, разработка MVP, Telegram автоматизация, статьи для бизнеса", url, 1, schema, body)
+
+
+def article_page(slug, data):
+    url = abs_url(f"articles/{slug}")
+    schema = schema_base(url, data["title"], data["description"])
+    schema["@graph"].append({"@type": "Article", "headline": data["title"], "description": data["description"], "author": {"@id": abs_url() + "#person"}, "datePublished": date.today().isoformat(), "dateModified": date.today().isoformat(), "mainEntityOfPage": url})
+    sections = []
+    for heading, paragraphs, bullets in data["sections"]:
+        paragraphs_html = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraphs)
+        bullets_html = f'<ul class="article-list">{"".join(f"<li>{escape(item)}</li>" for item in bullets)}</ul>' if bullets else ""
+        sections.append(f'<section class="article-section"><h2>{escape(heading)}</h2>{paragraphs_html}{bullets_html}</section>')
+    body = f'''<p class="breadcrumbs"><a href="../../">Главная</a> / <a href="../">Материалы</a> / {escape(data['title'])}</p><article class="article"><header class="seo-hero"><p class="seo-kicker">Практический материал · {date.today().year}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['lead'])}</p></header>{"".join(sections)}<footer class="article-cta"><h2>Нужен не общий совет, а план под задачу?</h2><p>Формат первой версии зависит от пользователей, данных и интеграций. Этапы и границы можно определить без готового технического задания.</p><div class="seo-actions"><a class="seo-button primary" href="../../process/">Посмотреть этапы</a><a class="seo-button" href="../../solutions/">Готовые решения</a></div></footer></article>'''
+    return document(data["title"], data["description"], f"{data['title']}, разработка для бизнеса, foxnaim", url, 2, schema, body)
+
+
+def localized_page(lang):
+    content = {
+        "en": {
+            "html_lang": "en", "locale": "en_US",
+            "skip": "Skip to content",
+            "title": "Yan Pavlov — full-stack developer in Kazakhstan",
+            "description": "Websites, CRM, SaaS, Telegram bots and AI automation for business. Full-stack development from the first idea to launch.",
+            "h1": "Websites, CRM and AI automation for business.",
+            "lead": "I build landing pages, online stores, internal systems and MVPs. One developer handles the interface, backend, data and integrations.",
+            "nav": ["Services", "Projects", "Process", "Contact"],
+            "services_title": "What I can build",
+            "services": [("Websites & e-commerce", "Landing pages, catalogs, stores and integrations.", "../services/web-development/"), ("CRM & SaaS", "Dashboards, roles, workflows, APIs and data.", "../services/crm-development/"), ("AI & automation", "AI assistants, Telegram bots and service integrations.", "../services/ai-automation/"), ("MVP development", "Prototype, frontend, backend and launch.", "../services/product-development/")],
+            "proof": [("2017", "developing products"), ("40+", "public repositories"), ("1–8 weeks", "typical project range")],
+            "projects_title": "Selected projects you can inspect",
+            "projects_intro": "Each item is marked as a live demo, source-code prototype or portfolio concept. No invented client results.",
+            "process_title": "Three ways to start",
+            "formats": [("1–2 weeks", "Quick launch", "A landing page, interactive prototype or one automation scenario."), ("3–5 weeks", "Working MVP", "A core user flow with interface, backend and data."), ("Up to 2 months", "System or automation", "Roles, multiple flows, APIs and integrations.")],
+            "contact_title": "Start with the problem, even without a specification.",
+            "contact_copy": "Describe the users, the current process and what should become easier. I will help define the first version and its boundaries.",
+            "contact_button": "Contact on Instagram",
+        },
+        "kz": {
+            "html_lang": "kk", "locale": "kk_KZ",
+            "skip": "Негізгі мазмұнға өту",
+            "title": "Ян Павлов — Қазақстандағы full-stack әзірлеуші",
+            "description": "Бизнеске арналған сайттар, CRM, SaaS, Telegram-боттар және AI автоматтандыру. Идеядан бастап іске қосуға дейінгі full-stack әзірлеу.",
+            "h1": "Бизнеске арналған сайттар, CRM және AI автоматтандыру.",
+            "lead": "Лендингтерді, интернет-дүкендерді, ішкі жүйелерді және MVP әзірлеймін. Интерфейс, backend, деректер мен интеграциялар бір циклде жасалады.",
+            "nav": ["Қызметтер", "Жобалар", "Жұмыс барысы", "Байланыс"],
+            "services_title": "Не әзірлей аламын",
+            "services": [("Сайттар мен интернет-дүкендер", "Лендингтер, каталогтар, дүкендер және интеграциялар.", "../services/web-development/"), ("CRM және SaaS", "Кабинеттер, рөлдер, процестер, API және деректер.", "../services/crm-development/"), ("AI және автоматтандыру", "AI көмекшілер, Telegram-боттар және сервистерді біріктіру.", "../services/ai-automation/"), ("MVP әзірлеу", "Прототип, frontend, backend және іске қосу.", "../services/product-development/")],
+            "proof": [("2017", "жылдан бері әзірлеу"), ("40+", "ашық репозиторий"), ("1–8 апта", "жобаның қалыпты мерзімі")],
+            "projects_title": "Тексеруге болатын таңдалған жобалар",
+            "projects_intro": "Әр жоба Live Demo, бастапқы коды бар прототип немесе портфельдік концепт ретінде белгіленген. Ойдан шығарылған клиенттік нәтиже жоқ.",
+            "process_title": "Жұмысты бастаудың үш форматы",
+            "formats": [("1–2 апта", "Жылдам іске қосу", "Лендинг, интерактивті прототип немесе бір автоматтандыру сценарийі."), ("3–5 апта", "Жұмыс істейтін MVP", "Интерфейс, backend және деректері бар негізгі сценарий."), ("2 айға дейін", "Жүйе немесе автоматтандыру", "Рөлдер, бірнеше сценарий, API және интеграциялар.")],
+            "contact_title": "Техникалық тапсырмасыз да мәселеден бастауға болады.",
+            "contact_copy": "Пайдаланушыларды, қазіргі процесті және нені жеңілдету керегін сипаттаңыз. Бірінші нұсқаның құрамы мен шекарасын анықтауға көмектесемін.",
+            "contact_button": "Instagram арқылы байланысу",
+        },
+    }[lang]
+    slug = "en" if lang == "en" else "kz"
+    url = abs_url(slug)
+    schema = {"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "url": url, "name": content["title"], "description": content["description"], "inLanguage": content["html_lang"]}, {"@type": "Person", "@id": abs_url() + "#person", "name": PERSON_NAME, "alternateName": BRAND, "url": abs_url(), "sameAs": [CONFIG["github"], CONFIG["instagram"], CONFIG["telegram"]], "jobTitle": "Full-stack developer"}]}
+    services = "".join(f'<a class="locale-service" href="{link}"><span class="number">0{i}</span><h3>{escape(title)}</h3><p>{escape(copy)}</p><span>↗</span></a>' for i, (title, copy, link) in enumerate(content["services"], 1))
+    proof = "".join(f'<article><strong>{escape(value)}</strong><span>{escape(label)}</span></article>' for value, label in content["proof"])
+    projects = "".join(f'<a class="locale-project" href="../cases/{slug_value}/"><strong>{escape(CASES[slug_value]["name"])}</strong><span>{escape(CASES[slug_value]["kind"])}</span><i>↗</i></a>' for slug_value in ["ai-lead-flow", "slotix-kz", "tazaorder", "tact", "neuronotes"])
+    formats = "".join(f'<article class="format-card"><p class="seo-kicker">{escape(term)}</p><h3>{escape(title)}</h3><p>{escape(copy)}</p></article>' for term, title, copy in content["formats"])
+    nav = content["nav"]
+    en_current = ' aria-current="page"' if lang == "en" else ""
+    kz_current = ' aria-current="page"' if lang == "kz" else ""
+    html = f'''<!doctype html><html lang="{content['html_lang']}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(content['title'])}</title><meta name="description" content="{escape(content['description'], quote=True)}"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="{url}"><link rel="alternate" hreflang="ru" href="{abs_url()}"><link rel="alternate" hreflang="en" href="{abs_url('en')}"><link rel="alternate" hreflang="kk" href="{abs_url('kz')}"><link rel="alternate" hreflang="x-default" href="{abs_url()}"><meta property="og:type" content="website"><meta property="og:locale" content="{content['locale']}"><meta property="og:title" content="{escape(content['title'], quote=True)}"><meta property="og:description" content="{escape(content['description'], quote=True)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{abs_url('assets/og-cover.png')}"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0a0a0b"><link rel="icon" href="../assets/logo.svg" type="image/svg+xml"><link rel="preload" href="../fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../seo-pages.css?v=6"><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(',', ':'))}</script></head><body><a class="skip-link" href="#content">{escape(content['skip'])}</a><header class="seo-header"><div class="seo-header-inner"><a class="seo-brand" href="../"><img src="../assets/logo.svg" width="38" height="38" alt="">{BRAND}</a><nav class="seo-nav"><a href="#services">{nav[0]}</a><a href="#projects">{nav[1]}</a><a href="#process">{nav[2]}</a><a href="#contact">{nav[3]}</a><span class="language-switch"><a href="../">RU</a><a href="../en/"{en_current}>EN</a><a href="../kz/"{kz_current}>KZ</a></span></nav></div></header><main class="seo-main locale-main" id="content"><section class="seo-hero"><p class="seo-kicker">{PERSON_NAME} · Full-stack developer</p><h1>{escape(content['h1'])}</h1><p class="seo-lead">{escape(content['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="#services">{nav[0]}</a><a class="seo-button" href="#projects">{nav[1]}</a></div></section><section class="locale-proof">{proof}</section><section class="seo-section" id="services"><h2>{escape(content['services_title'])}</h2><div class="locale-services">{services}</div></section><section class="seo-section" id="projects"><h2>{escape(content['projects_title'])}</h2><p>{escape(content['projects_intro'])}</p><div class="locale-projects">{projects}</div></section><section class="seo-section" id="process"><h2>{escape(content['process_title'])}</h2><div class="format-grid">{formats}</div></section><section class="seo-section" id="contact"><h2>{escape(content['contact_title'])}</h2><p>{escape(content['contact_copy'])}</p><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">{escape(content['contact_button'])}</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">GitHub</a></div></section></main><footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="../">RU</a><a href="../en/">EN</a><a href="../kz/">KZ</a><a href="{CONFIG['github']}">GitHub</a></div></footer></body></html>\n'''
+    return html
 
 
 def process_page():
@@ -312,8 +584,13 @@ def process_page():
         ("Разработка с демонстрациями", "Показываю промежуточные версии по этапам, чтобы решения можно было проверить до финального запуска."),
         ("Запуск и передача", "Проверяю ключевые сценарии, размещаю продукт, передаю исходники и остаюсь на связи по найденным ошибкам."),
     ], 1))
+    formats = "".join(f'<article class="format-card"><p class="seo-kicker">{escape(term)}</p><h3>{escape(title)}</h3><p>{escape(copy)}</p><ul>{"".join(f"<li>{escape(item)}</li>" for item in items)}</ul></article>' for term, title, copy, items in [
+        ("1–2 недели", "Быстрый запуск", "Один чёткий сценарий с готовыми материалами и ограниченным объёмом.", ["Лендинг или промосайт", "Интерактивный прототип", "Одна интеграция или бот"]),
+        ("3–5 недель", "Рабочий MVP", "Первая версия продукта с интерфейсом, данными и основным пользовательским путём.", ["Frontend и backend", "Авторизация и база данных", "Демонстрации по этапам"]),
+        ("До 2 месяцев", "Система или автоматизация", "Проект с ролями, несколькими сценариями, API и переносом существующего процесса.", ["CRM или SaaS", "Несколько интеграций", "AI-сценарий с ручным контролем"]),
+    ])
     faq_html = "".join(f"<details><summary>{escape(q)}</summary><p>{escape(a)}</p></details>" for q, a in faq)
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Как я работаю</p><section class="seo-hero"><p class="seo-kicker">From idea to release</p><h1>{escape(PROCESS['h1'])}</h1><p class="seo-lead">{escape(PROCESS['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="#stages">Перейти к этапам</a><a class="seo-button" href="../projects/">Посмотреть проекты</a></div></section><section class="seo-section" id="stages"><h2>Четыре этапа</h2><div class="seo-grid process-grid">{steps}</div></section><section class="seo-section"><h2>Базовые условия</h2><div class="terms-grid"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача проекта</span></article></div><p class="terms-note">Обычно в согласованный объём входят две итерации правок и 14 дней исправления найденных ошибок после запуска. Это базовая схема: финальные условия зависят от задачи и фиксируются до старта.</p></section><section class="seo-section seo-faq"><h2>Частые вопросы</h2>{faq_html}</section>'''
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Как я работаю</p><section class="seo-hero"><p class="seo-kicker">From idea to release</p><h1>{escape(PROCESS['h1'])}</h1><p class="seo-lead">{escape(PROCESS['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="#formats">Форматы и сроки</a><a class="seo-button" href="#stages">Перейти к этапам</a></div></section><section class="seo-section" id="formats"><h2>Три формата сотрудничества</h2><p>Диапазоны помогают выбрать масштаб первой версии. Точный срок определяется после состава функций, интеграций и готовности материалов.</p><div class="format-grid">{formats}</div></section><section class="seo-section" id="stages"><h2>Четыре этапа</h2><div class="seo-grid process-grid">{steps}</div></section><section class="seo-section"><h2>Базовые условия</h2><div class="terms-grid"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача проекта</span></article></div><p class="terms-note">Обычно в согласованный объём входят две итерации правок и 14 дней исправления найденных ошибок после запуска. Это базовая схема: финальные условия зависят от задачи и фиксируются до старта.</p></section><section class="seo-section seo-faq"><h2>Частые вопросы</h2>{faq_html}</section>'''
     return document(PROCESS["title"], PROCESS["description"], PROCESS["keywords"], url, 1, schema, body)
 
 
@@ -333,15 +610,50 @@ def write(path, content):
 def main():
     for slug, data in PAGES.items():
         write(f"{slug}/index.html", service_page(slug, data))
+    for slug, data in CASES.items():
+        write(f"cases/{slug}/index.html", case_page(slug, data))
+    for slug, data in ARTICLES.items():
+        write(f"articles/{slug}/index.html", article_page(slug, data))
+    write("solutions/index.html", solutions_page())
+    write("articles/index.html", articles_page())
+    write("en/index.html", localized_page("en"))
+    write("kz/index.html", localized_page("kz"))
     write("projects/index.html", projects_page())
     write("process/index.html", process_page())
     write("about/index.html", simple_page("about", ABOUT, f'''<section class="seo-profile" aria-label="Профиль разработчика"><img src="../assets/portrait.webp" width="160" height="160" loading="lazy" decoding="async" alt="Ян Павлов, full-stack разработчик"><div><p class="seo-kicker">Independent developer</p><h2>{PERSON_NAME}</h2><p>{BRAND} · Разработка с 2017 года · Казахстан и удалённая работа.</p></div></section><section class="seo-section"><h2>От школьных скриптов до цифровых продуктов</h2><p>Интерес к разработке появился ещё в школе: начинал со скриптов и интерфейсов, затем перешёл к полноценным web-продуктам. Сейчас беру задачи целиком — от пользовательского сценария и frontend до API, базы данных и интеграций.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Берусь за разные направления, особенно когда заказчик открыт к идеям и умеет относиться к процессу с юмором.</p></section><section class="seo-section"><h2>Командный и продуктовый опыт</h2><p>Среди проектов, над которыми работал самостоятельно или с командами друзей: AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. В открытом каталоге собраны проекты, код и демонстрационные решения, которые можно проверить.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Открыть проекты</a><a class="seo-button" href="../process/">Как проходит работа</a></div></section><section class="seo-section"><h2>Работаю с продуктом целиком</h2><div class="seo-grid"><article class="seo-card"><span class="number">01</span><h3>Frontend</h3><p>Адаптивные интерфейсы на React и Next.js, понятные сценарии и внимание к скорости.</p></article><article class="seo-card"><span class="number">02</span><h3>Backend</h3><p>API на Node.js и NestJS, базы данных, авторизация, роли и бизнес-логика.</p></article><article class="seo-card"><span class="number">03</span><h3>Интеграции</h3><p>Telegram, внешние API, AI-сервисы, уведомления и автоматизация процессов.</p></article></div></section><section class="seo-section"><h2>Основной стек</h2><ul class="seo-list"><li>TypeScript и JavaScript</li><li>React и Next.js</li><li>Node.js и NestJS</li><li>PostgreSQL и MongoDB</li><li>REST API и WebSocket</li><li>Docker и GitHub Actions</li></ul><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Технический профиль на GitHub</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Открыть Build with Yan</a></div></section>'''))
     write("contact/index.html", simple_page("contact", CONTACT, f'''<section class="seo-section"><h2>Что написать в первом сообщении</h2><ul class="seo-list"><li>Чем занимается ваш бизнес или продукт</li><li>Какую задачу нужно решить</li><li>Кто будет пользоваться решением</li><li>Какие сервисы уже используются</li></ul><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">Написать в Instagram</a><a class="seo-button" href="../process/">Этапы и условия</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Канал Build with Yan</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">Открыть GitHub</a></div></section><section class="seo-section seo-faq"><h2>Перед началом</h2><details open><summary>Нужно ли готовое техническое задание?</summary><p>Нет. Достаточно своими словами описать проблему и желаемый результат. Структуру и технические детали можно определить вместе.</p></details><details><summary>Как формируются сроки и стоимость?</summary><p>После короткого брифа задача делится на этапы. Обычно проект занимает от одной недели до двух месяцев; точная оценка зависит от функций, интеграций и готовности контента.</p></details></section>'''))
-    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("projects"), abs_url("process"), abs_url("about"), abs_url("contact")]
+    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("solutions"), abs_url("projects"), abs_url("process"), abs_url("about"), abs_url("contact"), abs_url("articles"), abs_url("en"), abs_url("kz")] + [abs_url(f"cases/{slug}") for slug in CASES] + [abs_url(f"articles/{slug}") for slug in ARTICLES]
     today = date.today().isoformat()
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{escape(url)}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{'1.0' if url == abs_url() else '0.8'}</priority></url>\n" for url in urls) + "</urlset>\n"
     write("sitemap.xml", sitemap)
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {abs_url('sitemap.xml').rstrip('/')}\n")
+    llms = f'''# {PERSON_NAME} / {BRAND}
+
+> Портфолио independent full-stack разработчика. Сайты, CRM, SaaS, Telegram-боты и AI-автоматизация от первой версии до запуска.
+
+## Основные страницы
+
+- [Главная]({abs_url()})
+- [Готовые решения]({abs_url('solutions')})
+- [Проекты]({abs_url('projects')})
+- [Как проходит работа]({abs_url('process')})
+- [Материалы]({abs_url('articles')})
+- [Обо мне]({abs_url('about')})
+- [Контакт]({abs_url('contact')})
+- [English]({abs_url('en')})
+- [Қазақша]({abs_url('kz')})
+
+## Кейсы
+
+{chr(10).join(f'- [{data["name"]}]({abs_url(f"cases/{slug}")}) — {data["kind"]}' for slug, data in CASES.items())}
+
+## Услуги
+
+{chr(10).join(f'- [{data["service"]}]({abs_url(slug)})' for slug, data in PAGES.items())}
+
+Публичные описания не содержат выдуманных клиентов, показателей или гарантий результата. Демонстрационные проекты и концепты отмечены явно.
+'''
+    write("llms.txt", llms)
     manifest = {"name": f"{PERSON_NAME} / {BRAND} — Full-stack разработчик", "short_name": BRAND, "description": "Сайты, CRM, SaaS и AI-автоматизация", "start_url": BASE, "scope": BASE, "display": "standalone", "background_color": "#000000", "theme_color": "#000000", "lang": "ru", "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}
     write("site.webmanifest", json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     index_now_key = CONFIG.get("indexNowKey")

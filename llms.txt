@@ -1,23 +1,32 @@
 # Ян Павлов / foxnaim
 
-> Портфолио Яна Павлова, independent full-stack разработчика. Разработка сайтов, CRM, SaaS, Telegram-ботов и AI-автоматизаций, которые помогают бизнесу получать заявки и экономить время.
+> Портфолио independent full-stack разработчика. Сайты, CRM, SaaS, Telegram-боты и AI-автоматизация от первой версии до запуска.
 
 ## Основные страницы
 
 - [Главная](https://foxnaim.github.io/portfolio/)
-- [Разработка сайтов](https://foxnaim.github.io/portfolio/services/web-development/)
-- [Разработка CRM и SaaS](https://foxnaim.github.io/portfolio/services/crm-development/)
-- [AI-автоматизация и Telegram-боты](https://foxnaim.github.io/portfolio/services/ai-automation/)
-- [Разработка MVP](https://foxnaim.github.io/portfolio/services/product-development/)
+- [Готовые решения](https://foxnaim.github.io/portfolio/solutions/)
 - [Проекты](https://foxnaim.github.io/portfolio/projects/)
 - [Как проходит работа](https://foxnaim.github.io/portfolio/process/)
+- [Материалы](https://foxnaim.github.io/portfolio/articles/)
 - [Обо мне](https://foxnaim.github.io/portfolio/about/)
 - [Контакт](https://foxnaim.github.io/portfolio/contact/)
+- [English](https://foxnaim.github.io/portfolio/en/)
+- [Қазақша](https://foxnaim.github.io/portfolio/kz/)
 
-## Профили
+## Кейсы
 
-- [GitHub](https://github.com/foxnaim)
-- [Instagram](https://www.instagram.com/yan._.pavlov/)
-- [Telegram-канал Build with Yan](https://t.me/+cYtUBpTN-2FkZTky)
+- [AI Lead Flow](https://foxnaim.github.io/portfolio/cases/ai-lead-flow/) — Concept · Live demo
+- [Slotix KZ](https://foxnaim.github.io/portfolio/cases/slotix-kz/) — Booking concept · Live demo
+- [TazaOrder](https://foxnaim.github.io/portfolio/cases/tazaorder/) — Telegram commerce · Live demo
+- [Tact](https://foxnaim.github.io/portfolio/cases/tact/) — SaaS prototype · Source code
+- [NeuroNotes](https://foxnaim.github.io/portfolio/cases/neuronotes/) — Productivity prototype · Source code
 
-Публичные описания не содержат выдуманных клиентов, показателей или гарантий результата. Технические детали проектов можно проверить в связанных GitHub-репозиториях.
+## Услуги
+
+- [Разработка сайтов и интернет-магазинов](https://foxnaim.github.io/portfolio/services/web-development/)
+- [Разработка CRM и SaaS-систем](https://foxnaim.github.io/portfolio/services/crm-development/)
+- [AI-автоматизация и Telegram-боты](https://foxnaim.github.io/portfolio/services/ai-automation/)
+- [Разработка MVP под ключ](https://foxnaim.github.io/portfolio/services/product-development/)
+
+Публичные описания не содержат выдуманных клиентов, показателей или гарантий результата. Демонстрационные проекты и концепты отмечены явно.
