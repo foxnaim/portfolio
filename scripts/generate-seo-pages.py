@@ -96,20 +96,44 @@ PAGES = {
     },
 }
 
-PROJECTS = [
-    ("AI Lead Flow", "Интерактивный frontend-концепт квалификации заявок, lead score и рекомендаций следующего действия. Все данные вымышлены, backend не подключён.", "https://foxnaim.github.io/AI-Lead-Flow/", "Live demo · JavaScript · CRM concept"),
-    ("Tact", "Учёт рабочего времени через Telegram и меняющиеся QR-коды: web-интерфейс, NestJS API, PostgreSQL и Redis.", "https://github.com/foxnaim/World-Time-Frontend", "Next.js · NestJS · PostgreSQL"),
-    ("NeuroNotes", "Прототип пространства для заметок и задач с поиском, тегами и интерфейсами AI-функций.", "https://github.com/foxnaim/NeuroNotes", "Next.js · TypeScript · React"),
-    ("Dev-flow", "Менеджер задач с канбан-доской, календарём, заметками, авторизацией и хранением данных.", "https://github.com/foxnaim/Dev-flow", "Next.js · MongoDB · NextAuth"),
-    ("feed Back", "Платформа анонимной обратной связи для компаний с кабинетами, локализацией и обновлениями в реальном времени.", "https://github.com/foxnaim/Anonymous-chat", "Next.js · Socket.IO · i18n"),
-]
+PROJECT_GROUPS = {
+    "Бизнес и автоматизация": [
+        ("AI Lead Flow", "Интерактивный frontend-концепт: квалификация входящих заявок, lead score и подсказка следующего действия. Данные демонстрационные, backend не подключён.", "https://foxnaim.github.io/AI-Lead-Flow/", "Live demo · JavaScript · CRM concept"),
+        ("Tact", "Учёт рабочего времени через Telegram и меняющиеся QR-коды: интерфейс команды, API и хранение данных.", "https://github.com/foxnaim/World-Time-Frontend", "Next.js · NestJS · PostgreSQL"),
+        ("Habit Tracker", "Full-stack система привычек: цели, серии, аналитика, отдельные frontend, backend и Telegram-бот.", "https://github.com/foxnaim/habit-tracker", "TypeScript · React · Telegram"),
+        ("Trial Admin Panel", "Панель управления пользователями и данными с адаптивным интерфейсом и аналитическими представлениями.", "https://github.com/foxnaim/Trial-Admin-Ponel", "Next.js · TypeScript · Dashboard"),
+        ("Dynamic Form Constructor", "Конструктор динамических форм: поля и структура собираются под конкретный бизнес-сценарий.", "https://github.com/foxnaim/Dynamic-Form-Constructor", "Next.js · TypeScript · Forms"),
+    ],
+    "Продукты и коммуникации": [
+        ("NeuroNotes", "Прототип пространства для заметок и задач с поиском, тегами и интерфейсами AI-функций.", "https://github.com/foxnaim/NeuroNotes", "Next.js · TypeScript · React"),
+        ("Dev-flow", "Менеджер задач с канбан-доской, календарём, заметками, авторизацией и хранением данных.", "https://github.com/foxnaim/Dev-flow", "Next.js · MongoDB · NextAuth"),
+        ("feed Back", "Платформа анонимной обратной связи с кабинетами, локализацией и обновлениями в реальном времени.", "https://github.com/foxnaim/Anonymous-chat", "Next.js · Socket.IO · i18n"),
+        ("Chat", "Web-приложение для обмена сообщениями в реальном времени на современном TypeScript-стеке.", "https://github.com/foxnaim/chat", "Next.js · TypeScript · Realtime"),
+        ("Study Hub", "Образовательное пространство для проектов, материалов и совместной работы студентов.", "https://github.com/foxnaim/Study-Hub", "Next.js · TypeScript · GraphQL"),
+    ],
+    "Commerce, data и эксперименты": [
+        ("AI Trend Analytics", "Дашборд для исследования трендов и визуализации данных с интерфейсами AI-анализа.", "https://github.com/foxnaim/AI-Trend-Analytics", "Next.js · TypeScript · Prisma"),
+        ("Weather App", "Поиск погоды по локации и прогноз на семь дней в адаптивном web-интерфейсе.", "https://github.com/foxnaim/Weather-app", "Next.js · TypeScript · API"),
+        ("Luki Lu Shop", "Интернет-магазин с каталогом, корзиной и сценарием оформления заказа.", "https://github.com/foxnaim/Luki_lu-Shop", "Next.js · TypeScript · E-commerce"),
+        ("BookForge", "Приложение для поиска, организации и изучения книг и подборок.", "https://github.com/foxnaim/BookForge", "Next.js · TypeScript · Search"),
+        ("Imperial", "React-приложение на Vite — один из проектов, созданных в ходе командной и продуктовой практики.", "https://github.com/foxnaim/Imperial", "React · Vite · JavaScript"),
+    ],
+}
 
 ABOUT = {
     "title": "Ян Павлов — full-stack разработчик, обо мне",
     "description": "Ян Павлов — full-stack разработчик сайтов, CRM, SaaS и AI-автоматизаций на TypeScript, React, Next.js, Node.js и NestJS.",
     "h1": "От интерфейса до API — один ответственный разработчик.",
-    "lead": "Я Ян Павлов, independent full-stack developer и автор foxnaim. Помогаю бизнесу получать заявки и экономить время: превращаю идеи в работающие продукты и беру на себя интерфейс, сервер, данные и интеграции.",
+    "lead": "Я Ян Павлов, full-stack разработчик и автор foxnaim. Увлекаюсь разработкой с 2017 года: ещё в школе начал писать скрипты и собирать интерфейсы. Сейчас превращаю идеи в работающие сайты, CRM, SaaS и AI-автоматизации.",
     "keywords": "Ян Павлов разработчик, full-stack разработчик, frontend разработчик, backend разработчик, TypeScript, React, Next.js, NestJS, foxnaim",
+}
+
+PROCESS = {
+    "title": "Как проходит разработка сайта, CRM и AI — Ян Павлов",
+    "description": "Этапы работы Яна Павлова: бриф, прототип, разработка, демонстрации и запуск. Срок проекта — от одной недели до двух месяцев.",
+    "h1": "Понятные этапы. Рабочая версия на каждом шаге.",
+    "lead": "Срок проекта обычно составляет от одной недели до двух месяцев и зависит от функций, интеграций и готовности материалов. До старта фиксируем состав работ, этапы и критерии готовности.",
+    "keywords": "этапы разработки сайта, процесс разработки CRM, сроки создания сайта, заказать MVP, разработка проекта по этапам, Ян Павлов",
 }
 
 CONTACT = {
@@ -180,13 +204,13 @@ def header(depth):
     return f'''<a class="skip-link" href="#content">К содержанию</a>
   <header class="seo-header"><div class="seo-header-inner">
     <a class="seo-brand" href="{root}"><img src="{root}assets/logo.svg" width="38" height="38" alt="">{BRAND}</a>
-    <nav class="seo-nav" aria-label="Основная навигация"><a href="{root}services/web-development/">Сайты</a><a href="{root}services/crm-development/">CRM & SaaS</a><a href="{root}services/ai-automation/">AI</a><a href="{root}projects/">Проекты</a><a href="{root}about/">Обо мне</a><a href="{root}contact/">Контакт</a></nav>
+    <nav class="seo-nav" aria-label="Основная навигация"><a href="{root}services/web-development/">Сайты</a><a href="{root}services/crm-development/">CRM & SaaS</a><a href="{root}services/ai-automation/">AI</a><a href="{root}projects/">Проекты</a><a href="{root}process/">Как работаю</a><a href="{root}about/">Обо мне</a><a href="{root}contact/">Контакт</a></nav>
   </div></header>'''
 
 
 def footer(depth):
     root = rel_root(depth)
-    return f'''<footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="{root}">Главная</a><a href="{CONFIG['github']}" rel="noopener">GitHub</a><a href="{CONFIG['instagram']}" rel="noopener">Instagram</a><a href="{CONFIG['telegram']}" rel="noopener">Build with Yan</a></div></footer>'''
+    return f'''<footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="{root}">Главная</a><a href="{root}process/">Как работаю</a><a href="{CONFIG['github']}" rel="noopener">GitHub</a><a href="{CONFIG['instagram']}" rel="noopener">Instagram</a><a href="{CONFIG['telegram']}" rel="noopener">Build with Yan</a></div></footer>'''
 
 
 def document(title, description, keywords, url, depth, schema, body):
@@ -218,12 +242,47 @@ def service_page(slug, data):
 def projects_page():
     url = abs_url("projects")
     title = "Проекты Яна Павлова: сайты, SaaS и web-приложения"
-    description = "Избранные проекты Яна Павлова: AI Lead Flow, Tact, NeuroNotes, Dev-flow и feed Back. Реализованные сценарии, live demo и технологии."
+    description = "Каталог проектов Яна Павлова: бизнес-системы, AI, SaaS, web-приложения и эксперименты. 40+ публичных репозиториев с кодом на GitHub."
     schema = schema_base(url, title, description)
-    schema["@graph"].append({"@type": "CollectionPage", "name": title, "hasPart": [{"@type": "SoftwareApplication", "name": name, "description": copy, "url": link, "applicationCategory": "WebApplication"} for name, copy, link, stack in PROJECTS]})
-    items = "".join(f'<a class="seo-project" href="{link}" rel="noopener"><span class="number">0{i}</span><div><h2>{escape(name)}</h2><p>{escape(copy)}</p><p class="seo-kicker">{escape(stack)}</p></div><span class="arrow">↗</span></a>' for i, (name, copy, link, stack) in enumerate(PROJECTS, 1))
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Selected work</p><h1>Проекты с открытым исходным кодом.</h1><p class="seo-lead">Здесь собраны продукты и прототипы, в которых можно посмотреть архитектуру, интерфейсы и подход к разработке.</p></section><section class="seo-section">{items}</section><section class="seo-section"><h2>Есть задача для следующего проекта?</h2><p>Расскажите, что должно измениться для пользователя или бизнеса. Технический стек выберем после задачи.</p><a class="seo-button primary" href="../contact/">Начать разговор</a></section>'''
+    projects = [project for group in PROJECT_GROUPS.values() for project in group]
+    schema["@graph"].append({"@type": "CollectionPage", "name": title, "hasPart": [{"@type": "SoftwareApplication", "name": name, "description": copy, "url": link, "applicationCategory": "WebApplication"} for name, copy, link, stack in projects]})
+    sections = []
+    project_number = 1
+    for group_name, group_projects in PROJECT_GROUPS.items():
+        items = []
+        for name, copy, link, stack in group_projects:
+            items.append(f'<a class="seo-project" href="{link}" rel="noopener"><span class="number">{project_number:02d}</span><div><h3>{escape(name)}</h3><p>{escape(copy)}</p><p class="seo-kicker">{escape(stack)}</p></div><span class="arrow">↗</span></a>')
+            project_number += 1
+        sections.append(f'<section class="seo-section project-group"><p class="seo-kicker">{escape(group_name)}</p><h2>{escape(group_name)}</h2>{"".join(items)}</section>')
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с определённым языком: исходники, отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>15</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../process/">Как я работаю</a></div></section>{"".join(sections)}<section class="seo-section"><h2>Есть задача для следующего проекта?</h2><p>Расскажите, что должно измениться для пользователя или бизнеса. Технологии и состав первой версии определим после задачи.</p><a class="seo-button primary" href="../contact/">Начать разговор</a></section>'''
     return document(title, description, "портфолио разработчика, проекты Next.js, CRM, SaaS, TypeScript, React, NestJS", url, 1, schema, body)
+
+
+def process_page():
+    url = abs_url("process")
+    schema = schema_base(url, PROCESS["title"], PROCESS["description"])
+    faq = [
+        ("Можно начать без технического задания?", "Да. Достаточно описать задачу, будущих пользователей и желаемый результат. После разговора появятся состав первой версии и понятные этапы."),
+        ("Сколько длится разработка?", "Обычно от одной недели до двух месяцев. Точный срок зависит от функций, интеграций, контента и скорости согласований."),
+        ("Можно предложить свои идеи по улучшению?", "Да. Я люблю находить дополнительные идеи для продукта и автоматизации, но добавляю их только после согласования с заказчиком."),
+        ("Как проходит оплата?", "Базовая схема — 30% перед стартом, 40% после рабочей промежуточной версии и 30% перед запуском или передачей. Для конкретного проекта условия фиксируются до начала."),
+    ]
+    schema["@graph"].append({"@type": "HowTo", "name": "Как проходит разработка цифрового продукта", "totalTime": "P2M", "step": [{"@type": "HowToStep", "position": i, "name": title, "text": copy} for i, (title, copy) in enumerate([
+        ("Разобраться в задаче", "Короткий бриф: бизнес, пользователь, проблема, ограничения и критерии готовности."),
+        ("Согласовать первую версию", "Фиксируем функции, этапы, сроки, стоимость и то, что не входит в текущий объём."),
+        ("Создать и показать", "Разработка идёт по этапам с демонстрацией рабочей промежуточной версии."),
+        ("Проверить и запустить", "Проверяем ключевые сценарии, размещаем продукт и передаём исходники."),
+    ], 1)]})
+    schema["@graph"].append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
+    steps = "".join(f'<article class="seo-card"><span class="number">0{i}</span><h3>{escape(title)}</h3><p>{escape(copy)}</p></article>' for i, (title, copy) in enumerate([
+        ("Бриф без бюрократии", "Вы рассказываете о задаче своими словами. Я уточняю пользователей, ограничения и ожидаемый результат."),
+        ("План и границы", "Фиксируем первую версию, этапы, сроки, стоимость и критерии, по которым работа считается готовой."),
+        ("Разработка с демонстрациями", "Показываю промежуточные версии по этапам, чтобы решения можно было проверить до финального запуска."),
+        ("Запуск и передача", "Проверяю ключевые сценарии, размещаю продукт, передаю исходники и остаюсь на связи по найденным ошибкам."),
+    ], 1))
+    faq_html = "".join(f"<details><summary>{escape(q)}</summary><p>{escape(a)}</p></details>" for q, a in faq)
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Как я работаю</p><section class="seo-hero"><p class="seo-kicker">From idea to release</p><h1>{escape(PROCESS['h1'])}</h1><p class="seo-lead">{escape(PROCESS['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="../contact/">Обсудить задачу</a><a class="seo-button" href="../projects/">Посмотреть проекты</a></div></section><section class="seo-section"><h2>Четыре этапа</h2><div class="seo-grid process-grid">{steps}</div></section><section class="seo-section"><h2>Базовые условия</h2><div class="terms-grid"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача проекта</span></article></div><p class="terms-note">Обычно в согласованный объём входят две итерации правок и 14 дней исправления найденных ошибок после запуска. Это базовая схема: финальные условия зависят от задачи и фиксируются до старта.</p></section><section class="seo-section seo-faq"><h2>Частые вопросы</h2>{faq_html}</section>'''
+    return document(PROCESS["title"], PROCESS["description"], PROCESS["keywords"], url, 1, schema, body)
 
 
 def simple_page(slug, data, body_extra):
@@ -243,9 +302,10 @@ def main():
     for slug, data in PAGES.items():
         write(f"{slug}/index.html", service_page(slug, data))
     write("projects/index.html", projects_page())
-    write("about/index.html", simple_page("about", ABOUT, f'''<section class="seo-profile" aria-label="Профиль разработчика"><img src="../assets/portrait.png" width="160" height="160" loading="lazy" decoding="async" alt="Ян Павлов, full-stack разработчик"><div><p class="seo-kicker">Independent developer</p><h2>{PERSON_NAME}</h2><p>{BRAND} · Код — на GitHub. Процессы и запуски — в Build with Yan.</p></div></section><section class="seo-section"><h2>Работаю с продуктом целиком</h2><div class="seo-grid"><article class="seo-card"><span class="number">01</span><h3>Frontend</h3><p>Адаптивные интерфейсы на React и Next.js, понятные сценарии и внимание к скорости.</p></article><article class="seo-card"><span class="number">02</span><h3>Backend</h3><p>API на Node.js и NestJS, базы данных, авторизация, роли и бизнес-логика.</p></article><article class="seo-card"><span class="number">03</span><h3>Интеграции</h3><p>Telegram, внешние API, AI-сервисы, уведомления и автоматизация процессов.</p></article></div></section><section class="seo-section"><h2>Основной стек</h2><ul class="seo-list"><li>TypeScript и JavaScript</li><li>React и Next.js</li><li>Node.js и NestJS</li><li>PostgreSQL и MongoDB</li><li>REST API и WebSocket</li><li>Docker и GitHub Actions</li></ul><div class="seo-actions"><a class="seo-button primary" href="../contact/">Обсудить проект</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Открыть Build with Yan</a></div></section>'''))
-    write("contact/index.html", simple_page("contact", CONTACT, f'''<section class="seo-section"><h2>Что написать в первом сообщении</h2><ul class="seo-list"><li>Чем занимается ваш бизнес или продукт</li><li>Какую задачу нужно решить</li><li>Кто будет пользоваться решением</li><li>Какие сервисы уже используются</li></ul><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">Написать в Instagram</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Канал Build with Yan</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">Открыть GitHub</a></div></section><section class="seo-section seo-faq"><h2>Перед началом</h2><details open><summary>Нужно ли готовое техническое задание?</summary><p>Нет. Достаточно своими словами описать проблему и желаемый результат. Структуру и технические детали можно определить вместе.</p></details><details><summary>Как формируются сроки и стоимость?</summary><p>После короткого брифа задача делится на этапы. Оценка зависит от состава функций, интеграций и готовности контента.</p></details></section>'''))
-    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("projects"), abs_url("about"), abs_url("contact")]
+    write("process/index.html", process_page())
+    write("about/index.html", simple_page("about", ABOUT, f'''<section class="seo-profile" aria-label="Профиль разработчика"><img src="../assets/portrait.png" width="160" height="160" loading="lazy" decoding="async" alt="Ян Павлов, full-stack разработчик"><div><p class="seo-kicker">Independent developer</p><h2>{PERSON_NAME}</h2><p>{BRAND} · Разработка с 2017 года · Казахстан и удалённая работа.</p></div></section><section class="seo-section"><h2>От школьных скриптов до цифровых продуктов</h2><p>Интерес к разработке появился ещё в школе: начинал со скриптов и интерфейсов, затем перешёл к полноценным web-продуктам. Сейчас беру задачи целиком — от пользовательского сценария и frontend до API, базы данных и интеграций.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Берусь за разные направления, особенно когда заказчик открыт к идеям и умеет относиться к процессу с юмором.</p></section><section class="seo-section"><h2>Командный и продуктовый опыт</h2><p>Среди проектов, над которыми работал самостоятельно или с командами друзей: AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. В открытом каталоге собраны проекты, код и демонстрационные решения, которые можно проверить.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Открыть проекты</a><a class="seo-button" href="../process/">Как проходит работа</a></div></section><section class="seo-section"><h2>Работаю с продуктом целиком</h2><div class="seo-grid"><article class="seo-card"><span class="number">01</span><h3>Frontend</h3><p>Адаптивные интерфейсы на React и Next.js, понятные сценарии и внимание к скорости.</p></article><article class="seo-card"><span class="number">02</span><h3>Backend</h3><p>API на Node.js и NestJS, базы данных, авторизация, роли и бизнес-логика.</p></article><article class="seo-card"><span class="number">03</span><h3>Интеграции</h3><p>Telegram, внешние API, AI-сервисы, уведомления и автоматизация процессов.</p></article></div></section><section class="seo-section"><h2>Основной стек</h2><ul class="seo-list"><li>TypeScript и JavaScript</li><li>React и Next.js</li><li>Node.js и NestJS</li><li>PostgreSQL и MongoDB</li><li>REST API и WebSocket</li><li>Docker и GitHub Actions</li></ul><div class="seo-actions"><a class="seo-button primary" href="../contact/">Обсудить проект</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Открыть Build with Yan</a></div></section>'''))
+    write("contact/index.html", simple_page("contact", CONTACT, f'''<section class="seo-section"><h2>Что написать в первом сообщении</h2><ul class="seo-list"><li>Чем занимается ваш бизнес или продукт</li><li>Какую задачу нужно решить</li><li>Кто будет пользоваться решением</li><li>Какие сервисы уже используются</li></ul><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">Написать в Instagram</a><a class="seo-button" href="../process/">Этапы и условия</a><a class="seo-button" href="{CONFIG['telegram']}" rel="noopener">Канал Build with Yan</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">Открыть GitHub</a></div></section><section class="seo-section seo-faq"><h2>Перед началом</h2><details open><summary>Нужно ли готовое техническое задание?</summary><p>Нет. Достаточно своими словами описать проблему и желаемый результат. Структуру и технические детали можно определить вместе.</p></details><details><summary>Как формируются сроки и стоимость?</summary><p>После короткого брифа задача делится на этапы. Обычно проект занимает от одной недели до двух месяцев; точная оценка зависит от функций, интеграций и готовности контента.</p></details></section>'''))
+    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("projects"), abs_url("process"), abs_url("about"), abs_url("contact")]
     today = date.today().isoformat()
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{escape(url)}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{'1.0' if url == abs_url() else '0.8'}</priority></url>\n" for url in urls) + "</urlset>\n"
     write("sitemap.xml", sitemap)

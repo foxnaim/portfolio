@@ -1215,6 +1215,36 @@ h2>span {
   margin-top:27px;
 }
 
+.panel-body>.panel-cta+.panel-cta {
+  margin-left:8px;
+}
+
+.work-proof {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  margin-top:24px;
+  border:1px solid #ffffff14;
+  background:#ffffff14;
+}
+
+.work-proof>span {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:16px;
+  background:#111113;
+  color:#85858e;
+  font-size:9px;
+}
+
+.work-proof strong {
+  color:#f4f4f6;
+  font-size:22px;
+  font-weight:520;
+  letter-spacing:-.05em;
+}
+
 .panel-about {
   max-width:1000px;
 }
@@ -1310,6 +1340,12 @@ h2>span {
   font-size:21px;
   margin:26px 0 25px;
   letter-spacing:-.04em;
+}
+
+.about-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 22px;
 }
 
 .about-footer {
@@ -1960,6 +1996,12 @@ textarea:hover,textarea:focus {
   .project-grid {
     gap:30px;
     grid-template-columns:1fr;
+  }
+  .work-proof {
+    grid-template-columns:1fr;
+  }
+  .panel-body>.panel-cta+.panel-cta {
+    margin-left:0;
   }
   .project-art {
     height:220px;

@@ -64,9 +64,21 @@ h1 { max-width: 930px; margin: 0; font-size: clamp(42px, 7vw, 86px); line-height
 .seo-project { display: grid; grid-template-columns: 80px 1fr auto; gap: 20px; align-items: start; padding: 30px 0; border-top: 1px solid var(--line); text-decoration: none; }
 .seo-project:last-child { border-bottom: 1px solid var(--line); }
 .seo-project .number { color: #666670; font-size: 12px; }
-.seo-project h2 { margin: 0 0 8px; font-size: 28px; }
+.seo-project h2, .seo-project h3 { margin: 0 0 8px; font-size: 28px; }
 .seo-project p { margin: 0; color: var(--muted); max-width: 650px; }
 .seo-project .arrow { color: var(--accent); font-size: 24px; }
+.project-group { scroll-margin-top: 90px; }
+.project-group > h2 { margin-top: 7px; }
+.project-stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; margin-top: 34px; border: 1px solid var(--line); background: var(--line); }
+.project-stats div { display: flex; flex-direction: column; gap: 7px; padding: 22px; background: var(--surface); }
+.project-stats strong { color: var(--text); font-size: clamp(28px,4vw,46px); font-weight: 570; letter-spacing: -.05em; }
+.project-stats span { color: var(--muted); font-size: 12px; line-height: 1.45; }
+.process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.terms-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; margin-top: 24px; border: 1px solid var(--line); background: var(--line); }
+.terms-grid article { display: flex; flex-direction: column; gap: 8px; padding: 28px; background: var(--surface); }
+.terms-grid strong { color: var(--accent); font-size: clamp(32px,5vw,58px); letter-spacing: -.05em; }
+.terms-grid span, .terms-note { color: var(--muted); line-height: 1.65; }
+.terms-note { max-width: 800px; margin-top: 20px; }
 .seo-profile { display: flex; align-items: center; gap: 28px; padding: 44px 0; border-bottom: 1px solid var(--line); }
 .seo-profile img { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); }
 .seo-profile h2 { margin: 0 0 7px; font-size: 32px; letter-spacing: -.05em; }
@@ -83,6 +95,8 @@ h1 { max-width: 930px; margin: 0; font-size: clamp(42px, 7vw, 86px); line-height
   .seo-list { grid-template-columns: 1fr; }
   .seo-project { grid-template-columns: 38px 1fr; }
   .seo-project .arrow { display: none; }
+  .seo-project h2, .seo-project h3 { font-size: 22px; }
+  .project-stats, .terms-grid, .process-grid { grid-template-columns: 1fr; }
   .seo-profile { align-items: flex-start; gap: 20px; }
   .seo-profile img { width: 108px; height: 108px; }
   .seo-footer { flex-direction: column; }

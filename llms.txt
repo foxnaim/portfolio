@@ -10,6 +10,7 @@
 - [AI-автоматизация и Telegram-боты](https://foxnaim.github.io/portfolio/services/ai-automation/)
 - [Разработка MVP](https://foxnaim.github.io/portfolio/services/product-development/)
 - [Проекты](https://foxnaim.github.io/portfolio/projects/)
+- [Как проходит работа](https://foxnaim.github.io/portfolio/process/)
 - [Обо мне](https://foxnaim.github.io/portfolio/about/)
 - [Контакт](https://foxnaim.github.io/portfolio/contact/)
 
