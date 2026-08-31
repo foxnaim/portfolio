@@ -19,6 +19,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - Уникальные title и description, canonical, Open Graph, Twitter Cards, JSON-LD, `sitemap.xml`, `robots.txt` и web manifest.
 - Локальные шрифты, постер, видео и социальное превью без внешних CDN-зависимостей.
 - Автоматическая публикация через GitHub Actions.
+- Автоматическое уведомление поисковиков через IndexNow после публикации.
 
 ## Где менять содержимое
 

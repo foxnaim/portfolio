@@ -32,3 +32,6 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow search engines
+        continue-on-error: true
+        run: python3 scripts/submit-indexnow.py

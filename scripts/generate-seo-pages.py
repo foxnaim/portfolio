@@ -250,6 +250,9 @@ def main():
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {abs_url('sitemap.xml').rstrip('/')}\n")
     manifest = {"name": "foxnaim — Full-stack разработчик", "short_name": "foxnaim", "description": "Сайты, CRM, SaaS и AI-автоматизация", "start_url": BASE, "scope": BASE, "display": "standalone", "background_color": "#000000", "theme_color": "#000000", "lang": "ru", "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}
     write("site.webmanifest", json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+    index_now_key = CONFIG.get("indexNowKey")
+    if index_now_key:
+        write(f"{index_now_key}.txt", index_now_key + "\n")
     print(f"Generated {len(urls)} canonical URLs for {SITE}")
 
 
