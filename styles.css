@@ -1050,6 +1050,127 @@ h2>span {
   transform:translateY(-6px);
 }
 
+.art-slotix {
+  background:linear-gradient(145deg,#eef2df,#d8ff65);
+  color:#131a14;
+}
+
+.slotix-word {
+  position:absolute;
+  left:24px;
+  top:68px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:39px;
+  font-weight:750;
+  letter-spacing:-3px;
+}
+
+.slotix-word>i {
+  width:33px;
+  height:33px;
+  border-radius:10px;
+  background:linear-gradient(110deg,#d8ff65 18%,#182119 19% 100%);
+  box-shadow:inset 0 0 0 6px #182119;
+}
+
+.slotix-word>span {
+  color:#63862f;
+}
+
+.slotix-calendar {
+  position:absolute;
+  right:24px;
+  top:48px;
+  width:112px;
+  padding:13px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  border:1px solid #25332325;
+  border-radius:17px;
+  background:#fffdf1b8;
+  box-shadow:0 15px 30px #29351e18;
+}
+
+.slotix-calendar strong {
+  grid-column:1/-1;
+  font-size:28px;
+  letter-spacing:-2px;
+}
+
+.slotix-calendar span {
+  padding:5px 4px;
+  border-radius:6px;
+  background:#182119;
+  color:#d8ff65;
+  font-size:7px;
+  text-align:center;
+}
+
+.art-taza {
+  background:#dfff64;
+  color:#151510;
+}
+
+.art-taza::before {
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  right:-125px;
+  bottom:-150px;
+  border:1px solid #5e2bff55;
+  border-radius:50%;
+  box-shadow:0 0 0 35px #5e2bff0d,0 0 0 36px #5e2bff33;
+}
+
+.taza-word {
+  position:absolute;
+  left:23px;
+  top:75px;
+  font-size:45px;
+  font-weight:800;
+  letter-spacing:-3.8px;
+}
+
+.taza-word>span {
+  color:#5e2bff;
+}
+
+.taza-products {
+  position:absolute;
+  right:25px;
+  top:59px;
+  width:125px;
+  height:105px;
+  display:flex;
+  align-items:end;
+  gap:6px;
+}
+
+.taza-products>i {
+  flex:1;
+  height:76%;
+  border-radius:11px 11px 7px 7px;
+  background:#151510;
+  transform:rotate(-7deg);
+  box-shadow:0 12px 22px #5e2bff24;
+}
+
+.taza-products>i:nth-child(2) {
+  height:100%;
+  background:#5e2bff;
+  transform:none;
+}
+
+.taza-products>i:nth-child(3) {
+  height:65%;
+  background:#f7f7ef;
+  transform:rotate(8deg);
+}
+
 .art-flow {
   background:#253934;
   color:#dce8da;

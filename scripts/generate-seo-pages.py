@@ -99,6 +99,7 @@ PAGES = {
 PROJECT_GROUPS = {
     "Бизнес и автоматизация": [
         ("AI Lead Flow", "Интерактивный frontend-концепт: квалификация входящих заявок, lead score и подсказка следующего действия. Данные демонстрационные, backend не подключён.", "https://foxnaim.github.io/AI-Lead-Flow/", "Live demo · JavaScript · CRM concept"),
+        ("Slotix KZ", "Интерактивный макет онлайн-записи для сервисного бизнеса: клиентский сценарий, расписание, поиск записей, мини-CRM и управление услугами. Данные сохраняются только в браузере.", "https://foxnaim.github.io/Slotix-KZ/", "Live demo · JavaScript · Booking concept"),
         ("Tact", "Учёт рабочего времени через Telegram и меняющиеся QR-коды: интерфейс команды, API и хранение данных.", "https://github.com/foxnaim/World-Time-Frontend", "Next.js · NestJS · PostgreSQL"),
         ("Habit Tracker", "Full-stack система привычек: цели, серии, аналитика, отдельные frontend, backend и Telegram-бот.", "https://github.com/foxnaim/habit-tracker", "TypeScript · React · Telegram"),
         ("Trial Admin Panel", "Панель управления пользователями и данными с адаптивным интерфейсом и аналитическими представлениями.", "https://github.com/foxnaim/Trial-Admin-Ponel", "Next.js · TypeScript · Dashboard"),
@@ -112,6 +113,7 @@ PROJECT_GROUPS = {
         ("Study Hub", "Образовательное пространство для проектов, материалов и совместной работы студентов.", "https://github.com/foxnaim/Study-Hub", "Next.js · TypeScript · GraphQL"),
     ],
     "Commerce, data и эксперименты": [
+        ("TazaOrder", "Интерактивный макет Telegram-магазина для локальных брендов: каталог, избранное, корзина, оформление и статус доставки. Портфельная адаптация открытого MIT-проекта tma-shop с сохранённой атрибуцией.", "https://foxnaim.github.io/TazaOrder/", "Live demo · React · Telegram commerce"),
         ("AI Trend Analytics", "Дашборд для исследования трендов и визуализации данных с интерфейсами AI-анализа.", "https://github.com/foxnaim/AI-Trend-Analytics", "Next.js · TypeScript · Prisma"),
         ("Weather App", "Поиск погоды по локации и прогноз на семь дней в адаптивном web-интерфейсе.", "https://github.com/foxnaim/Weather-app", "Next.js · TypeScript · API"),
         ("Luki Lu Shop", "Интернет-магазин с каталогом, корзиной и сценарием оформления заказа.", "https://github.com/foxnaim/Luki_lu-Shop", "Next.js · TypeScript · E-commerce"),
@@ -146,7 +148,11 @@ CONTACT = {
 
 
 def abs_url(path=""):
-    return SITE + ("/" + path.strip("/") if path else "") + ("/" if path else "/")
+    clean_path = path.strip("/")
+    if not clean_path:
+        return SITE + "/"
+    trailing_slash = "" if "." in Path(clean_path).name else "/"
+    return SITE + "/" + clean_path + trailing_slash
 
 
 def rel_root(depth):
@@ -254,7 +260,7 @@ def projects_page():
             items.append(f'<a class="seo-project" href="{link}" rel="noopener"><span class="number">{project_number:02d}</span><div><h3>{escape(name)}</h3><p>{escape(copy)}</p><p class="seo-kicker">{escape(stack)}</p></div><span class="arrow">↗</span></a>')
             project_number += 1
         sections.append(f'<section class="seo-section project-group"><p class="seo-kicker">{escape(group_name)}</p><h2>{escape(group_name)}</h2>{"".join(items)}</section>')
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с определённым языком: исходники, отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>15</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../process/">Как я работаю</a></div></section>{"".join(sections)}<section class="seo-section"><h2>Есть задача для следующего проекта?</h2><p>Расскажите, что должно измениться для пользователя или бизнеса. Технологии и состав первой версии определим после задачи.</p><a class="seo-button primary" href="../contact/">Начать разговор</a></section>'''
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 40+ публичных репозиториев с определённым языком: исходники, отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>40+</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../process/">Как я работаю</a></div></section>{"".join(sections)}<section class="seo-section"><h2>Есть задача для следующего проекта?</h2><p>Расскажите, что должно измениться для пользователя или бизнеса. Технологии и состав первой версии определим после задачи.</p><a class="seo-button primary" href="../contact/">Начать разговор</a></section>'''
     return document(title, description, "портфолио разработчика, проекты Next.js, CRM, SaaS, TypeScript, React, NestJS", url, 1, schema, body)
 
 
