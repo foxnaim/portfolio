@@ -70,7 +70,7 @@ function renderRoute() {
   activeDialog = target;
   const navRoute = serviceContent[route] ? "home" : route;
   navLinks.forEach(link => {
-    if (link.hash === `#${navRoute}`) link.setAttribute("aria-current", "page");
+    if (link.dataset.route === navRoute || link.hash === `#${navRoute}`) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
   });
 
@@ -103,9 +103,9 @@ function dismiss(dialog) {
 }
 
 document.addEventListener("click", event => {
-  const link = event.target.closest('a[href^="#"]');
+  const link = event.target.closest('a[data-route], a[href^="#"]');
   if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
-  const route = link.hash.slice(1);
+  const route = link.dataset.route || link.hash.slice(1);
   if (!routeNames.has(route)) return;
   event.preventDefault();
   if (!activeDialog) returnFocus = link;
@@ -176,7 +176,6 @@ const motionButton = document.querySelector(".motion-toggle");
 const motionLabel = document.querySelector(".motion-label");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let userPaused = reduceMotion.matches;
-let localVideoFallbackUsed = false;
 
 function updateVideoControl() {
   const paused = video.paused || reduceMotion.matches;
@@ -194,35 +193,14 @@ function syncVideo() {
 }
 
 motionButton.addEventListener("click", () => {
-  userPaused = !video.paused;
+  userPaused = !userPaused;
   syncVideo();
 });
 video.addEventListener("play", updateVideoControl);
 video.addEventListener("pause", updateVideoControl);
-// Keep the supplied CloudFront source primary; a local copy is available if the CDN fails.
-function useLocalVideo() {
-  if (localVideoFallbackUsed) return;
-  localVideoFallbackUsed = true;
-  video.src = "assets/background.mp4";
-  video.load();
-  syncVideo();
-}
-video.querySelector("source").addEventListener("error", useLocalVideo);
-// The original MP4 is large and has its metadata at the end. Keep the page
-// responsive on a slow connection by switching to the optimized local copy.
-let videoWaitTimer = setTimeout(() => {
-  if (video.readyState < 3 && !reduceMotion.matches) useLocalVideo();
-}, 2200);
-video.addEventListener("waiting", () => {
-  clearTimeout(videoWaitTimer);
-  videoWaitTimer = setTimeout(() => {
-    if (!userPaused && !reduceMotion.matches) useLocalVideo();
-  }, 2200);
-});
-video.addEventListener("playing", () => clearTimeout(videoWaitTimer));
 video.addEventListener("error", () => {
-  if (!localVideoFallbackUsed) useLocalVideo();
-  else { motionButton.disabled = true; motionButton.title = "Показывается статичный фон"; }
+  motionButton.disabled = true;
+  motionButton.title = "Показывается статичный фон";
 });
 document.addEventListener("visibilitychange", syncVideo);
 reduceMotion.addEventListener("change", () => { userPaused = reduceMotion.matches; syncVideo(); });
