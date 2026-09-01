@@ -229,6 +229,13 @@ CASES = {
         "preview_path": "journal/agent-skills",
         "preview_class": "social-cover",
         "application_category": "DeveloperApplication",
+        "evidence": {
+            "title": "Двойной клик: код работает, но продукт ещё не готов",
+            "copy": "В новом разборе одна повторная отправка создаёт две одинаковые заявки. Automation map превращает этот сбой в проверяемый сценарий: запрос получает уникальный ID, повтор не дублирует запись, а безопасная попытка в CRM сохраняет тот же результат.",
+            "points": ["Уникальный request ID", "Идемпотентная защита от дублей", "Контролируемые повторы и повторный QA-тест"],
+            "journal": "../../journal/#double-submit",
+            "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcvpS3RtmF2/",
+        },
         "disclosure": "Это оригинальный open-source набор рабочих инструкций и шаблонов. Он не получает доступ к CRM, Telegram или production и не заменяет проверку результата человеком.",
     },
     "neuronotes": {
@@ -339,6 +346,17 @@ JOURNAL = [
         "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcvWvHgtDpP/",
         "case": "../cases/build-with-yan-skills/",
         "points": ["client-brief для проверяемого брифа", "automation-map для надёжного процесса", "release-gate для решения о готовности"],
+    },
+    {
+        "slug": "double-submit",
+        "title": "Код работает, но продукт ещё не готов: двойная отправка формы",
+        "description": "Один двойной клик создаёт две одинаковые заявки. Разбор показывает, как request ID, защита от дублей и контролируемые повторы превращают быстрый AI-прототип в устойчивый продукт.",
+        "date": "2026-09-01",
+        "label": "QA · Automation Map · Reel",
+        "image": "double-submit",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcvpS3RtmF2/",
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["Уникальный request ID для каждой операции", "Защита CRM от повторной записи", "Контролируемый retry и повторный тест"],
     },
 ]
 
@@ -584,10 +602,15 @@ def case_page(slug, data):
     preview_height = data.get("preview_height", 640 if data.get("preview_path") else 540)
     preview_class = f' {data["preview_class"]}' if data.get("preview_class") else ""
     preview = f'<figure class="case-visual{preview_class}"><img src="../../assets/{preview_path}.webp" width="{preview_width}" height="{preview_height}" loading="eager" fetchpriority="high" alt="Обложка проекта {escape(data["name"], quote=True)}"></figure>' if preview_path else ""
+    evidence = ""
+    if data.get("evidence"):
+        item = data["evidence"]
+        evidence_points = "".join(f"<li>{escape(point)}</li>" for point in item["points"])
+        evidence = f'''\n    <section class="seo-section"><p class="seo-kicker">Проверка на реальном сценарии</p><h2>{escape(item['title'])}</h2><p>{escape(item['copy'])}</p><ul class="article-list">{evidence_points}</ul><div class="seo-actions"><a class="seo-button primary" href="{item['journal']}">Читать короткий разбор</a><a class="seo-button" href="{item['instagram']}" target="_blank" rel="noopener noreferrer">Смотреть Reel</a></div></section>'''
     body = f'''<p class="breadcrumbs"><a href="../../">Главная</a> / <a href="../../projects/">Проекты</a> / {escape(data['name'])}</p>
     <section class="seo-hero case-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['summary'])}</p><div class="seo-actions">{"".join(actions)}</div></section>
     {preview}
-    <section class="seo-section case-story"><div><p class="seo-kicker">Задача</p><h2>Что нужно было показать</h2><p>{escape(data['challenge'])}</p></div><div><p class="seo-kicker">Решение</p><h2>Как устроен концепт</h2><p>{escape(data['solution'])}</p></div></section>
+    <section class="seo-section case-story"><div><p class="seo-kicker">Задача</p><h2>Что нужно было показать</h2><p>{escape(data['challenge'])}</p></div><div><p class="seo-kicker">Решение</p><h2>Как устроен концепт</h2><p>{escape(data['solution'])}</p></div></section>{evidence}
     <section class="seo-section"><p class="seo-kicker">User flow</p><h2>Сценарий от входа до результата</h2><ol class="case-flow">{flow}</ol></section>
     <section class="seo-section case-story"><div><p class="seo-kicker">Решения</p><h2>Почему интерфейс устроен так</h2><ul class="article-list">{decisions}</ul></div><div><p class="seo-kicker">Границы</p><h2>Что этот кейс не обещает</h2><ul class="article-list">{limitations}</ul></div></section>
     <section class="seo-section"><h2>Что реализовано</h2><ul class="seo-list">{features}</ul></section>
@@ -657,7 +680,7 @@ def journal_page():
     body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Журнал разработки</p>
     <section class="seo-hero"><p class="seo-kicker">Build with Yan · Dev journal</p><h1>Показываю не только результат, но и путь к нему.</h1><p class="seo-lead">Проекты, open-source инструменты, ошибки и решения между «есть идея» и «оно работает». На сайте остаются лёгкие обложки и текст; оригинальные видео открываются в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../cases/build-with-yan-skills/">Свежий open-source кейс</a><a class="seo-button" href="{CONFIG['telegram']}" target="_blank" rel="noopener noreferrer">Канал Build with Yan</a></div></section>
     <section class="journal-list" aria-label="Записи журнала">{"".join(cards)}</section>
-    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Две локальные WebP-обложки весят меньше 30 КБ вместе, а видео загружается только после перехода в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
+    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Три локальные WebP-обложки весят меньше 45 КБ вместе, а видео загружается только после перехода в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
     return document(title, description, "Build with Yan, журнал разработчика, разработка проектов, open source, Agent Skills, foxnaim", url, 1, schema, body)
 
 
