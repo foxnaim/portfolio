@@ -2250,12 +2250,12 @@ textarea:hover,textarea:focus {
     display:none;
   }
   .availability-pill {
-    font-size:10px;
+    font-size:12px;
     margin-left:0;
     padding:0 14px;
   }
   .hero .eyebrow {
-    font-size:7px;
+    font-size:12px;
     letter-spacing:.21em;
     margin-bottom:20px;
   }
@@ -2284,7 +2284,7 @@ textarea:hover,textarea:focus {
     font-size:12px;
   }
   .hero-actions .button-text {
-    font-size:11px;
+    font-size:12px;
     min-height:29px;
     padding:5px 0;
   }
@@ -2305,7 +2305,7 @@ textarea:hover,textarea:focus {
     justify-content:flex-start;
     gap:3px;
     padding:0 7px;
-    font-size:7.5px;
+    font-size:12px;
     line-height:1.35;
     white-space:normal;
   }
@@ -2313,7 +2313,7 @@ textarea:hover,textarea:focus {
     display:none;
   }
   .hero-proof strong {
-    font-size:10.5px;
+    font-size:13px;
   }
   .hero-selector {
     display:none;
@@ -2352,7 +2352,7 @@ textarea:hover,textarea:focus {
     font-size:20px;
   }
   .footer-bottom {
-    font-size:8px;
+    font-size:12px;
     padding-top:14px;
   }
   .footer-bottom>span {
@@ -2369,7 +2369,7 @@ textarea:hover,textarea:focus {
     display:none;
   }
   .footer-links>a {
-    font-size:8px;
+    font-size:12px;
     gap:0;
   }
   .footer-links>a .icon {
