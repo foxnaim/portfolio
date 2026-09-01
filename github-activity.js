@@ -9,7 +9,7 @@ if (activityRoot) {
       return response.json();
     })
     .then(data => {
-      document.querySelector("#github-total").textContent = String(data.publicRepos || "40+");
+      document.querySelector("#github-total").textContent = String(data.publicRepos || "58");
       document.querySelector("#github-updated").textContent = new Intl.DateTimeFormat("ru", { day: "2-digit", month: "short", year: "numeric" }).format(new Date(data.generatedAt));
       activityRoot.replaceChildren();
       (data.latest || []).slice(0, 5).forEach(repo => {

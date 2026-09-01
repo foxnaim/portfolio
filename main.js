@@ -70,6 +70,10 @@ function runtimeCopy(key, fallback) {
   return localeData()?.runtime?.[key] || fallback;
 }
 
+function track(name, properties = {}) {
+  window.FoxnaimAnalytics?.track(name, properties);
+}
+
 function documentPath(path) {
   return window.location.protocol === "file:" && path.endsWith("/") ? `${path}index.html` : path;
 }
@@ -209,7 +213,7 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove("visible"), 3500);
 }
 
-document.querySelector("#copy-brief").addEventListener("click", async () => {
+async function copyBrief() {
   const field = document.querySelector("#project-brief");
   const fallbackBrief = window.PortfolioI18n?.language?.() === "en"
     ? "Hi! I would like to discuss a development project."
@@ -226,6 +230,12 @@ document.querySelector("#copy-brief").addEventListener("click", async () => {
     field.select();
     showToast(runtimeCopy("copyFailed", "Не удалось скопировать"));
   }
+}
+
+document.querySelector("#copy-brief").addEventListener("click", copyBrief);
+document.querySelector("#copy-open-instagram").addEventListener("click", () => {
+  copyBrief();
+  track("instagram_opened", { location: "contact", flow: "brief" });
 });
 
 const selectorGoalButtons = [...document.querySelectorAll("[data-selector-goal]")];
@@ -237,6 +247,8 @@ const selectorResult = document.querySelector("#selector-result");
 const selectorResultTitle = document.querySelector("#selector-result-title");
 const selectorResultCopy = document.querySelector("#selector-result-copy");
 const selectorResultScope = document.querySelector("#selector-result-scope");
+const selectorBudget = document.querySelector("#selector-budget");
+const selectorTimeline = document.querySelector("#selector-timeline");
 const selectorDetail = document.querySelector("#selector-detail");
 const selectorContact = document.querySelector("#selector-contact");
 let selectedGoal = "";
@@ -274,7 +286,10 @@ function updateSelector() {
     item.textContent = copy;
     return item;
   }));
+  selectorBudget.textContent = recommendation.budget;
+  selectorTimeline.textContent = recommendation.timeline;
   selectorDetail.href = documentPath(recommendation.page);
+  selectorDetail.dataset.offer = selectedGoal;
 }
 
 selectorGoalButtons.forEach(button => {
@@ -283,6 +298,7 @@ selectorGoalButtons.forEach(button => {
     selectedGoal = button.dataset.selectorGoal;
     selectorGoalButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
     updateSelector();
+    track("selector_goal_selected", { goal: selectedGoal });
   });
 });
 
@@ -299,6 +315,7 @@ selectorTimeButtons.forEach(button => {
 selectorContact.addEventListener("click", () => {
   const brief = selectorBrief();
   if (brief) document.querySelector("#project-brief").value = brief;
+  track("selector_completed", { goal: selectedGoal || "unknown", timeline: selectedTime });
 });
 
 const video = document.querySelector(".bg-video");

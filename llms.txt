@@ -5,6 +5,7 @@
 ## Основные страницы
 
 - [Главная](https://foxnaim.github.io/portfolio/)
+- [Пакеты, цены и сроки](https://foxnaim.github.io/portfolio/pricing/)
 - [Готовые решения](https://foxnaim.github.io/portfolio/solutions/)
 - [Интерактивный Demo Lab](https://foxnaim.github.io/portfolio/demo-lab/)
 - [Сравнение решений](https://foxnaim.github.io/portfolio/compare/)
@@ -32,5 +33,12 @@
 - [Разработка CRM и SaaS-систем](https://foxnaim.github.io/portfolio/services/crm-development/)
 - [AI-автоматизация и Telegram-боты](https://foxnaim.github.io/portfolio/services/ai-automation/)
 - [Разработка MVP под ключ](https://foxnaim.github.io/portfolio/services/product-development/)
+
+## Решения под задачу
+
+- [Разработка сайта для бизнеса в Казахстане](https://foxnaim.github.io/portfolio/solutions/business-website-kazakhstan/) — 150 000–300 000 ₸
+- [Разработка CRM вместо Excel](https://foxnaim.github.io/portfolio/solutions/crm-instead-of-excel/) — от 800 000 ₸
+- [Разработка Telegram-бота для заявок](https://foxnaim.github.io/portfolio/solutions/telegram-lead-bot/) — от 200 000 ₸
+- [AI-автоматизация повторяющейся работы](https://foxnaim.github.io/portfolio/solutions/ai-routine-automation/) — от 200 000 ₸
 
 Публичные описания не содержат выдуманных клиентов, показателей или гарантий результата. Демонстрационные проекты и концепты отмечены явно.
