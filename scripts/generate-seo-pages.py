@@ -358,6 +358,17 @@ JOURNAL = [
         "case": "../cases/build-with-yan-skills/",
         "points": ["Уникальный request ID для каждой операции", "Защита CRM от повторной записи", "Контролируемый retry и повторный тест"],
     },
+    {
+        "slug": "fundamentals-before-ai",
+        "title": "База перед AI: HTML, CSS и JavaScript",
+        "description": "AI и vibe coding ускоряют разработку, но понимание HTML, CSS и JavaScript помогает проверять код, исправлять ошибки и доводить идеи до рабочих проектов.",
+        "date": "2026-09-01",
+        "label": "Обучение · Vibe coding · Reel",
+        "image": "fundamentals-before-ai",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcwYSjANyCw/",
+        "case": "",
+        "points": ["HTML, CSS и JavaScript как основа", "Практика до усложнения инструментов", "AI-инструменты для ускорения понятного процесса"],
+    },
 ]
 
 CASE_DETAILS = {
@@ -683,7 +694,7 @@ def journal_page():
     body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Журнал разработки</p>
     <section class="seo-hero"><p class="seo-kicker">Build with Yan · Dev journal</p><h1>Показываю не только результат, но и путь к нему.</h1><p class="seo-lead">Проекты, open-source инструменты, ошибки и решения между «есть идея» и «оно работает». На сайте остаются лёгкие обложки и текст; оригинальные видео открываются в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../cases/build-with-yan-skills/">Свежий open-source кейс</a><a class="seo-button" href="{CONFIG['telegram']}" target="_blank" rel="noopener noreferrer">Канал Build with Yan</a></div></section>
     <section class="journal-list" aria-label="Записи журнала">{"".join(cards)}</section>
-    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Три локальные WebP-обложки весят меньше 45 КБ вместе, а видео загружается только после перехода в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
+    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Четыре локальные WebP-обложки весят меньше 50 КБ вместе, а видео загружается только после перехода в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
     return document(title, description, "Build with Yan, журнал разработчика, разработка проектов, open source, Agent Skills, foxnaim", url, 1, schema, body)
 
 
