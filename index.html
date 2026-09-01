@@ -35,8 +35,10 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/poster.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=9">
-  <script src="main.js?v=9" defer></script>
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script src="pwa.js?v=1" defer></script>
+  <script src="i18n.js?v=1" defer></script>
+  <script src="main.js?v=11" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,10 +143,11 @@
         <span>© <span id="year">2026</span> Ян Павлов <span class="footer-divider">/</span> foxnaim</span>
         <div class="footer-links">
           <a href="solutions/" data-short="SOL">Решения <svg class="icon"><use href="#external"/></svg></a>
+          <a href="demo-lab/" data-short="LAB">Demo Lab <svg class="icon"><use href="#external"/></svg></a>
           <a href="https://github.com/foxnaim" target="_blank" rel="noopener noreferrer" data-short="GH">GitHub <svg class="icon"><use href="#external"/></svg></a>
           <a href="https://www.instagram.com/yan._.pavlov/" target="_blank" rel="noopener noreferrer" data-short="IG">Instagram <svg class="icon"><use href="#external"/></svg></a>
           <a href="https://t.me/+cYtUBpTN-2FkZTky" target="_blank" rel="noopener noreferrer" data-short="TG">Канал <svg class="icon"><use href="#external"/></svg></a>
-          <span class="language-links" aria-label="Язык"><a href="./" lang="ru" aria-current="page">RU</a><a href="en/" lang="en">EN</a><a href="kz/" lang="kk">KZ</a></span>
+          <span class="language-links" aria-label="Язык"><button type="button" data-language="ru" lang="ru" aria-pressed="true">RU</button><button type="button" data-language="en" lang="en" aria-pressed="false">EN</button><button type="button" data-language="kk" lang="kk" aria-pressed="false">KZ</button></span>
           <button type="button" class="motion-toggle" aria-label="Приостановить фон" aria-pressed="false"><span class="pause-icon" aria-hidden="true"></span><span class="motion-label">Пауза</span></button>
         </div>
       </div>
@@ -154,7 +157,8 @@
   <dialog class="mobile-menu" id="mobile-menu" aria-label="Навигация">
     <div class="menu-sheet">
       <div class="menu-heading"><span>foxnaim / меню</span><button type="button" class="icon-button" data-close aria-label="Закрыть меню"><svg class="icon"><use href="#close"/></svg></button></div>
-      <nav aria-label="Мобильная навигация"><a href="./" data-route="home">Главная <span>01</span></a><a href="projects/" data-route="work">Проекты <span>02</span></a><a href="solutions/">Решения <span>03</span></a><a href="about/" data-route="about">Обо мне <span>04</span></a><a href="contact/" data-route="contact">Контакт <span>05</span></a></nav>
+      <nav aria-label="Мобильная навигация"><a href="./" data-route="home">Главная <span>01</span></a><a href="projects/" data-route="work">Проекты <span>02</span></a><a href="solutions/">Решения <span>03</span></a><a href="demo-lab/">Demo Lab <span>04</span></a><a href="resources/">Чек-листы <span>05</span></a><a href="about/" data-route="about">Обо мне <span>06</span></a><a href="partners/">Партнёрам <span>07</span></a><a href="contact/" data-route="contact">Контакт <span>08</span></a></nav>
+      <span class="menu-languages" aria-label="Язык"><button type="button" data-language="ru" aria-pressed="true">RU</button><button type="button" data-language="en" aria-pressed="false">EN</button><button type="button" data-language="kk" aria-pressed="false">KZ</button></span>
       <a class="button button-dark" href="process/">Этапы и условия <svg class="icon"><use href="#arrow"/></svg></a>
     </div>
   </dialog>
@@ -190,6 +194,7 @@
       <p class="fineprint">На главной показана короткая подборка. Остальные решения, описания и ссылки собраны на отдельной странице проектов.</p>
       <a class="button button-secondary panel-cta" href="projects/">Открыть весь каталог <svg class="icon"><use href="#external"/></svg></a>
       <a class="button button-secondary panel-cta" href="solutions/">Готовые решения <svg class="icon"><use href="#external"/></svg></a>
+      <a class="button button-secondary panel-cta" href="demo-lab/">Попробовать Demo Lab <svg class="icon"><use href="#external"/></svg></a>
       <a class="button button-primary panel-cta" href="process/">Как проходит работа <svg class="icon"><use href="#arrow"/></svg></a>
     </div>
   </dialog>
@@ -198,7 +203,7 @@
     <div class="panel-top"><span class="eyebrow">THE PERSON BEHIND THE CODE</span><button type="button" class="icon-button" data-close aria-label="Закрыть информацию обо мне"><svg class="icon"><use href="#close"/></svg></button></div>
     <div class="panel-body about-grid">
       <div class="about-identity"><div class="identity-mark portrait-frame"><img src="assets/portrait.webp" alt="Ян Павлов, full-stack разработчик" width="140" height="140" loading="lazy" decoding="async"></div><span class="identity-name">Ян Павлов</span><span class="identity-role">foxnaim · full-stack developer</span><span class="identity-status"><span class="status-dot"></span> Открыт к сотрудничеству</span></div>
-      <div class="about-copy"><p class="kicker">Привет, я Ян</p><h2 id="about-title">Превращаю идеи.<br><span>В работающие продукты.</span></h2><p>Увлекаюсь разработкой с 2017 года. Ещё в школе начал писать разные скрипты и собирать интерфейсы; сейчас создаю сайты, CRM, SaaS и AI-автоматизации.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Люблю разные интересные задачи и, если заказчик согласен, предлагаю собственные идеи для улучшения продукта и автоматизации.</p><p>Среди самостоятельных и командных проектов — AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. Особенно ценю заказчиков с чувством юмора и открытым диалогом.</p><div class="about-stack"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>NestJS</span><span>PostgreSQL</span><span>AI / API</span></div><p class="about-principle">Code it. Ship it. Improve it.</p><div class="about-links"><a class="text-link" href="process/">Как проходит работа <svg class="icon"><use href="#external"/></svg></a><a class="text-link" href="contact/" data-route="contact">Контакт и первый шаг <svg class="icon"><use href="#arrow"/></svg></a></div></div>
+      <div class="about-copy"><p class="kicker">Привет, я Ян</p><h2 id="about-title">Превращаю идеи.<br><span>В работающие продукты.</span></h2><p>Увлекаюсь разработкой с 2017 года. Ещё в школе начал писать разные скрипты и собирать интерфейсы; сейчас создаю сайты, CRM, SaaS и AI-автоматизации.</p><p>Свободно работаю из Казахстана и часто бываю в Алматы, Павлодаре, Семее и Астане. Люблю разные интересные задачи и, если заказчик согласен, предлагаю собственные идеи для улучшения продукта и автоматизации.</p><p>Среди самостоятельных и командных проектов — AI-Таргетолог, Imperial, мобильное приложение One System и Leadflow. Особенно ценю заказчиков с чувством юмора и открытым диалогом.</p><div class="about-stack"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>NestJS</span><span>PostgreSQL</span><span>AI / API</span></div><p class="about-principle">Code it. Ship it. Improve it.</p><div class="about-links"><a class="text-link" href="process/">Как проходит работа <svg class="icon"><use href="#external"/></svg></a><a class="text-link" href="partners/">Партнёрам <svg class="icon"><use href="#external"/></svg></a><a class="text-link" href="contact/" data-route="contact">Контакт и первый шаг <svg class="icon"><use href="#arrow"/></svg></a></div></div>
     </div>
     <div class="about-footer"><span>Код — на GitHub. Процессы и запуски — в Build with Yan.</span><a href="https://t.me/+cYtUBpTN-2FkZTky" target="_blank" rel="noopener noreferrer">Открыть канал <svg class="icon"><use href="#external"/></svg></a><a href="https://www.instagram.com/yan._.pavlov/" target="_blank" rel="noopener noreferrer">@yan._.pavlov <svg class="icon"><use href="#external"/></svg></a></div>
   </dialog>
@@ -209,13 +214,13 @@
   </dialog>
 
   <dialog class="panel panel-selector" id="selector" aria-labelledby="selector-title">
-    <div class="panel-top"><span class="eyebrow">SOLUTION FINDER / 01—03</span><button type="button" class="icon-button" data-close aria-label="Закрыть подбор решения"><svg class="icon"><use href="#close"/></svg></button></div>
+    <div class="panel-top"><span class="eyebrow">SOLUTION FINDER / 01—05</span><button type="button" class="icon-button" data-close aria-label="Закрыть подбор решения"><svg class="icon"><use href="#close"/></svg></button></div>
     <div class="panel-body">
-      <p class="kicker">Подбор за минуту</p><h2 id="selector-title">Начнём с результата,<br><span>а не с технологии.</span></h2><p class="panel-intro">Выберите главную задачу. Затем уточните готовность и желаемый срок — сайт предложит разумный формат первой версии.</p>
+      <p class="kicker">Подбор за пару минут</p><h2 id="selector-title">Начнём с результата,<br><span>а не с технологии.</span></h2><p class="panel-intro">Ответьте на пять коротких вопросов. Сайт предложит формат, состав первой версии и подготовит сообщение для Instagram.</p>
       <fieldset class="selector-question"><legend><span>01</span> Что должно измениться?</legend><div class="selector-options"><button type="button" data-selector-goal="web"><strong>Получать заявки и продажи</strong><small>Сайт, каталог или магазин</small></button><button type="button" data-selector-goal="crm"><strong>Навести порядок в процессе</strong><small>CRM, кабинет или SaaS</small></button><button type="button" data-selector-goal="ai"><strong>Убрать ручную работу</strong><small>AI, бот или интеграция</small></button><button type="button" data-selector-goal="mvp"><strong>Проверить новую идею</strong><small>Прототип или MVP</small></button></div></fieldset>
-      <div class="selector-details"><label><span><i>02</i> Что уже есть?</span><select id="selector-stage"><option value="Только идея">Только идея</option><option value="Есть тексты или прототип">Есть тексты или прототип</option><option value="Есть работающий процесс">Есть работающий процесс</option><option value="Есть старый продукт или система">Есть старый продукт или система</option></select></label><fieldset><legend><i>03</i> Желаемый срок</legend><div class="selector-time"><button type="button" data-selector-time="1–2 недели">1–2 недели</button><button type="button" data-selector-time="3–5 недель">3–5 недель</button><button type="button" data-selector-time="До 2 месяцев">До 2 месяцев</button><button type="button" data-selector-time="Без жёсткого срока">Без жёсткого срока</button></div></fieldset></div>
-      <section class="selector-result" id="selector-result" aria-live="polite" hidden><p class="kicker">Подходящий старт</p><h3 id="selector-result-title"></h3><p id="selector-result-copy"></p><div class="selector-result-actions"><a class="button button-primary" id="selector-detail" href="services/web-development/">Посмотреть состав <svg class="icon"><use href="#arrow"/></svg></a><a class="button button-secondary" id="selector-contact" href="contact/" data-route="contact">Подготовить сообщение <svg class="icon"><use href="#copy"/></svg></a></div></section>
-      <p class="fineprint selector-note">Подбор не рассчитывает стоимость и не отправляет данные. Это ориентир для первой версии.</p>
+      <div class="selector-details"><label><span><i>02</i> Что уже есть?</span><select id="selector-stage"><option value="idea">Только идея</option><option value="prototype">Есть тексты или прототип</option><option value="process">Есть работающий процесс</option><option value="legacy">Есть старый продукт или система</option></select></label><label><span><i>03</i> Кто будет пользоваться?</span><select id="selector-audience"><option value="clients">Клиенты</option><option value="team">Команда</option><option value="both">Клиенты и команда</option><option value="public">Открытая аудитория</option></select></label><label><span><i>04</i> Что нужно подключить?</span><select id="selector-integration"><option value="none">Пока ничего</option><option value="telegram">Telegram</option><option value="crm">CRM или существующую систему</option><option value="payments">Оплату или каталог</option><option value="multiple">Несколько сервисов</option></select></label><fieldset><legend><i>05</i> Желаемый срок</legend><div class="selector-time"><button type="button" data-selector-time="fast">1–2 недели</button><button type="button" data-selector-time="mvp">3–5 недель</button><button type="button" data-selector-time="system">До 2 месяцев</button><button type="button" data-selector-time="flexible">Без жёсткого срока</button></div></fieldset></div>
+      <section class="selector-result" id="selector-result" aria-live="polite" hidden><p class="kicker">Подходящий старт</p><h3 id="selector-result-title"></h3><p id="selector-result-copy"></p><h4 id="selector-scope-title">Состав первой версии</h4><ul id="selector-result-scope"></ul><div class="selector-result-actions"><a class="button button-primary" id="selector-detail" href="services/web-development/">Посмотреть состав <svg class="icon"><use href="#arrow"/></svg></a><a class="button button-secondary" id="selector-contact" href="contact/" data-route="contact">Подготовить сообщение <svg class="icon"><use href="#copy"/></svg></a></div></section>
+      <p class="fineprint selector-note">Подбор не рассчитывает стоимость и не отправляет данные. Ответы остаются только в браузере.</p>
     </div>
   </dialog>
 

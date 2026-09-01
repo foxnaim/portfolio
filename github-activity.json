@@ -1,0 +1,90 @@
+{
+  "source": "https://github.com/foxnaim",
+  "generatedAt": "2026-09-01T00:14:00Z",
+  "publicRepos": 58,
+  "originalActiveRepos": 56,
+  "topLanguages": [
+    {
+      "name": "TypeScript",
+      "repos": 25
+    },
+    {
+      "name": "JavaScript",
+      "repos": 7
+    },
+    {
+      "name": "HTML",
+      "repos": 6
+    },
+    {
+      "name": "Python",
+      "repos": 2
+    }
+  ],
+  "latest": [
+    {
+      "name": "portfolio",
+      "url": "https://github.com/foxnaim/portfolio",
+      "description": "",
+      "language": "HTML",
+      "pushedAt": "2026-08-31T23:57:16Z",
+      "stars": 1
+    },
+    {
+      "name": "foxnaim",
+      "url": "https://github.com/foxnaim/foxnaim",
+      "description": "Ян Павлов — Full-stack developer | Sites, CRM, SaaS and AI automation",
+      "language": "Python",
+      "pushedAt": "2026-08-31T23:06:11Z",
+      "stars": 2
+    },
+    {
+      "name": "Slotix-KZ",
+      "url": "https://github.com/foxnaim/Slotix-KZ",
+      "description": "Онлайн-запись и кабинет управления для сервисного бизнеса — интерактивный макет",
+      "language": "HTML",
+      "pushedAt": "2026-08-31T22:59:57Z",
+      "stars": 0
+    },
+    {
+      "name": "AI-Lead-Flow",
+      "url": "https://github.com/foxnaim/AI-Lead-Flow",
+      "description": "Interactive AI lead qualification and CRM workflow concept",
+      "language": "HTML",
+      "pushedAt": "2026-08-31T22:02:20Z",
+      "stars": 1
+    },
+    {
+      "name": "confession",
+      "url": "https://github.com/foxnaim/confession",
+      "description": "",
+      "language": "Python",
+      "pushedAt": "2026-07-10T11:36:25Z",
+      "stars": 1
+    },
+    {
+      "name": "Weather-app",
+      "url": "https://github.com/foxnaim/Weather-app",
+      "description": "🌤️ Weather forecast app with location search and 7-day forecast",
+      "language": "TypeScript",
+      "pushedAt": "2026-05-21T00:45:51Z",
+      "stars": 2
+    },
+    {
+      "name": "chat",
+      "url": "https://github.com/foxnaim/chat",
+      "description": "💬 Real-time messaging app with Socket.io and modern UI",
+      "language": "TypeScript",
+      "pushedAt": "2026-05-20T19:53:18Z",
+      "stars": 2
+    },
+    {
+      "name": "Agenda-2.0",
+      "url": "https://github.com/foxnaim/Agenda-2.0",
+      "description": "📋 Task & agenda management app v2.0 — plan your day efficiently",
+      "language": "TypeScript",
+      "pushedAt": "2026-05-20T18:53:23Z",
+      "stars": 2
+    }
+  ]
+}

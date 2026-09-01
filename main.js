@@ -28,27 +28,47 @@ const selectorRecommendations = {
     label: "Сайт или интернет-магазин",
     description: "Начать стоит со структуры предложения и одного главного пути: от первого экрана до заявки или покупки.",
     page: "services/web-development/",
-    brief: "сайт, каталог или интернет-магазин"
+    brief: "сайт, каталог или интернет-магазин",
+    scope: ["Структура и основной пользовательский путь", "Адаптивный интерфейс", "Форма заявки или корзина", "Базовая аналитика и техническое SEO"]
   },
   crm: {
     label: "CRM, кабинет или SaaS",
     description: "Первая версия должна собрать роли, данные, статусы и одно действие, которое сейчас отнимает больше всего времени.",
     page: "services/crm-development/",
-    brief: "CRM, личный кабинет или SaaS-систему"
+    brief: "CRM, личный кабинет или SaaS-систему",
+    scope: ["Роли и права", "Основные сущности и статусы", "История действий", "Один полезный отчёт"]
   },
   ai: {
     label: "AI-автоматизация или Telegram-бот",
     description: "Лучший старт — один повторяющийся сценарий на реальных примерах с логами и возможностью ручного контроля.",
     page: "services/ai-automation/",
-    brief: "AI-автоматизацию, интеграцию или Telegram-бота"
+    brief: "AI-автоматизацию, интеграцию или Telegram-бота",
+    scope: ["Один повторяющийся сценарий", "Реальные входные примеры", "Логи и обработка ошибок", "Ручное подтверждение важных действий"]
   },
   mvp: {
     label: "Рабочий MVP",
     description: "Нужно выделить основную гипотезу и собрать минимальный путь пользователя с интерфейсом, данными и критериями готовности.",
     page: "services/product-development/",
-    brief: "первую версию нового продукта"
+    brief: "первую версию нового продукта",
+    scope: ["Главная гипотеза", "Один полный путь пользователя", "Интерфейс, API и данные", "Критерии готовности и обратная связь"]
   }
 };
+
+function localeData() {
+  return window.PortfolioI18n?.data?.();
+}
+
+function activeServiceContent() {
+  return localeData()?.services || serviceContent;
+}
+
+function activeRecommendations() {
+  return localeData()?.selector?.recommendations || selectorRecommendations;
+}
+
+function runtimeCopy(key, fallback) {
+  return localeData()?.runtime?.[key] || fallback;
+}
 
 function documentPath(path) {
   return window.location.protocol === "file:" && path.endsWith("/") ? `${path}index.html` : path;
@@ -72,12 +92,12 @@ function closeSilently(dialog) {
 
 function updateMenuState(open) {
   menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+  menuToggle.setAttribute("aria-label", open ? runtimeCopy("closeMenu", "Закрыть меню") : runtimeCopy("openMenu", "Открыть меню"));
   document.body.classList.toggle("menu-open", open);
 }
 
 function renderService(route) {
-  const content = serviceContent[route];
+  const content = activeServiceContent()[route];
   document.querySelector("#service-index").textContent = content.index;
   document.querySelector("#service-symbol").textContent = content.symbol;
   document.querySelector("#service-title").textContent = content.title;
@@ -191,41 +211,69 @@ function showToast(message) {
 
 document.querySelector("#copy-brief").addEventListener("click", async () => {
   const field = document.querySelector("#project-brief");
-  const brief = field.value.trim() || "Привет! Хочу обсудить с вами разработку проекта.";
+  const fallbackBrief = window.PortfolioI18n?.language?.() === "en"
+    ? "Hi! I would like to discuss a development project."
+    : window.PortfolioI18n?.language?.() === "kk"
+      ? "Сәлем! Әзірлеу жобасын талқылағым келеді."
+      : "Привет! Хочу обсудить с вами разработку проекта.";
+  const brief = field.value.trim() || fallbackBrief;
   try {
     await navigator.clipboard.writeText(brief);
-    showToast("Скопировано. Отправьте текст удобным способом.");
+    showToast(runtimeCopy("copied", "Скопировано"));
   } catch {
     if (!field.value.trim()) field.value = brief;
     field.focus();
     field.select();
-    showToast("Выделил текст — скопируйте его вручную.");
+    showToast(runtimeCopy("copyFailed", "Не удалось скопировать"));
   }
 });
 
 const selectorGoalButtons = [...document.querySelectorAll("[data-selector-goal]")];
 const selectorTimeButtons = [...document.querySelectorAll("[data-selector-time]")];
 const selectorStage = document.querySelector("#selector-stage");
+const selectorAudience = document.querySelector("#selector-audience");
+const selectorIntegration = document.querySelector("#selector-integration");
 const selectorResult = document.querySelector("#selector-result");
 const selectorResultTitle = document.querySelector("#selector-result-title");
 const selectorResultCopy = document.querySelector("#selector-result-copy");
+const selectorResultScope = document.querySelector("#selector-result-scope");
 const selectorDetail = document.querySelector("#selector-detail");
 const selectorContact = document.querySelector("#selector-contact");
 let selectedGoal = "";
-let selectedTime = "Без жёсткого срока";
+let selectedTime = "flexible";
+
+function selectorValues() {
+  return {
+    stage: selectorStage.value,
+    audience: selectorAudience.value,
+    integration: selectorIntegration.value,
+    time: selectedTime
+  };
+}
 
 function selectorBrief() {
   if (!selectedGoal) return "";
-  const recommendation = selectorRecommendations[selectedGoal];
-  return `Привет! Хочу обсудить ${recommendation.brief}. Сейчас: ${selectorStage.value}. Желаемый срок: ${selectedTime}.`;
+  if (window.PortfolioI18n?.formatBrief) return window.PortfolioI18n.formatBrief(selectedGoal, selectorValues());
+  const recommendation = activeRecommendations()[selectedGoal];
+  return `Привет! Хочу обсудить ${recommendation.brief}. Сейчас: ${selectorStage.selectedOptions[0].textContent}. Пользователи: ${selectorAudience.selectedOptions[0].textContent}. Интеграция: ${selectorIntegration.selectedOptions[0].textContent}. Срок: ${selectorTimeButtons.find(button => button.dataset.selectorTime === selectedTime)?.textContent}.`;
 }
 
 function updateSelector() {
   if (!selectedGoal) return;
-  const recommendation = selectorRecommendations[selectedGoal];
+  const recommendation = activeRecommendations()[selectedGoal];
   selectorResult.hidden = false;
   selectorResultTitle.textContent = recommendation.label;
-  selectorResultCopy.textContent = `${recommendation.description} Текущая готовность: ${selectorStage.value.toLowerCase()}. Ориентир по сроку: ${selectedTime.toLowerCase()}.`;
+  selectorResultCopy.textContent = window.PortfolioI18n?.formatResult
+    ? window.PortfolioI18n.formatResult(selectedGoal, selectorValues())
+    : recommendation.description;
+  const scope = window.PortfolioI18n?.scope
+    ? window.PortfolioI18n.scope(selectedGoal, selectorIntegration.value)
+    : [...recommendation.scope, selectorIntegration.selectedOptions[0].textContent];
+  selectorResultScope.replaceChildren(...scope.map(copy => {
+    const item = document.createElement("li");
+    item.textContent = copy;
+    return item;
+  }));
   selectorDetail.href = documentPath(recommendation.page);
 }
 
@@ -247,7 +295,7 @@ selectorTimeButtons.forEach(button => {
   });
 });
 
-selectorStage.addEventListener("change", updateSelector);
+[selectorStage, selectorAudience, selectorIntegration].forEach(select => select.addEventListener("change", updateSelector));
 selectorContact.addEventListener("click", () => {
   const brief = selectorBrief();
   if (brief) document.querySelector("#project-brief").value = brief;
@@ -258,7 +306,7 @@ const motionButton = document.querySelector(".motion-toggle");
 const motionLabel = document.querySelector(".motion-label");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-const networkLimited = Boolean(connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType));
+const networkLimited = Boolean(connection?.saveData || ["slow-2g", "2g", "3g"].includes(connection?.effectiveType));
 let userPaused = reduceMotion.matches || networkLimited;
 
 if (!reduceMotion.matches && !networkLimited) {
@@ -293,8 +341,8 @@ if (window.location.protocol === "file:") {
 function updateVideoControl() {
   const paused = video.paused || reduceMotion.matches;
   motionButton.setAttribute("aria-pressed", String(paused));
-  motionButton.setAttribute("aria-label", paused ? "Включить фоновое видео" : "Приостановить фон");
-  motionLabel.textContent = paused ? "Смотреть" : "Пауза";
+  motionButton.setAttribute("aria-label", paused ? runtimeCopy("playAria", "Включить фоновое видео") : runtimeCopy("pauseAria", "Приостановить фон"));
+  motionLabel.textContent = paused ? runtimeCopy("play", "Смотреть") : runtimeCopy("pause", "Пауза");
 }
 
 function syncVideo() {
@@ -302,10 +350,10 @@ function syncVideo() {
   else video.play().catch(() => updateVideoControl());
   motionButton.disabled = reduceMotion.matches;
   motionButton.title = reduceMotion.matches
-    ? "Анимация отключена в настройках вашего устройства"
+    ? runtimeCopy("reduced", "Анимация отключена в настройках вашего устройства")
     : networkLimited && userPaused
-      ? "Видео не загружается для экономии трафика. Можно включить вручную"
-      : "Фоновое видео без звука";
+      ? runtimeCopy("network", "Видео не загружается для экономии трафика")
+      : runtimeCopy("video", "Фоновое видео без звука");
   updateVideoControl();
 }
 
@@ -317,11 +365,18 @@ video.addEventListener("play", updateVideoControl);
 video.addEventListener("pause", updateVideoControl);
 video.addEventListener("error", () => {
   motionButton.disabled = true;
-  motionButton.title = "Показывается статичный фон";
+  motionButton.title = runtimeCopy("staticBackground", "Показывается статичный фон");
 });
 document.addEventListener("visibilitychange", syncVideo);
 reduceMotion.addEventListener("change", () => { userPaused = reduceMotion.matches; syncVideo(); });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+window.addEventListener("portfolio:language", () => {
+  const route = window.location.hash.slice(1);
+  if (serviceContent[route]) renderService(route);
+  if (selectedGoal) updateSelector();
+  updateMenuState(menu.open);
+  updateVideoControl();
+});
 renderRoute();
 syncVideo();
