@@ -322,9 +322,11 @@ const video = document.querySelector(".bg-video");
 const motionButton = document.querySelector(".motion-toggle");
 const motionLabel = document.querySelector(".motion-label");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const compactViewport = window.matchMedia("(max-width: 720px)");
 const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 const networkLimited = Boolean(connection?.saveData || ["slow-2g", "2g", "3g"].includes(connection?.effectiveType));
-let userPaused = reduceMotion.matches || networkLimited;
+let videoReady = false;
+let userPaused = reduceMotion.matches || networkLimited || compactViewport.matches;
 
 if (!reduceMotion.matches && !networkLimited) {
   document.querySelectorAll(".project-preview").forEach(preview => {
@@ -363,19 +365,26 @@ function updateVideoControl() {
 }
 
 function syncVideo() {
-  if (reduceMotion.matches || userPaused || document.hidden) video.pause();
+  if (reduceMotion.matches || userPaused || document.hidden || !videoReady) video.pause();
   else video.play().catch(() => updateVideoControl());
   motionButton.disabled = reduceMotion.matches;
   motionButton.title = reduceMotion.matches
     ? runtimeCopy("reduced", "Анимация отключена в настройках вашего устройства")
     : networkLimited && userPaused
       ? runtimeCopy("network", "Видео не загружается для экономии трафика")
+      : compactViewport.matches && userPaused
+        ? runtimeCopy("mobileVideo", "На телефоне видео запускается вручную")
       : runtimeCopy("video", "Фоновое видео без звука");
   updateVideoControl();
 }
 
 motionButton.addEventListener("click", () => {
-  userPaused = !userPaused;
+  if (video.paused) {
+    videoReady = true;
+    userPaused = false;
+  } else {
+    userPaused = true;
+  }
   syncVideo();
 });
 video.addEventListener("play", updateVideoControl);
@@ -386,6 +395,21 @@ video.addEventListener("error", () => {
 });
 document.addEventListener("visibilitychange", syncVideo);
 reduceMotion.addEventListener("change", () => { userPaused = reduceMotion.matches; syncVideo(); });
+compactViewport.addEventListener("change", event => {
+  if (event.matches) userPaused = true;
+  syncVideo();
+});
+
+function scheduleBackgroundVideo() {
+  if (reduceMotion.matches || networkLimited || compactViewport.matches) return;
+  const start = () => window.setTimeout(() => {
+    if (userPaused) return;
+    videoReady = true;
+    syncVideo();
+  }, 5000);
+  if (document.readyState === "complete") start();
+  else window.addEventListener("load", start, { once: true });
+}
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 window.addEventListener("portfolio:language", () => {
@@ -397,3 +421,4 @@ window.addEventListener("portfolio:language", () => {
 });
 renderRoute();
 syncVideo();
+scheduleBackgroundVideo();

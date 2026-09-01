@@ -34,13 +34,14 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/GeistPixel-Circle.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/poster.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
   <script src="pwa.js?v=1" defer></script>
-  <script src="analytics-config.js?v=1"></script>
+  <script src="analytics-config.js?v=1" defer></script>
   <script src="analytics.js?v=1" defer></script>
   <script src="i18n.js?v=4" defer></script>
-  <script src="main.js?v=13" defer></script>
+  <script src="main.js?v=14" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,7 +116,7 @@
     </header>
 
     <main class="hero" id="home">
-      <div class="availability anim" style="--d:.05s">
+      <div class="availability">
         <div class="stack-rings" aria-label="Стек: TypeScript, React, Next.js">
           <span class="stack-ring"><span class="stack-inner ts">TS</span></span>
           <span class="stack-ring"><span class="stack-inner"><svg class="icon"><use href="#react"/></svg></span></span>
@@ -123,23 +124,23 @@
         </div>
         <span class="availability-pill"><span class="status-dot"></span>Открыт к новым проектам</span>
       </div>
-      <p class="eyebrow anim" style="--d:.12s">YAN PAVLOV · FULL-STACK DEVELOPER</p>
+      <p class="eyebrow">YAN PAVLOV · FULL-STACK DEVELOPER</p>
       <h1 class="headline" lang="en"><span>Your idea.</span><span>My next build.</span></h1>
-      <p class="subhead anim" style="--d:.3s">Создаю сайты, CRM и AI-автоматизации для бизнеса.<br class="desktop-break"> Помогаю получать заявки и экономить время.</p>
-      <div class="hero-actions anim" style="--d:.4s">
+      <p class="subhead">Создаю сайты, CRM и AI-автоматизации для бизнеса.<br class="desktop-break"> Помогаю получать заявки и экономить время.</p>
+      <div class="hero-actions">
         <a class="button button-primary" href="#selector" data-route="selector" data-analytics="selector_started" data-location="hero">Получить план и оценку <svg class="icon"><use href="#arrow"/></svg></a>
         <a class="button button-text" href="projects/" data-route="work" data-analytics="projects_opened" data-location="hero">Смотреть работы <svg class="icon"><use href="#external"/></svg></a>
       </div>
-      <div class="hero-proof anim" style="--d:.46s" aria-label="Условия и подтверждённые факты"><span><strong>от 150 000 ₸</strong>стартовый формат</span><span><strong>1–8 недель</strong>срок проекта</span><span><strong>30 / 40 / 30</strong>оплата по этапам</span><span><strong>59</strong>публичных репозиториев</span></div>
-      <a class="hero-selector anim" style="--d:.5s" href="pricing/" data-analytics="pricing_opened" data-location="hero">Форматы, сроки и цены <svg class="icon"><use href="#arrow"/></svg></a>
+      <div class="hero-proof" aria-label="Условия и подтверждённые факты"><span><strong>от 150 000 ₸</strong>стартовый формат</span><span><strong>1–8 недель</strong>срок проекта</span><span><strong>30 / 40 / 30</strong>оплата по этапам</span><span><strong>59</strong>публичных репозиториев</span></div>
+      <a class="hero-selector" href="pricing/" data-analytics="pricing_opened" data-location="hero">Форматы, сроки и цены <svg class="icon"><use href="#arrow"/></svg></a>
     </main>
 
     <footer class="footer">
       <div class="services" aria-label="Чем я могу помочь">
-        <a href="services/web-development/" data-route="web" class="service anim" style="--d:.5s"><span class="service-symbol" aria-hidden="true">&lt;/&gt;</span><span class="service-copy"><strong>Сайты и магазины</strong><span>Лендинги, каталоги и e-commerce</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
-        <a href="services/crm-development/" data-route="systems" class="service anim" style="--d:.58s"><span class="service-symbol" aria-hidden="true">#</span><span class="service-copy"><strong>CRM и SaaS</strong><span>Кабинеты, роли и бизнес-процессы</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
-        <a href="services/ai-automation/" data-route="ai" class="service anim" style="--d:.66s"><span class="service-symbol" aria-hidden="true">*</span><span class="service-copy"><strong>AI и автоматизация</strong><span>AI-агенты, Telegram и API</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
-        <a href="services/product-development/" data-route="launch" class="service anim" style="--d:.74s"><span class="service-symbol" aria-hidden="true">↗</span><span class="service-copy"><strong>MVP под ключ</strong><span>Прототип, разработка и запуск</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/web-development/" data-route="web" class="service"><span class="service-symbol" aria-hidden="true">&lt;/&gt;</span><span class="service-copy"><strong>Сайты и магазины</strong><span>Лендинги, каталоги и e-commerce</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/crm-development/" data-route="systems" class="service"><span class="service-symbol" aria-hidden="true">#</span><span class="service-copy"><strong>CRM и SaaS</strong><span>Кабинеты, роли и бизнес-процессы</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/ai-automation/" data-route="ai" class="service"><span class="service-symbol" aria-hidden="true">*</span><span class="service-copy"><strong>AI и автоматизация</strong><span>AI-агенты, Telegram и API</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
+        <a href="services/product-development/" data-route="launch" class="service"><span class="service-symbol" aria-hidden="true">↗</span><span class="service-copy"><strong>MVP под ключ</strong><span>Прототип, разработка и запуск</span></span><svg class="icon service-arrow"><use href="#external"/></svg></a>
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> Ян Павлов <span class="footer-divider">/</span> foxnaim</span>
