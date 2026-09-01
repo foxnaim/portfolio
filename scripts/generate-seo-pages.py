@@ -130,6 +130,7 @@ PROJECT_GROUPS = {
         ("Dynamic Form Constructor", "Конструктор динамических форм: поля и структура собираются под конкретный бизнес-сценарий.", "https://github.com/foxnaim/Dynamic-Form-Constructor", "Next.js · TypeScript · Forms"),
     ],
     "Продукты и коммуникации": [
+        ("Build with Yan Skills", "Три открытых Agent Skills для клиентского брифа, карты автоматизации и проверки готовности релиза. В репозитории есть шаблоны, примеры, проверочные сценарии и локальный валидатор.", "https://github.com/foxnaim/build-with-yan-skills", "Python · Agent Skills · MIT"),
         ("NeuroNotes", "Прототип пространства для заметок и задач с поиском, тегами и интерфейсами AI-функций.", "https://github.com/foxnaim/NeuroNotes", "Next.js · TypeScript · React"),
         ("Dev-flow", "Менеджер задач с канбан-доской, календарём, заметками, авторизацией и хранением данных.", "https://github.com/foxnaim/Dev-flow", "Next.js · MongoDB · NextAuth"),
         ("feed Back", "Платформа анонимной обратной связи с кабинетами, локализацией и обновлениями в реальном времени.", "https://github.com/foxnaim/Anonymous-chat", "Next.js · Socket.IO · i18n"),
@@ -211,6 +212,25 @@ CASES = {
         "preview": "",
         "disclosure": "В открытом доступе находится исходный код прототипа. Публичная production-демонстрация пока не размещена.",
     },
+    "build-with-yan-skills": {
+        "name": "Build with Yan Skills",
+        "title": "Build with Yan Skills — open-source инструменты разработки",
+        "description": "Кейс Build with Yan Skills: три открытых Agent Skills для подготовки клиентского брифа, проектирования автоматизации и проверки релиза.",
+        "h1": "Build with Yan Skills: от сообщений клиента до проверяемого релиза.",
+        "kind": "Open Source · Agent Skills",
+        "summary": "Три компактных инструмента помогают не додумывать требования, заранее проектировать сбои автоматизации и отделять готовый релиз от непроверенных обещаний.",
+        "challenge": "AI способен быстро написать код, но продукт часто ломается раньше: требования остаются в переписке, автоматизация создаёт дубли, а отсутствие проверок принимают за готовность.",
+        "solution": "Создан открытый набор из client-brief, automation-map и release-gate. Каждый инструмент имеет узкую задачу, проверяемый формат результата, примеры и прозрачные сценарии оценки.",
+        "features": ["Client brief без выдуманных решений", "Карта данных, повторов и восстановления", "Release gate с блокерами и доказательствами", "Три готовых шаблона", "Шесть открытых проверочных сценариев", "Локальный валидатор структуры"],
+        "stack": ["Python", "Agent Skills", "Markdown", "JSON", "MIT License"],
+        "live": "",
+        "repo": "https://github.com/foxnaim/build-with-yan-skills",
+        "preview": "agent-skills",
+        "preview_path": "journal/agent-skills",
+        "preview_class": "social-cover",
+        "application_category": "DeveloperApplication",
+        "disclosure": "Это оригинальный open-source набор рабочих инструкций и шаблонов. Он не получает доступ к CRM, Telegram или production и не заменяет проверку результата человеком.",
+    },
     "neuronotes": {
         "name": "NeuroNotes",
         "title": "NeuroNotes — кейс пространства для заметок",
@@ -233,6 +253,7 @@ PROJECT_META = {
     "AI Lead Flow": ("ai-lead-flow", ["live", "ai", "business"]),
     "Slotix KZ": ("slotix-kz", ["live", "business", "products"]),
     "Tact": ("tact", ["business", "products", "open-source"]),
+    "Build with Yan Skills": ("build-with-yan-skills", ["ai", "products", "open-source"]),
     "Habit Tracker": ("", ["products", "open-source"]),
     "Trial Admin Panel": ("", ["business", "open-source"]),
     "Dynamic Form Constructor": ("", ["business", "open-source"]),
@@ -296,6 +317,31 @@ ARTICLES = {
     },
 }
 
+JOURNAL = [
+    {
+        "slug": "github-path",
+        "title": "Код говорит за себя: начинаю показывать путь разработки",
+        "description": "Проекты, практика и решения между «есть идея» и «оно работает»: без скрытых этапов и выдуманного идеального процесса.",
+        "date": "2026-08-31",
+        "label": "Путь разработчика · Reel",
+        "image": "github-path",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DctwijrN9_z/",
+        "case": "",
+        "points": ["Проекты и открытый код", "Процесс, ошибки и найденные решения", "Следующий разбор выбирает аудитория"],
+    },
+    {
+        "slug": "agent-skills",
+        "title": "Три Agent Skills для брифа, автоматизации и релиза",
+        "description": "Открытый набор инструментов помогает не додумывать требования, учитывать сбои и требовать доказательства проверок до публикации.",
+        "date": "2026-09-01",
+        "label": "Open Source · Reel",
+        "image": "agent-skills",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcvWvHgtDpP/",
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["client-brief для проверяемого брифа", "automation-map для надёжного процесса", "release-gate для решения о готовности"],
+    },
+]
+
 CASE_DETAILS = {
     "ai-lead-flow": {
         "flow": ["Заявка попадает в единый входящий поток.", "Правила и демонстрационный lead score подсвечивают приоритет.", "Менеджер видит причину оценки и рекомендуемое следующее действие."],
@@ -320,6 +366,12 @@ CASE_DETAILS = {
         "decisions": ["Меняющийся QR-код снижает повторное использование", "Telegram сокращает путь до рабочего действия", "Frontend, API и хранение данных разделены"],
         "limitations": ["Публичная production-демонстрация не размещена", "Правила расчёта требуют адаптации под компанию", "Инфраструктура и нагрузка не проходили клиентский аудит"],
         "next": ["Уточнить роли и правила рабочего времени", "Добавить отчёты, экспорт и уведомления", "Провести пилот с небольшой командой"],
+    },
+    "build-with-yan-skills": {
+        "flow": ["Сообщения клиента превращаются в бриф с фактами, вопросами и открытыми решениями.", "Процесс автоматизации получает карту данных, повторов, прав, сбоев и ручного контроля.", "Перед публикацией release gate отделяет блокеры, предупреждения и непроверенные области."],
+        "decisions": ["Каждый вывод можно проверить по исходным данным", "Неизвестные решения остаются вопросами, а не догадками", "Важные автоматические действия сохраняют ручной контроль"],
+        "limitations": ["Инструменты не получают права на файлы, CRM или production", "Проверочные сценарии не являются обещанием качества любого AI-ответа", "Финальные обязательства и релиз подтверждает человек"],
+        "next": ["Добавлять примеры из реальных обезличенных процессов", "Развивать открытые проверки для новых типов проектов", "Публиковать версии и изменения через GitHub"],
     },
     "neuronotes": {
         "flow": ["Пользователь создаёт заметку или задачу.", "Материал получает теги и попадает в поиск.", "Интерфейс подготавливает контекст для будущих AI-функций."],
@@ -432,7 +484,7 @@ def head(title, description, keywords, url, depth, schema):
   <link rel="apple-touch-icon" href="{root}assets/apple-touch-icon.png">
   <link rel="manifest" href="{root}site.webmanifest">
   <link rel="preload" href="{root}fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{root}seo-pages.css?v=9">
+  <link rel="stylesheet" href="{root}seo-pages.css?v=10">
   <script src="{root}pwa.js?v=1" defer></script>
   <script src="{root}analytics-config.js?v=1"></script>
   <script src="{root}analytics.js?v=1" defer></script>
@@ -444,13 +496,13 @@ def header(depth):
     return f'''<a class="skip-link" href="#content">К содержанию</a>
   <header class="seo-header"><div class="seo-header-inner">
     <a class="seo-brand" href="{root}"><img src="{root}assets/logo.svg" width="38" height="38" alt="">{BRAND}</a>
-    <nav class="seo-nav" aria-label="Основная навигация"><a href="{root}pricing/">Пакеты и цены</a><a href="{root}solutions/">Решения</a><a href="{root}demo-lab/">Demo Lab</a><a href="{root}projects/">Проекты</a><a href="{root}compare/">Сравнение</a><a href="{root}resources/">Чек-листы</a><a href="{root}about/">Обо мне</a><a href="{root}partners/">Партнёрам</a><a href="{root}contact/">Контакт</a></nav>
+    <nav class="seo-nav" aria-label="Основная навигация"><a href="{root}pricing/">Пакеты и цены</a><a href="{root}solutions/">Решения</a><a href="{root}demo-lab/">Demo Lab</a><a href="{root}projects/">Проекты</a><a href="{root}journal/">Журнал</a><a href="{root}compare/">Сравнение</a><a href="{root}resources/">Чек-листы</a><a href="{root}about/">Обо мне</a><a href="{root}partners/">Партнёрам</a><a href="{root}contact/">Контакт</a></nav>
   </div></header>'''
 
 
 def footer(depth):
     root = rel_root(depth)
-    return f'''<footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="{root}">Главная</a><a href="{root}pricing/">Пакеты</a><a href="{root}demo-lab/">Demo Lab</a><a href="{root}resources/">Чек-листы</a><a href="{root}process/">Как работаю</a><a href="{root}partners/">Партнёрам</a><a href="{CONFIG['github']}" rel="noopener">GitHub</a><a href="{CONFIG['instagram']}" rel="noopener">Instagram</a></div></footer>'''
+    return f'''<footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="{root}">Главная</a><a href="{root}pricing/">Пакеты</a><a href="{root}demo-lab/">Demo Lab</a><a href="{root}journal/">Журнал</a><a href="{root}resources/">Чек-листы</a><a href="{root}process/">Как работаю</a><a href="{root}partners/">Партнёрам</a><a href="{CONFIG['github']}" rel="noopener">GitHub</a><a href="{CONFIG['instagram']}" rel="noopener">Instagram</a></div></footer>'''
 
 
 def document(title, description, keywords, url, depth, schema, body):
@@ -484,7 +536,7 @@ def service_page(slug, data):
 def projects_page():
     url = abs_url("projects")
     title = "Проекты Яна Павлова: сайты, SaaS и web-приложения"
-    description = "Каталог проектов Яна Павлова: бизнес-системы, AI, SaaS, web-приложения и эксперименты. 58 публичных репозиториев с кодом на GitHub."
+    description = "Каталог проектов Яна Павлова: бизнес-системы, AI, SaaS, web-приложения и эксперименты. 59 публичных репозиториев с кодом на GitHub."
     schema = schema_base(url, title, description)
     projects = [project for group in PROJECT_GROUPS.values() for project in group]
     schema["@graph"].append({"@type": "CollectionPage", "name": title, "hasPart": [{"@type": "SoftwareApplication", "name": name, "description": copy, "url": link, "applicationCategory": "WebApplication"} for name, copy, link, stack in projects]})
@@ -501,7 +553,7 @@ def projects_page():
             project_number += 1
         sections.append(f'<section class="seo-section project-group" data-project-group><p class="seo-kicker">{escape(group_name)}</p><h2>{escape(group_name)}</h2>{"".join(items)}</section>')
     filters = ''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label}</button>' for key, label in [("all", "Все"), ("live", "Live Demo"), ("business", "Бизнес"), ("ai", "AI"), ("commerce", "Магазины"), ("products", "Продукты"), ("open-source", "Open Source")])
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 58 публичных репозиториев с кодом: отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>58</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../demo-lab/">Открыть Demo Lab</a></div></section><section class="github-activity" aria-labelledby="github-activity-title"><div><p class="seo-kicker">Static GitHub snapshot</p><h2 id="github-activity-title">Активность без публичного API на странице.</h2><p>Данные обновляет GitHub Actions во время публикации. Посетители получают готовый файл, поэтому блок не ломается из-за rate limit.</p></div><div class="github-metrics"><span><strong id="github-total">58</strong>публичных репозиториев</span><span><strong id="github-updated">—</strong>обновлено</span></div><div class="github-latest" id="github-latest"><p>Последние обновления появятся после загрузки статического снимка.</p></div></section><section class="catalog-tools" aria-label="Фильтр проектов"><div class="catalog-filters">{filters}</div><p><span id="catalog-count">{len(projects)}</span> проектов</p></section>{"".join(sections)}<p class="catalog-empty" hidden>В этой категории пока нет проектов.</p><section class="seo-section"><h2>Как создаётся следующий проект</h2><p>Задача переводится в первую рабочую версию, этапы и критерии готовности. На отдельной странице описаны порядок работы, сроки и базовые условия.</p><a class="seo-button primary" href="../process/">Этапы и условия</a></section><script src="../catalog.js?v=2" defer></script><script src="../github-activity.js?v=1" defer></script>'''
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Проекты</p><section class="seo-hero"><p class="seo-kicker">Projects & solutions</p><h1>Проекты, решения и рабочие эксперименты.</h1><p class="seo-lead">На этой странице — отобранные проекты с понятной задачей и стеком. В профиле GitHub уже 59 публичных репозиториев с кодом: отдельные frontend и backend части, боты, учебные эксперименты и заготовки.</p><div class="project-stats"><div><strong>{len(projects)}</strong><span>проектов в каталоге</span></div><div><strong>59</strong><span>публичных репозиториев с кодом</span></div><div><strong>2017</strong><span>год начала разработки</span></div></div><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['github']}" rel="noopener">Все репозитории на GitHub</a><a class="seo-button" href="../journal/">Журнал разработки</a></div></section><section class="github-activity" aria-labelledby="github-activity-title"><div><p class="seo-kicker">Static GitHub snapshot</p><h2 id="github-activity-title">Активность без публичного API на странице.</h2><p>Данные обновляет GitHub Actions во время публикации. Посетители получают готовый файл, поэтому блок не ломается из-за rate limit.</p></div><div class="github-metrics"><span><strong id="github-total">59</strong>публичных репозиториев</span><span><strong id="github-updated">—</strong>обновлено</span></div><div class="github-latest" id="github-latest"><p>Последние обновления появятся после загрузки статического снимка.</p></div></section><section class="catalog-tools" aria-label="Фильтр проектов"><div class="catalog-filters">{filters}</div><p><span id="catalog-count">{len(projects)}</span> проектов</p></section>{"".join(sections)}<p class="catalog-empty" hidden>В этой категории пока нет проектов.</p><section class="seo-section"><h2>Как создаётся следующий проект</h2><p>Задача переводится в первую рабочую версию, этапы и критерии готовности. На отдельной странице описаны порядок работы, сроки и базовые условия.</p><a class="seo-button primary" href="../process/">Этапы и условия</a></section><script src="../catalog.js?v=2" defer></script><script src="../github-activity.js?v=1" defer></script>'''
     return document(title, description, "портфолио разработчика, проекты Next.js, CRM, SaaS, TypeScript, React, NestJS", url, 1, schema, body)
 
 
@@ -513,7 +565,7 @@ def case_page(slug, data):
         "name": data["name"],
         "description": data["summary"],
         "url": data["live"] or data["repo"],
-        "applicationCategory": "WebApplication",
+        "applicationCategory": data.get("application_category", "WebApplication"),
         "author": {"@id": abs_url() + "#person"},
     })
     features = "".join(f"<li>{escape(item)}</li>" for item in data["features"])
@@ -527,7 +579,11 @@ def case_page(slug, data):
     if data["live"]:
         actions.append(f'<a class="seo-button primary" href="{data["live"]}" rel="noopener">Открыть Live Demo</a>')
     actions.append(f'<a class="seo-button" href="{data["repo"]}" rel="noopener">Посмотреть исходный код</a>')
-    preview = f'<figure class="case-visual"><img src="../../assets/previews/{data["preview"]}.webp" width="960" height="540" loading="eager" fetchpriority="high" alt="Интерфейс проекта {escape(data["name"], quote=True)}"></figure>' if data["preview"] else ""
+    preview_path = data.get("preview_path") or (f'previews/{data["preview"]}' if data["preview"] else "")
+    preview_width = data.get("preview_width", 640 if data.get("preview_path") else 960)
+    preview_height = data.get("preview_height", 640 if data.get("preview_path") else 540)
+    preview_class = f' {data["preview_class"]}' if data.get("preview_class") else ""
+    preview = f'<figure class="case-visual{preview_class}"><img src="../../assets/{preview_path}.webp" width="{preview_width}" height="{preview_height}" loading="eager" fetchpriority="high" alt="Обложка проекта {escape(data["name"], quote=True)}"></figure>' if preview_path else ""
     body = f'''<p class="breadcrumbs"><a href="../../">Главная</a> / <a href="../../projects/">Проекты</a> / {escape(data['name'])}</p>
     <section class="seo-hero case-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['summary'])}</p><div class="seo-actions">{"".join(actions)}</div></section>
     {preview}
@@ -561,6 +617,48 @@ def articles_page():
     cards = "".join(f'<a class="article-card" href="{slug}/"><p class="seo-kicker">Практический разбор</p><h2>{escape(data["title"])}</h2><p>{escape(data["description"])}</p><span>Читать материал ↗</span></a>' for slug, data in ARTICLES.items())
     body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Материалы</p><section class="seo-hero"><p class="seo-kicker">Notes & guides</p><h1>Практика разработки без бесконечных новостей.</h1><p class="seo-lead">Короткие разборы для владельцев продуктов и бизнеса: как выбрать первую версию, где нужна автоматизация и когда отдельная система действительно оправдана.</p></section><section class="article-grid">{cards}</section>'''
     return document(title, description, "разработка CRM, разработка MVP, Telegram автоматизация, статьи для бизнеса", url, 1, schema, body)
+
+
+def journal_page():
+    url = abs_url("journal")
+    title = "Build with Yan — журнал разработки Яна Павлова"
+    description = "Короткие разборы проектов, open-source инструментов, ошибок и решений Яна Павлова. Материалы из Instagram и Telegram без тяжёлых виджетов."
+    schema = schema_base(url, title, description)
+    schema["@graph"].append({
+        "@type": "Blog",
+        "@id": url + "#blog",
+        "name": "Build with Yan",
+        "description": description,
+        "url": url,
+        "author": {"@id": abs_url() + "#person"},
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "@id": url + "#" + item["slug"],
+                "headline": item["title"],
+                "description": item["description"],
+                "datePublished": item["date"],
+                "image": abs_url(f'assets/journal/{item["image"]}.webp'),
+                "sameAs": item["instagram"],
+                "author": {"@id": abs_url() + "#person"},
+            }
+            for item in JOURNAL
+        ],
+    })
+    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026"}
+    cards = []
+    for item in reversed(JOURNAL):
+        points = "".join(f"<li>{escape(point)}</li>" for point in item["points"])
+        case_action = f'<a class="seo-button primary" href="{item["case"]}">Открыть подробный кейс</a>' if item["case"] else ""
+        cards.append(f'''<article class="journal-entry" id="{escape(item['slug'], quote=True)}">
+          <a class="journal-cover" href="{item['instagram']}" target="_blank" rel="noopener noreferrer" aria-label="Смотреть Reel: {escape(item['title'], quote=True)}"><img src="../assets/journal/{item['image']}.webp" width="640" height="640" loading="lazy" decoding="async" alt="Обложка Reel: {escape(item['title'], quote=True)}"><span>REEL ↗</span></a>
+          <div class="journal-copy"><p class="seo-kicker">{escape(item['label'])} · <time datetime="{item['date']}">{display_dates[item['date']]}</time></p><h2>{escape(item['title'])}</h2><p>{escape(item['description'])}</p><ul class="article-list">{points}</ul><div class="seo-actions">{case_action}<a class="seo-button" href="{item['instagram']}" target="_blank" rel="noopener noreferrer">Смотреть в Instagram</a></div></div>
+        </article>''')
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Журнал разработки</p>
+    <section class="seo-hero"><p class="seo-kicker">Build with Yan · Dev journal</p><h1>Показываю не только результат, но и путь к нему.</h1><p class="seo-lead">Проекты, open-source инструменты, ошибки и решения между «есть идея» и «оно работает». На сайте остаются лёгкие обложки и текст; оригинальные видео открываются в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../cases/build-with-yan-skills/">Свежий open-source кейс</a><a class="seo-button" href="{CONFIG['telegram']}" target="_blank" rel="noopener noreferrer">Канал Build with Yan</a></div></section>
+    <section class="journal-list" aria-label="Записи журнала">{"".join(cards)}</section>
+    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Две локальные WebP-обложки весят меньше 30 КБ вместе, а видео загружается только после перехода в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
+    return document(title, description, "Build with Yan, журнал разработчика, разработка проектов, open source, Agent Skills, foxnaim", url, 1, schema, body)
 
 
 def article_page(slug, data):
@@ -665,7 +763,7 @@ def pricing_page():
         for name, low, high in [("Быстрый запуск", 150000, 300000), ("Рабочий MVP", 450000, 900000), ("Система или CRM", 800000, None)]
     ]})
     cards = "".join(f'''<article class="price-card"><p class="seo-kicker">0{i} · {escape(term)}</p><h2>{escape(name)}</h2><strong class="price">{escape(price)}</strong><p>{escape(copy)}</p><ul>{"".join(f"<li>{escape(item)}</li>" for item in items)}</ul><a class="seo-button primary" href="../#selector" data-analytics="selector_started" data-location="pricing" data-offer="{i}">Получить план</a></article>''' for i, (name, price, term, copy, items) in enumerate(offers, 1))
-    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Пакеты и цены</p><section class="seo-hero"><p class="seo-kicker">Scope · timeline · budget</p><h1>Понятный старт без скрытого объёма.</h1><p class="seo-lead">Выберите близкий по масштабу формат. Диапазон помогает соотнести задачу и бюджет; точная оценка появляется после короткого брифа и фиксируется до разработки.</p><div class="seo-actions"><a class="seo-button primary" href="../#selector" data-analytics="selector_started" data-location="pricing_hero">Получить план и оценку</a><a class="seo-button" href="../projects/">Проверить проекты</a></div></section><section class="pricing-grid">{cards}</section><aside class="pricing-note"><strong>Небольшая автоматизация — от 200 000 ₸.</strong><p>Подходит для одного Telegram-, API- или AI-сценария. Подписки внешних сервисов, платные API, домен, хостинг и контент согласуются отдельно. Цены на странице — ориентиры и не являются публичной офертой.</p></aside><section class="seo-section"><h2>Что защищает проект от сюрпризов</h2><div class="assurance-strip"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача</span></article><article><strong>14 дней</strong><span>исправление найденных ошибок</span></article></div><p>До старта фиксируются состав первой версии, критерии готовности, этапы, сроки и то, что не входит в работу. Исходный код и доступы передаются после завершения согласованного объёма.</p></section><section class="seo-section"><h2>Проверяемые факты вместо обещаний</h2><div class="assurance-strip proof-strip"><article><strong>2017</strong><span>интерес и практика разработки</span></article><article><strong>58</strong><span>публичных репозиториев</span></article><article><strong>17</strong><span>отобранных проектов</span></article><article><strong>4</strong><span>интерактивных демо</span></article></div><div class="seo-actions"><a class="seo-button" href="../projects/">Каталог проектов</a><a class="seo-button" href="../demo-lab/">Открыть Demo Lab</a></div></section><section class="seo-section"><h2>Если формат пока неясен</h2><p>Достаточно описать проблему, будущих пользователей и текущий процесс. Я предложу минимальный состав, который можно проверить без лишних функций.</p><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener" data-analytics="generate_lead" data-location="pricing_bottom">Отправить задачу в Instagram</a><a class="seo-button" href="../process/">Как проходит работа</a></div></section>'''
+    body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Пакеты и цены</p><section class="seo-hero"><p class="seo-kicker">Scope · timeline · budget</p><h1>Понятный старт без скрытого объёма.</h1><p class="seo-lead">Выберите близкий по масштабу формат. Диапазон помогает соотнести задачу и бюджет; точная оценка появляется после короткого брифа и фиксируется до разработки.</p><div class="seo-actions"><a class="seo-button primary" href="../#selector" data-analytics="selector_started" data-location="pricing_hero">Получить план и оценку</a><a class="seo-button" href="../projects/">Проверить проекты</a></div></section><section class="pricing-grid">{cards}</section><aside class="pricing-note"><strong>Небольшая автоматизация — от 200 000 ₸.</strong><p>Подходит для одного Telegram-, API- или AI-сценария. Подписки внешних сервисов, платные API, домен, хостинг и контент согласуются отдельно. Цены на странице — ориентиры и не являются публичной офертой.</p></aside><section class="seo-section"><h2>Что защищает проект от сюрпризов</h2><div class="assurance-strip"><article><strong>30%</strong><span>старт и резерв времени</span></article><article><strong>40%</strong><span>рабочая промежуточная версия</span></article><article><strong>30%</strong><span>запуск или передача</span></article><article><strong>14 дней</strong><span>исправление найденных ошибок</span></article></div><p>До старта фиксируются состав первой версии, критерии готовности, этапы, сроки и то, что не входит в работу. Исходный код и доступы передаются после завершения согласованного объёма.</p></section><section class="seo-section"><h2>Проверяемые факты вместо обещаний</h2><div class="assurance-strip proof-strip"><article><strong>2017</strong><span>интерес и практика разработки</span></article><article><strong>59</strong><span>публичных репозиториев</span></article><article><strong>18</strong><span>отобранных проектов</span></article><article><strong>4</strong><span>интерактивных демо</span></article></div><div class="seo-actions"><a class="seo-button" href="../projects/">Каталог проектов</a><a class="seo-button" href="../demo-lab/">Открыть Demo Lab</a></div></section><section class="seo-section"><h2>Если формат пока неясен</h2><p>Достаточно описать проблему, будущих пользователей и текущий процесс. Я предложу минимальный состав, который можно проверить без лишних функций.</p><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener" data-analytics="generate_lead" data-location="pricing_bottom">Отправить задачу в Instagram</a><a class="seo-button" href="../process/">Как проходит работа</a></div></section>'''
     return document(title, description, "стоимость разработки сайта, цена CRM Казахстан, стоимость MVP, заказать сайт, разработчик Казахстан", url, 1, schema, body)
 
 
@@ -745,7 +843,7 @@ def localized_page(lang):
             "nav": ["Services", "Projects", "Process", "Contact"],
             "services_title": "What I can build",
             "services": [("Websites & e-commerce", "Landing pages, catalogs, stores and integrations.", "../services/web-development/"), ("CRM & SaaS", "Dashboards, roles, workflows, APIs and data.", "../services/crm-development/"), ("AI & automation", "AI assistants, Telegram bots and service integrations.", "../services/ai-automation/"), ("MVP development", "Prototype, frontend, backend and launch.", "../services/product-development/")],
-            "proof": [("2017", "developing products"), ("58", "public repositories"), ("1–8 weeks", "typical project range")],
+            "proof": [("2017", "developing products"), ("59", "public repositories"), ("1–8 weeks", "typical project range")],
             "projects_title": "Selected projects you can inspect",
             "projects_intro": "Each item is marked as a live demo, source-code prototype or portfolio concept. No invented client results.",
             "process_title": "Three ways to start",
@@ -764,7 +862,7 @@ def localized_page(lang):
             "nav": ["Қызметтер", "Жобалар", "Жұмыс барысы", "Байланыс"],
             "services_title": "Не әзірлей аламын",
             "services": [("Сайттар мен интернет-дүкендер", "Лендингтер, каталогтар, дүкендер және интеграциялар.", "../services/web-development/"), ("CRM және SaaS", "Кабинеттер, рөлдер, процестер, API және деректер.", "../services/crm-development/"), ("AI және автоматтандыру", "AI көмекшілер, Telegram-боттар және сервистерді біріктіру.", "../services/ai-automation/"), ("MVP әзірлеу", "Прототип, frontend, backend және іске қосу.", "../services/product-development/")],
-            "proof": [("2017", "жылдан бері әзірлеу"), ("58", "ашық репозиторий"), ("1–8 апта", "жобаның қалыпты мерзімі")],
+            "proof": [("2017", "жылдан бері әзірлеу"), ("59", "ашық репозиторий"), ("1–8 апта", "жобаның қалыпты мерзімі")],
             "projects_title": "Тексеруге болатын таңдалған жобалар",
             "projects_intro": "Әр жоба Live Demo, бастапқы коды бар прототип немесе портфельдік концепт ретінде белгіленген. Ойдан шығарылған клиенттік нәтиже жоқ.",
             "process_title": "Жұмысты бастаудың үш форматы",
@@ -786,7 +884,7 @@ def localized_page(lang):
     full_url = f"../?lang={'en' if lang == 'en' else 'kk'}"
     en_current = ' aria-current="page"' if lang == "en" else ""
     kz_current = ' aria-current="page"' if lang == "kz" else ""
-    html = f'''<!doctype html><html lang="{content['html_lang']}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(content['title'])}</title><meta name="description" content="{escape(content['description'], quote=True)}"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="{url}"><link rel="alternate" hreflang="ru" href="{abs_url()}"><link rel="alternate" hreflang="en" href="{abs_url('en')}"><link rel="alternate" hreflang="kk" href="{abs_url('kz')}"><link rel="alternate" hreflang="x-default" href="{abs_url()}"><meta property="og:type" content="website"><meta property="og:locale" content="{content['locale']}"><meta property="og:title" content="{escape(content['title'], quote=True)}"><meta property="og:description" content="{escape(content['description'], quote=True)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{abs_url('assets/og-cover.png')}"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0a0a0b"><link rel="icon" href="../assets/logo.svg" type="image/svg+xml"><link rel="preload" href="../fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../seo-pages.css?v=9"><script src="../pwa.js?v=1" defer></script><script src="../analytics-config.js?v=1"></script><script src="../analytics.js?v=1" defer></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(',', ':'))}</script></head><body><a class="skip-link" href="#content">{escape(content['skip'])}</a><header class="seo-header"><div class="seo-header-inner"><a class="seo-brand" href="../"><img src="../assets/logo.svg" width="38" height="38" alt="">{BRAND}</a><nav class="seo-nav"><a href="#services">{nav[0]}</a><a href="#projects">{nav[1]}</a><a href="#process">{nav[2]}</a><a href="#contact">{nav[3]}</a><span class="language-switch"><a href="../">RU</a><a href="../en/"{en_current}>EN</a><a href="../kz/"{kz_current}>KZ</a></span></nav></div></header><main class="seo-main locale-main" id="content"><section class="seo-hero"><p class="seo-kicker">{PERSON_NAME} · Full-stack developer</p><h1>{escape(content['h1'])}</h1><p class="seo-lead">{escape(content['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="{full_url}">{escape(full_label)}</a><a class="seo-button" href="#services">{nav[0]}</a><a class="seo-button" href="#projects">{nav[1]}</a></div></section><section class="locale-proof">{proof}</section><section class="seo-section" id="services"><h2>{escape(content['services_title'])}</h2><div class="locale-services">{services}</div></section><section class="seo-section" id="projects"><h2>{escape(content['projects_title'])}</h2><p>{escape(content['projects_intro'])}</p><div class="locale-projects">{projects}</div></section><section class="seo-section" id="process"><h2>{escape(content['process_title'])}</h2><div class="format-grid">{formats}</div></section><section class="seo-section" id="contact"><h2>{escape(content['contact_title'])}</h2><p>{escape(content['contact_copy'])}</p><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">{escape(content['contact_button'])}</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">GitHub</a></div></section></main><footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="../">RU</a><a href="../en/">EN</a><a href="../kz/">KZ</a><a href="{CONFIG['github']}">GitHub</a></div></footer></body></html>\n'''
+    html = f'''<!doctype html><html lang="{content['html_lang']}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(content['title'])}</title><meta name="description" content="{escape(content['description'], quote=True)}"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="{url}"><link rel="alternate" hreflang="ru" href="{abs_url()}"><link rel="alternate" hreflang="en" href="{abs_url('en')}"><link rel="alternate" hreflang="kk" href="{abs_url('kz')}"><link rel="alternate" hreflang="x-default" href="{abs_url()}"><meta property="og:type" content="website"><meta property="og:locale" content="{content['locale']}"><meta property="og:title" content="{escape(content['title'], quote=True)}"><meta property="og:description" content="{escape(content['description'], quote=True)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{abs_url('assets/og-cover.png')}"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0a0a0b"><link rel="icon" href="../assets/logo.svg" type="image/svg+xml"><link rel="preload" href="../fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../seo-pages.css?v=10"><script src="../pwa.js?v=1" defer></script><script src="../analytics-config.js?v=1"></script><script src="../analytics.js?v=1" defer></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(',', ':'))}</script></head><body><a class="skip-link" href="#content">{escape(content['skip'])}</a><header class="seo-header"><div class="seo-header-inner"><a class="seo-brand" href="../"><img src="../assets/logo.svg" width="38" height="38" alt="">{BRAND}</a><nav class="seo-nav"><a href="#services">{nav[0]}</a><a href="#projects">{nav[1]}</a><a href="#process">{nav[2]}</a><a href="#contact">{nav[3]}</a><span class="language-switch"><a href="../">RU</a><a href="../en/"{en_current}>EN</a><a href="../kz/"{kz_current}>KZ</a></span></nav></div></header><main class="seo-main locale-main" id="content"><section class="seo-hero"><p class="seo-kicker">{PERSON_NAME} · Full-stack developer</p><h1>{escape(content['h1'])}</h1><p class="seo-lead">{escape(content['lead'])}</p><div class="seo-actions"><a class="seo-button primary" href="{full_url}">{escape(full_label)}</a><a class="seo-button" href="#services">{nav[0]}</a><a class="seo-button" href="#projects">{nav[1]}</a></div></section><section class="locale-proof">{proof}</section><section class="seo-section" id="services"><h2>{escape(content['services_title'])}</h2><div class="locale-services">{services}</div></section><section class="seo-section" id="projects"><h2>{escape(content['projects_title'])}</h2><p>{escape(content['projects_intro'])}</p><div class="locale-projects">{projects}</div></section><section class="seo-section" id="process"><h2>{escape(content['process_title'])}</h2><div class="format-grid">{formats}</div></section><section class="seo-section" id="contact"><h2>{escape(content['contact_title'])}</h2><p>{escape(content['contact_copy'])}</p><div class="seo-actions"><a class="seo-button primary" href="{CONFIG['instagram']}" rel="noopener">{escape(content['contact_button'])}</a><a class="seo-button" href="{CONFIG['github']}" rel="noopener">GitHub</a></div></section></main><footer class="seo-footer"><span>© {date.today().year} {PERSON_NAME} / {BRAND}</span><div><a href="../">RU</a><a href="../en/">EN</a><a href="../kz/">KZ</a><a href="{CONFIG['github']}">GitHub</a></div></footer></body></html>\n'''
     return html
 
 
@@ -849,6 +947,7 @@ def main():
         write(f"solutions/{slug}/index.html", sales_page(slug, data))
     write("pricing/index.html", pricing_page())
     write("articles/index.html", articles_page())
+    write("journal/index.html", journal_page())
     write("resources/index.html", resources_page())
     write("demo-lab/index.html", demo_lab_page())
     write("compare/index.html", comparison_page())
@@ -859,7 +958,7 @@ def main():
     write("process/index.html", process_page())
     write("about/index.html", about_page())
     write("contact/index.html", contact_page())
-    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("pricing"), abs_url("solutions"), abs_url("demo-lab"), abs_url("compare"), abs_url("projects"), abs_url("process"), abs_url("about"), abs_url("partners"), abs_url("contact"), abs_url("articles"), abs_url("resources"), abs_url("en"), abs_url("kz")] + [abs_url(f"solutions/{slug}") for slug in SALES_PAGES] + [abs_url(f"cases/{slug}") for slug in CASES] + [abs_url(f"articles/{slug}") for slug in ARTICLES] + [abs_url(f"resources/{slug}") for slug in RESOURCES]
+    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("pricing"), abs_url("solutions"), abs_url("demo-lab"), abs_url("compare"), abs_url("projects"), abs_url("journal"), abs_url("process"), abs_url("about"), abs_url("partners"), abs_url("contact"), abs_url("articles"), abs_url("resources"), abs_url("en"), abs_url("kz")] + [abs_url(f"solutions/{slug}") for slug in SALES_PAGES] + [abs_url(f"cases/{slug}") for slug in CASES] + [abs_url(f"articles/{slug}") for slug in ARTICLES] + [abs_url(f"resources/{slug}") for slug in RESOURCES]
     today = date.today().isoformat()
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{escape(url)}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{'1.0' if url == abs_url() else '0.8'}</priority></url>\n" for url in urls) + "</urlset>\n"
     write("sitemap.xml", sitemap)
@@ -876,6 +975,7 @@ def main():
 - [Интерактивный Demo Lab]({abs_url('demo-lab')})
 - [Сравнение решений]({abs_url('compare')})
 - [Проекты]({abs_url('projects')})
+- [Журнал разработки Build with Yan]({abs_url('journal')})
 - [Как проходит работа]({abs_url('process')})
 - [Материалы]({abs_url('articles')})
 - [Бесплатные чек-листы]({abs_url('resources')})

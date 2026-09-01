@@ -393,7 +393,7 @@ window.addEventListener("portfolio:language", () => {
   if (serviceContent[route]) renderService(route);
   if (selectedGoal) updateSelector();
   updateMenuState(menu.open);
-  updateVideoControl();
+  syncVideo();
 });
 renderRoute();
 syncVideo();

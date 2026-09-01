@@ -10,6 +10,7 @@
 - [Интерактивный Demo Lab](https://foxnaim.github.io/portfolio/demo-lab/)
 - [Сравнение решений](https://foxnaim.github.io/portfolio/compare/)
 - [Проекты](https://foxnaim.github.io/portfolio/projects/)
+- [Журнал разработки Build with Yan](https://foxnaim.github.io/portfolio/journal/)
 - [Как проходит работа](https://foxnaim.github.io/portfolio/process/)
 - [Материалы](https://foxnaim.github.io/portfolio/articles/)
 - [Бесплатные чек-листы](https://foxnaim.github.io/portfolio/resources/)
@@ -25,6 +26,7 @@
 - [Slotix KZ](https://foxnaim.github.io/portfolio/cases/slotix-kz/) — Booking concept · Live demo
 - [TazaOrder](https://foxnaim.github.io/portfolio/cases/tazaorder/) — Telegram commerce · Live demo
 - [Tact](https://foxnaim.github.io/portfolio/cases/tact/) — SaaS prototype · Source code
+- [Build with Yan Skills](https://foxnaim.github.io/portfolio/cases/build-with-yan-skills/) — Open Source · Agent Skills
 - [NeuroNotes](https://foxnaim.github.io/portfolio/cases/neuronotes/) — Productivity prototype · Source code
 
 ## Услуги

@@ -1,8 +1,8 @@
 {
   "source": "https://github.com/foxnaim",
-  "generatedAt": "2026-09-01T00:14:00Z",
-  "publicRepos": 58,
-  "originalActiveRepos": 56,
+  "generatedAt": "2026-09-01T11:45:00Z",
+  "publicRepos": 59,
+  "originalActiveRepos": 57,
   "topLanguages": [
     {
       "name": "TypeScript",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Python",
-      "repos": 2
+      "repos": 3
     }
   ],
   "latest": [
@@ -27,7 +27,15 @@
       "url": "https://github.com/foxnaim/portfolio",
       "description": "",
       "language": "HTML",
-      "pushedAt": "2026-08-31T23:57:16Z",
+      "pushedAt": "2026-09-01T11:01:01Z",
+      "stars": 1
+    },
+    {
+      "name": "build-with-yan-skills",
+      "url": "https://github.com/foxnaim/build-with-yan-skills",
+      "description": "Open Agent Skills for client briefs, business automation maps, and release readiness checks.",
+      "language": "Python",
+      "pushedAt": "2026-09-01T09:15:18Z",
       "stars": 1
     },
     {
@@ -35,7 +43,7 @@
       "url": "https://github.com/foxnaim/foxnaim",
       "description": "Ян Павлов — Full-stack developer | Sites, CRM, SaaS and AI automation",
       "language": "Python",
-      "pushedAt": "2026-08-31T23:06:11Z",
+      "pushedAt": "2026-09-01T02:07:22Z",
       "stars": 2
     },
     {
@@ -44,7 +52,7 @@
       "description": "Онлайн-запись и кабинет управления для сервисного бизнеса — интерактивный макет",
       "language": "HTML",
       "pushedAt": "2026-08-31T22:59:57Z",
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "AI-Lead-Flow",
@@ -76,14 +84,6 @@
       "description": "💬 Real-time messaging app with Socket.io and modern UI",
       "language": "TypeScript",
       "pushedAt": "2026-05-20T19:53:18Z",
-      "stars": 2
-    },
-    {
-      "name": "Agenda-2.0",
-      "url": "https://github.com/foxnaim/Agenda-2.0",
-      "description": "📋 Task & agenda management app v2.0 — plan your day efficiently",
-      "language": "TypeScript",
-      "pushedAt": "2026-05-20T18:53:23Z",
       "stars": 2
     }
   ]
