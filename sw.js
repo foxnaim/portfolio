@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "foxnaim-v3";
+const CACHE_VERSION = "foxnaim-v4";
 const CORE = [
   "./",
   "./offline.html",
@@ -21,6 +21,22 @@ function scoped(path) {
   return new URL(path, self.registration.scope).href;
 }
 
+async function fetchAndCache(request) {
+  const response = await fetch(request);
+  if (response.ok) {
+    // Clone before the response is returned to the page. Delaying clone() until
+    // caches.open() resolves can race with the browser consuming the body.
+    const copy = response.clone();
+    try {
+      const cache = await caches.open(CACHE_VERSION);
+      await cache.put(request, copy);
+    } catch (_) {
+      // A cache write must never turn a successful network response into an error.
+    }
+  }
+  return response;
+}
+
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(CORE.map(scoped))).then(() => self.skipWaiting()));
 });
@@ -36,19 +52,9 @@ self.addEventListener("fetch", event => {
   if (url.origin !== self.location.origin) return;
 
   if (request.mode === "navigate") {
-    event.respondWith(fetch(request).then(response => {
-      const copy = response.clone();
-      caches.open(CACHE_VERSION).then(cache => cache.put(request, copy));
-      return response;
-    }).catch(async () => (await caches.match(request, { ignoreSearch: true })) || caches.match(scoped("./offline.html"))));
+    event.respondWith(fetchAndCache(request).catch(async () => (await caches.match(request, { ignoreSearch: true })) || caches.match(scoped("./offline.html"))));
     return;
   }
 
-  event.respondWith(caches.match(request, { ignoreSearch: false }).then(cached => {
-    const network = fetch(request).then(response => {
-      if (response.ok) caches.open(CACHE_VERSION).then(cache => cache.put(request, response.clone()));
-      return response;
-    }).catch(() => cached);
-    return cached || network;
-  }));
+  event.respondWith(caches.match(request, { ignoreSearch: false }).then(cached => cached || fetchAndCache(request)));
 });
