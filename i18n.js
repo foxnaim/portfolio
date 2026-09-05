@@ -50,7 +50,13 @@ const portfolioLocales = {
       audience: { clients: "Клиенты", team: "Команда", both: "Клиенты и команда", public: "Открытая аудитория" },
       integration: { none: "Пока ничего", telegram: "Telegram", crm: "CRM или существующая система", payments: "Оплата или каталог", multiple: "Несколько сервисов" },
       time: { fast: "1–2 недели", mvp: "3–5 недель", system: "До 2 месяцев", flexible: "Без жёсткого срока" },
-      integrationScope: { none: "Без внешней интеграции на первом этапе", telegram: "Подключение Telegram", crm: "Обмен данными с существующей системой", payments: "Каталог и сценарий оплаты", multiple: "План интеграций по приоритету" }
+      integrationScope: { none: "Без внешней интеграции на первом этапе", telegram: "Подключение Telegram", crm: "Обмен данными с существующей системой", payments: "Каталог и сценарий оплаты", multiple: "План интеграций по приоритету" },
+      estimateFactors: {
+        stage: { idea: "проработка идеи", prototype: "готовые материалы", process: "аудит рабочего процесса", legacy: "разбор и перенос старой системы" },
+        audience: { clients: "клиентский сценарий", team: "роли команды", both: "клиентская и внутренняя части", public: "публичный доступ и нагрузка" },
+        integration: { none: "без внешней интеграции", telegram: "подключение Telegram", crm: "обмен с CRM", payments: "каталог и оплата", multiple: "несколько внешних сервисов" },
+        time: { fast: "ускоренный запуск", mvp: "сжатый срок", system: "обычный темп", flexible: "гибкий график" }
+      }
     },
     runtime: { copied: "Скопировано", copyFailed: "Не удалось скопировать", pause: "Пауза", play: "Смотреть", pauseAria: "Приостановить фон", playAria: "Включить фоновое видео", reduced: "Анимация отключена в настройках вашего устройства", network: "Видео отключено для экономии трафика", video: "Фоновое видео без звука", staticBackground: "Показывается статичный фон", openMenu: "Открыть меню", closeMenu: "Закрыть меню", resultPrefix: "Текущая готовность", audiencePrefix: "Пользователи", integrationPrefix: "Интеграция", timePrefix: "Ориентир по сроку", briefHello: "Привет! Хочу обсудить" },
     accessibility: { brand: "foxnaim — на главную", mainNav: "Главная навигация", stack: "Стек: TypeScript, React, Next.js", proof: "Факты о работе", services: "Чем я могу помочь", language: "Язык", navigation: "Навигация", mobileNav: "Мобильная навигация", closeWork: "Закрыть проекты", workProof: "Факты о проектах", closeAbout: "Закрыть информацию обо мне", closeService: "Закрыть описание услуги", closeSelector: "Закрыть подбор решения", closeContact: "Закрыть контакты" }
@@ -86,7 +92,13 @@ const portfolioLocales = {
         ai: { label: "AI automation or Telegram bot", description: "The strongest start is one repetitive scenario tested on real examples with logs and human control.", page: "services/ai-automation/", budget: "from KZT 200,000", timeline: "1–5 weeks", brief: "AI automation, an integration or a Telegram bot", scope: ["One repetitive scenario", "Real input examples", "Logs and error handling", "Human approval for important actions"] },
         mvp: { label: "Working MVP", description: "Focus on the core hypothesis and a complete user flow with interface, data and acceptance criteria.", page: "services/product-development/", budget: "KZT 450,000–900,000", timeline: "3–5 weeks", brief: "the first version of a new product", scope: ["Core hypothesis", "One complete user flow", "Interface, API and data", "Acceptance criteria and feedback"] }
       },
-      stage: { idea: "Only an idea", prototype: "Texts or a prototype exist", process: "A working process exists", legacy: "An old product or system exists" }, audience: { clients: "Customers", team: "Team", both: "Customers and team", public: "Public audience" }, integration: { none: "Nothing yet", telegram: "Telegram", crm: "CRM or an existing system", payments: "Payments or catalog", multiple: "Several services" }, time: { fast: "1–2 weeks", mvp: "3–5 weeks", system: "Up to 2 months", flexible: "Flexible timeline" }, integrationScope: { none: "No external integration in the first stage", telegram: "Telegram connection", crm: "Data exchange with the existing system", payments: "Catalog and payment flow", multiple: "Integration plan ordered by priority" }
+      stage: { idea: "Only an idea", prototype: "Texts or a prototype exist", process: "A working process exists", legacy: "An old product or system exists" }, audience: { clients: "Customers", team: "Team", both: "Customers and team", public: "Public audience" }, integration: { none: "Nothing yet", telegram: "Telegram", crm: "CRM or an existing system", payments: "Payments or catalog", multiple: "Several services" }, time: { fast: "1–2 weeks", mvp: "3–5 weeks", system: "Up to 2 months", flexible: "Flexible timeline" }, integrationScope: { none: "No external integration in the first stage", telegram: "Telegram connection", crm: "Data exchange with the existing system", payments: "Catalog and payment flow", multiple: "Integration plan ordered by priority" },
+      estimateFactors: {
+        stage: { idea: "idea discovery", prototype: "ready materials", process: "working process review", legacy: "legacy review and migration" },
+        audience: { clients: "customer flow", team: "team roles", both: "customer and internal flows", public: "public access and load" },
+        integration: { none: "no external integration", telegram: "Telegram connection", crm: "CRM data exchange", payments: "catalog and payments", multiple: "several external services" },
+        time: { fast: "accelerated launch", mvp: "compressed timeline", system: "standard pace", flexible: "flexible schedule" }
+      }
     },
     runtime: { copied: "Copied", copyFailed: "Could not copy", pause: "Pause", play: "Play", pauseAria: "Pause background motion", playAria: "Play background motion", reduced: "Motion is disabled in your device settings", network: "Video is disabled to save data", video: "Muted background video", staticBackground: "Static background is displayed", openMenu: "Open menu", closeMenu: "Close menu", resultPrefix: "Current readiness", audiencePrefix: "Users", integrationPrefix: "Integration", timePrefix: "Timeline", briefHello: "Hi! I would like to discuss" },
     accessibility: { brand: "foxnaim — home", mainNav: "Main navigation", stack: "Stack: TypeScript, React, Next.js", proof: "Work facts", services: "How I can help", language: "Language", navigation: "Navigation", mobileNav: "Mobile navigation", closeWork: "Close projects", workProof: "Project facts", closeAbout: "Close about", closeService: "Close service details", closeSelector: "Close solution finder", closeContact: "Close contact" }
@@ -117,7 +129,13 @@ const portfolioLocales = {
         ai: { label: "AI автоматтандыру немесе Telegram-бот", description: "Ең дұрыс бастау — нақты мысалдар, логтар және қолмен бақылауы бар бір қайталанатын сценарий.", page: "services/ai-automation/", budget: "200 000 ₸ бастап", timeline: "1–5 апта", brief: "AI автоматтандыруды, интеграцияны немесе Telegram-ботты", scope: ["Бір қайталанатын сценарий", "Нақты кіріс мысалдары", "Логтар және қателерді өңдеу", "Маңызды әрекеттерді қолмен растау"] },
         mvp: { label: "Жұмыс істейтін MVP", description: "Негізгі гипотезаны және интерфейс, деректер, дайындық өлшемдері бар толық пайдаланушы жолын бөліп алу керек.", page: "services/product-development/", budget: "450 000–900 000 ₸", timeline: "3–5 апта", brief: "жаңа өнімнің алғашқы нұсқасын", scope: ["Негізгі гипотеза", "Бір толық пайдаланушы жолы", "Интерфейс, API және деректер", "Дайындық өлшемдері және кері байланыс"] }
       },
-      stage: { idea: "Тек идея", prototype: "Мәтін немесе прототип бар", process: "Жұмыс істейтін процесс бар", legacy: "Ескі өнім немесе жүйе бар" }, audience: { clients: "Клиенттер", team: "Команда", both: "Клиенттер мен команда", public: "Ашық аудитория" }, integration: { none: "Әзірге ештеңе", telegram: "Telegram", crm: "CRM немесе бар жүйе", payments: "Төлем немесе каталог", multiple: "Бірнеше сервис" }, time: { fast: "1–2 апта", mvp: "3–5 апта", system: "2 айға дейін", flexible: "Қатаң мерзім жоқ" }, integrationScope: { none: "Алғашқы кезеңде сыртқы интеграциясыз", telegram: "Telegram қосу", crm: "Бар жүйемен дерек алмасу", payments: "Каталог және төлем сценарийі", multiple: "Басымдық бойынша интеграциялар жоспары" }
+      stage: { idea: "Тек идея", prototype: "Мәтін немесе прототип бар", process: "Жұмыс істейтін процесс бар", legacy: "Ескі өнім немесе жүйе бар" }, audience: { clients: "Клиенттер", team: "Команда", both: "Клиенттер мен команда", public: "Ашық аудитория" }, integration: { none: "Әзірге ештеңе", telegram: "Telegram", crm: "CRM немесе бар жүйе", payments: "Төлем немесе каталог", multiple: "Бірнеше сервис" }, time: { fast: "1–2 апта", mvp: "3–5 апта", system: "2 айға дейін", flexible: "Қатаң мерзім жоқ" }, integrationScope: { none: "Алғашқы кезеңде сыртқы интеграциясыз", telegram: "Telegram қосу", crm: "Бар жүйемен дерек алмасу", payments: "Каталог және төлем сценарийі", multiple: "Басымдық бойынша интеграциялар жоспары" },
+      estimateFactors: {
+        stage: { idea: "идеяны пысықтау", prototype: "дайын материалдар", process: "жұмыс процесін талдау", legacy: "ескі жүйені талдау және көшіру" },
+        audience: { clients: "клиент сценарийі", team: "команда рөлдері", both: "клиент және ішкі сценарийлер", public: "ашық қолжетімділік пен жүктеме" },
+        integration: { none: "сыртқы интеграциясыз", telegram: "Telegram қосу", crm: "CRM-мен дерек алмасу", payments: "каталог пен төлем", multiple: "бірнеше сыртқы сервис" },
+        time: { fast: "жедел іске қосу", mvp: "қысқа мерзім", system: "қалыпты қарқын", flexible: "икемді кесте" }
+      }
     },
     runtime: { copied: "Көшірілді", copyFailed: "Көшіру мүмкін болмады", pause: "Тоқтату", play: "Қосу", pauseAria: "Фон қозғалысын тоқтату", playAria: "Фон қозғалысын қосу", reduced: "Құрылғы баптауында анимация өшірілген", network: "Трафикті үнемдеу үшін видео өшірілген", video: "Дыбыссыз фондық видео", staticBackground: "Статикалық фон көрсетіледі", openMenu: "Мәзірді ашу", closeMenu: "Мәзірді жабу", resultPrefix: "Қазіргі дайындық", audiencePrefix: "Пайдаланушылар", integrationPrefix: "Интеграция", timePrefix: "Мерзім", briefHello: "Сәлем! Талқылағым келеді:" },
     accessibility: { brand: "foxnaim — басты бет", mainNav: "Негізгі навигация", stack: "Стек: TypeScript, React, Next.js", proof: "Жұмыс деректері", services: "Қалай көмектесе аламын", language: "Тіл", navigation: "Навигация", mobileNav: "Мобильді навигация", closeWork: "Жобаларды жабу", workProof: "Жобалар туралы деректер", closeAbout: "Мен туралы ақпаратты жабу", closeService: "Қызмет сипаттамасын жабу", closeSelector: "Шешім таңдауды жабу", closeContact: "Байланысты жабу" }
@@ -274,10 +292,11 @@ window.PortfolioI18n = {
   language: () => activeLocale,
   data: () => portfolioLocales[activeLocale],
   apply: applyLanguage,
-  formatBrief(goal, values) {
+  formatBrief(goal, values, estimate) {
     const data = portfolioLocales[activeLocale];
     const recommendation = data.selector.recommendations[goal];
-    return `${data.runtime.briefHello} ${recommendation.brief}. ${data.runtime.resultPrefix}: ${data.selector.stage[values.stage]}. ${data.runtime.audiencePrefix}: ${data.selector.audience[values.audience]}. ${data.runtime.integrationPrefix}: ${data.selector.integration[values.integration]}. ${data.runtime.timePrefix}: ${data.selector.time[values.time]}.`;
+    const budget = estimate ? ` ${data.static.estimateLabels[0]}: ${window.PortfolioI18n.formatBudget(estimate.min, estimate.max)}.` : "";
+    return `${data.runtime.briefHello} ${recommendation.brief}. ${data.runtime.resultPrefix}: ${data.selector.stage[values.stage]}. ${data.runtime.audiencePrefix}: ${data.selector.audience[values.audience]}. ${data.runtime.integrationPrefix}: ${data.selector.integration[values.integration]}. ${data.runtime.timePrefix}: ${data.selector.time[values.time]}.${budget}`;
   },
   formatResult(goal, values) {
     const data = portfolioLocales[activeLocale];
@@ -287,6 +306,34 @@ window.PortfolioI18n = {
   scope(goal, integration) {
     const data = portfolioLocales[activeLocale];
     return [...data.selector.recommendations[goal].scope, data.selector.integrationScope[integration]];
+  },
+  formatBudget(min, max) {
+    const formatter = new Intl.NumberFormat(activeLocale === "en" ? "en-US" : "ru-RU");
+    const range = `${formatter.format(min)}–${formatter.format(max)}`;
+    return activeLocale === "en" ? `KZT ${range}` : `${range} ₸`;
+  },
+  formatTimeline(weeks, time, targetIsTight) {
+    const [min, max] = weeks;
+    let range;
+    if (activeLocale === "en") range = `${min}–${max} ${max === 1 ? "week" : "weeks"}`;
+    else if (activeLocale === "kk") range = `${min}–${max} апта`;
+    else {
+      const remainder = max % 100;
+      const word = remainder >= 11 && remainder <= 14 ? "недель" : max % 10 === 1 ? "неделя" : max % 10 >= 2 && max % 10 <= 4 ? "недели" : "недель";
+      range = `${min}–${max} ${word}`;
+    }
+    if (!targetIsTight) return range;
+    const requested = portfolioLocales[activeLocale].selector.time[time];
+    if (activeLocale === "en") return `${requested}: first stage · full scope ${range}`;
+    if (activeLocale === "kk") return `${requested}: алғашқы кезең · толық көлем ${range}`;
+    return `${requested}: первый этап · весь объём ${range}`;
+  },
+  estimateReason(values) {
+    const factors = portfolioLocales[activeLocale].selector.estimateFactors;
+    const list = [factors.stage[values.stage], factors.audience[values.audience], factors.integration[values.integration], factors.time[values.time]].join(", ");
+    if (activeLocale === "en") return `Included in the range: ${list}. Every answer updates the estimate.`;
+    if (activeLocale === "kk") return `Диапазонда ескерілді: ${list}. Әр жауап бағаны жаңартады.`;
+    return `В диапазоне учтены: ${list}. Каждый ответ обновляет оценку.`;
   }
 };
 

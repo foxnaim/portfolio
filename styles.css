@@ -2718,6 +2718,12 @@ textarea:hover,textarea:focus {
   font-size: 13px;
   font-weight: 560;
 }
+.selector-result .selector-estimate-reason {
+  margin-top: 11px;
+  color: #8f8f98;
+  font-size: 10px;
+  line-height: 1.6;
+}
 .contact-assurances {
   display: grid;
   grid-template-columns: 1fr 1fr;

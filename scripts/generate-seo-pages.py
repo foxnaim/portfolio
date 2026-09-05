@@ -125,6 +125,7 @@ PROJECT_GROUPS = {
         ("AI Lead Flow", "Интерактивный frontend-концепт: квалификация входящих заявок, lead score и подсказка следующего действия. Данные демонстрационные, backend не подключён.", "https://foxnaim.github.io/AI-Lead-Flow/", "Live demo · JavaScript · CRM concept"),
         ("Slotix KZ", "Интерактивный макет онлайн-записи для сервисного бизнеса: клиентский сценарий, расписание, поиск записей, мини-CRM и управление услугами. Данные сохраняются только в браузере.", "https://foxnaim.github.io/Slotix-KZ/", "Live demo · JavaScript · Booking concept"),
         ("Tact", "Учёт рабочего времени через Telegram и меняющиеся QR-коды: интерфейс команды, API и хранение данных.", "https://github.com/foxnaim/World-Time-Frontend", "Next.js · NestJS · PostgreSQL"),
+        ("Двойная отправка формы", "Разбор типового сбоя: один двойной клик создаёт две заявки в CRM. Защита ставится на трёх слоях — интерфейс, ключ идемпотентности в API и ограничение в базе.", "", "QA · Идемпотентность · PostgreSQL"),
         ("Habit Tracker", "Full-stack система привычек: цели, серии, аналитика, отдельные frontend, backend и Telegram-бот.", "https://github.com/foxnaim/habit-tracker", "TypeScript · React · Telegram"),
         ("Trial Admin Panel", "Панель управления пользователями и данными с адаптивным интерфейсом и аналитическими представлениями.", "https://github.com/foxnaim/Trial-Admin-Ponel", "Next.js · TypeScript · Dashboard"),
         ("Dynamic Form Constructor", "Конструктор динамических форм: поля и структура собираются под конкретный бизнес-сценарий.", "https://github.com/foxnaim/Dynamic-Form-Constructor", "Next.js · TypeScript · Forms"),
@@ -238,6 +239,32 @@ CASES = {
         },
         "disclosure": "Это оригинальный open-source набор рабочих инструкций и шаблонов. Он не получает доступ к CRM, Telegram или production и не заменяет проверку результата человеком.",
     },
+    "double-submit": {
+        "name": "Двойная отправка формы",
+        "title": "Двойная отправка формы — защита заявок на трёх слоях",
+        "description": "Кейс: один двойной клик создаёт две одинаковые заявки в CRM. Разбор защиты на уровне интерфейса, API и базы данных.",
+        "h1": "Один двойной клик создаёт две заявки. Разбор защиты на трёх слоях.",
+        "kind": "QA · Надёжность",
+        "summary": "Форма отправилась, но человек не увидел реакцию и нажал ещё раз. В CRM появились две одинаковые заявки, и менеджер звонит клиенту дважды. Один слой улучшает интерфейс, три слоя защищают результат.",
+        "challenge": "Форму заявки собирают за вечер, и на демонстрации она работает. Сбой появляется на медленной сети: ответ идёт секунды, у кнопки нет понятного состояния, человек нажимает второй раз. Дубль доходит до CRM, а в сценарии с оплатой — до списания.",
+        "solution": "Защита ставится не в одном месте, а в трёх: в интерфейсе, в API и в базе данных. Каждый слой закрывает свой класс повторов, и ни один из них не заменяет остальные.",
+        "features": ["Кнопка блокируется после первого клика и показывает статус", "Операция получает ключ идемпотентности", "Повтор запроса возвращает уже созданный результат, а не новый", "Ограничение в базе не даёт создать дубль при гонке запросов", "Проверка идёт по количеству записей, а не только по экрану"],
+        "stack": ["Idempotency key", "Unique constraint", "REST API", "PostgreSQL", "QA"],
+        "live": "",
+        "repo": "",
+        "schema_type": "CreativeWork",
+        "preview": "double-submit",
+        "preview_path": "journal/double-submit",
+        "preview_class": "social-cover",
+        "evidence": {
+            "title": "Как одна заявка превращается в две",
+            "copy": "Пользователь заполняет форму и нажимает «Отправить заявку». Сеть отвечает медленно, кнопка выглядит активной, реакции нет. Человек нажимает ещё раз — и в CRM появляются две карточки с одним и тем же номером.",
+            "points": ["Блокировки кнопки мало: запрос повторяют из другой вкладки", "Ограничения базы тоже мало: человек увидит ошибку вместо результата", "Ключ идемпотентности связывает слои и делает повтор безопасным"],
+            "journal": "../../journal/#double-submit",
+            "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcvpS3RtmF2/",
+        },
+        "disclosure": "Это обучающий разбор типового сбоя, собранный на демонстрационной форме. Он не описывает проект конкретного клиента и не содержит его данных.",
+    },
     "neuronotes": {
         "name": "NeuroNotes",
         "title": "NeuroNotes — кейс пространства для заметок",
@@ -260,6 +287,7 @@ PROJECT_META = {
     "AI Lead Flow": ("ai-lead-flow", ["live", "ai", "business"]),
     "Slotix KZ": ("slotix-kz", ["live", "business", "products"]),
     "Tact": ("tact", ["business", "products", "open-source"]),
+    "Двойная отправка формы": ("double-submit", ["business", "products"]),
     "Build with Yan Skills": ("build-with-yan-skills", ["ai", "products", "open-source"]),
     "Habit Tracker": ("", ["products", "open-source"]),
     "Trial Admin Panel": ("", ["business", "open-source"]),
@@ -355,7 +383,7 @@ JOURNAL = [
         "label": "QA · Automation Map · Reel",
         "image": "double-submit",
         "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcvpS3RtmF2/",
-        "case": "../cases/build-with-yan-skills/",
+        "case": "../cases/double-submit/",
         "points": ["Уникальный request ID для каждой операции", "Защита CRM от повторной записи", "Контролируемый retry и повторный тест"],
     },
     {
@@ -368,6 +396,42 @@ JOURNAL = [
         "instagram": "https://www.instagram.com/yan._.pavlov/reel/DcwYSjANyCw/",
         "case": "",
         "points": ["HTML, CSS и JavaScript как основа", "Практика до усложнения инструментов", "AI-инструменты для ускорения понятного процесса"],
+    },
+    {
+        "slug": "ai-skill-tests",
+        "title": "Промпт сработал один раз — это ещё не AI-инструмент",
+        "description": "Рабочий skill начинается с повторяемой задачи, границ, формата результата и проверок. Для открытого mvp-scope собраны десять сценариев, которые показывают слабые места до реального запуска.",
+        "date": "2026-09-05",
+        "label": "AI Skills · Open Source · Reel",
+        "image": "ai-skill-tests",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/Dc577A4t9BW/",
+        "telegram": True,
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["Пустой и противоречивый ввод", "Список из сорока функций", "Попытка убрать проверку безопасности ради скорости"],
+    },
+    {
+        "slug": "resilient-automation",
+        "title": "Если CRM недоступна: как автоматизация не теряет заявку",
+        "description": "Надёжный маршрут сначала сохраняет событие, ограниченно повторяет запрос, передаёт сбой конкретному человеку и показывает клиенту честный статус вместо ложного «готово».",
+        "date": "2026-09-05",
+        "label": "CRM · Надёжность · Reel",
+        "image": "resilient-automation",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/Dc580aINCak/",
+        "telegram": True,
+        "case": "",
+        "points": ["Входящее событие сохраняется до отправки в CRM", "Повторы ограничены и видны в журнале", "После лимита у ошибки появляется ответственный"],
+    },
+    {
+        "slug": "weekly-build-notes",
+        "title": "Неделя разработки: MVP, брифы, AI-skills и защита заявок",
+        "description": "Короткая карта свежих разборов: как сформировать MVP, не отправить ключи в Git, защититься от дублей, разобрать переписку клиента и проверить автоматизацию на сбоях.",
+        "date": "2026-09-05",
+        "label": "Build in public · Weekly recap · Reel",
+        "image": "weekly-build-notes",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/Dc6GEPhtvaP/",
+        "telegram": True,
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["MVP начинается с проверяемой идеи", "Секреты и дубли закрываются до релиза", "Бриф, AI-skill и автоматизация проверяются по сценариям"],
     },
 ]
 
@@ -401,6 +465,12 @@ CASE_DETAILS = {
         "decisions": ["Каждый вывод можно проверить по исходным данным", "Неизвестные решения остаются вопросами, а не догадками", "Важные автоматические действия сохраняют ручной контроль"],
         "limitations": ["Инструменты не получают права на файлы, CRM или production", "Проверочные сценарии не являются обещанием качества любого AI-ответа", "Финальные обязательства и релиз подтверждает человек"],
         "next": ["Добавлять примеры из реальных обезличенных процессов", "Развивать открытые проверки для новых типов проектов", "Публиковать версии и изменения через GitHub"],
+    },
+    "double-submit": {
+        "flow": ["Пользователь заполняет форму и нажимает кнопку отправки.", "Сеть отвечает медленно, кнопка выглядит активной, реакции нет.", "Человек нажимает ещё раз, и в CRM появляются две одинаковые заявки."],
+        "decisions": ["Кнопка блокируется сразу и показывает понятный статус", "Повтор с тем же ключом идемпотентности возвращает уже созданную запись", "Ограничение в базе остаётся последней линией на случай гонки запросов"],
+        "limitations": ["Разбор показывает учебный пример, а не данные реального клиента", "Цифры потерь и конверсии не измерялись и здесь не приводятся", "Конкретная реализация зависит от стека, CRM и платёжного провайдера"],
+        "next": ["Включить медленную сеть в инструментах разработчика", "Нажать кнопку отправки дважды подряд", "Сравнить не экран, а количество записей в базе и в CRM"],
     },
     "neuronotes": {
         "flow": ["Пользователь создаёт заметку или задачу.", "Материал получает теги и попадает в поиск.", "Интерфейс подготавливает контекст для будущих AI-функций."],
@@ -590,10 +660,10 @@ def case_page(slug, data):
     url = abs_url(f"cases/{slug}")
     schema = schema_base(url, data["title"], data["description"])
     schema["@graph"].append({
-        "@type": "SoftwareApplication",
+        "@type": data.get("schema_type", "SoftwareApplication"),
         "name": data["name"],
         "description": data["summary"],
-        "url": data["live"] or data["repo"],
+        "url": data["live"] or data["repo"] or url,
         "applicationCategory": data.get("application_category", "WebApplication"),
         "author": {"@id": abs_url() + "#person"},
     })
@@ -607,7 +677,8 @@ def case_page(slug, data):
     actions = []
     if data["live"]:
         actions.append(f'<a class="seo-button primary" href="{data["live"]}" rel="noopener">Открыть Live Demo</a>')
-    actions.append(f'<a class="seo-button" href="{data["repo"]}" rel="noopener">Посмотреть исходный код</a>')
+    if data["repo"]:
+        actions.append(f'<a class="seo-button" href="{data["repo"]}" rel="noopener">Посмотреть исходный код</a>')
     preview_path = data.get("preview_path") or (f'previews/{data["preview"]}' if data["preview"] else "")
     preview_width = data.get("preview_width", 640 if data.get("preview_path") else 960)
     preview_height = data.get("preview_height", 640 if data.get("preview_path") else 540)
@@ -619,7 +690,7 @@ def case_page(slug, data):
         evidence_points = "".join(f"<li>{escape(point)}</li>" for point in item["points"])
         evidence = f'''\n    <section class="seo-section"><p class="seo-kicker">Проверка на реальном сценарии</p><h2>{escape(item['title'])}</h2><p>{escape(item['copy'])}</p><ul class="article-list">{evidence_points}</ul><div class="seo-actions"><a class="seo-button primary" href="{item['journal']}">Читать короткий разбор</a><a class="seo-button" href="{item['instagram']}" target="_blank" rel="noopener noreferrer">Смотреть Reel</a></div></section>'''
     body = f'''<p class="breadcrumbs"><a href="../../">Главная</a> / <a href="../../projects/">Проекты</a> / {escape(data['name'])}</p>
-    <section class="seo-hero case-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['summary'])}</p><div class="seo-actions">{"".join(actions)}</div></section>
+    <section class="seo-hero case-hero"><p class="seo-kicker">{escape(data['kind'])}</p><h1>{escape(data['h1'])}</h1><p class="seo-lead">{escape(data['summary'])}</p>{f'<div class="seo-actions">{"".join(actions)}</div>' if actions else ""}</section>
     {preview}
     <section class="seo-section case-story"><div><p class="seo-kicker">Задача</p><h2>Что нужно было показать</h2><p>{escape(data['challenge'])}</p></div><div><p class="seo-kicker">Решение</p><h2>Как устроен концепт</h2><p>{escape(data['solution'])}</p></div></section>{evidence}
     <section class="seo-section"><p class="seo-kicker">User flow</p><h2>Сценарий от входа до результата</h2><ol class="case-flow">{flow}</ol></section>
@@ -673,35 +744,38 @@ def journal_page():
                 "description": item["description"],
                 "datePublished": item["date"],
                 "image": abs_url(f'assets/journal/{item["image"]}.webp'),
-                "sameAs": item["instagram"],
+                "sameAs": [item["instagram"], CONFIG["telegram"]] if item.get("telegram") else item["instagram"],
                 "author": {"@id": abs_url() + "#person"},
             }
             for item in JOURNAL
         ],
     })
-    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026"}
+    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026", "2026-09-05": "5 сентября 2026"}
     cards = []
     for index, item in enumerate(reversed(JOURNAL)):
         featured = index == 0
         points = f'<ul class="article-list">{"".join(f"<li>{escape(point)}</li>" for point in item["points"])}</ul>' if featured else ""
         case_action = f'<a class="seo-button primary" href="{item["case"]}">{"Открыть подробный кейс" if featured else "Открыть кейс"}</a>' if item["case"] else ""
         instagram_action = f'<a class="seo-button" href="{item["instagram"]}" target="_blank" rel="noopener noreferrer">Смотреть в Instagram</a>' if featured or not item["case"] else ""
+        telegram_action = f'<a class="seo-button" href="{CONFIG["telegram"]}" target="_blank" rel="noopener noreferrer">Материалы в Telegram</a>' if item.get("telegram") and featured else ""
         entry_class = "journal-entry is-featured" if featured else "journal-entry is-compact"
         cards.append(f'''<article class="{entry_class}" id="{escape(item['slug'], quote=True)}">
           <a class="journal-cover" href="{item['instagram']}" target="_blank" rel="noopener noreferrer" aria-label="Смотреть Reel: {escape(item['title'], quote=True)}"><img src="../assets/journal/{item['image']}.webp" width="640" height="640" loading="lazy" decoding="async" alt="Обложка Reel: {escape(item['title'], quote=True)}"><span>REEL ↗</span></a>
-          <div class="journal-copy"><p class="seo-kicker">{escape(item['label'])} · <time datetime="{item['date']}">{display_dates[item['date']]}</time></p><h2>{escape(item['title'])}</h2><p>{escape(item['description'])}</p>{points}<div class="seo-actions">{case_action}{instagram_action}</div></div>
+          <div class="journal-copy"><p class="seo-kicker">{escape(item['label'])} · <time datetime="{item['date']}">{display_dates[item['date']]}</time></p><h2>{escape(item['title'])}</h2><p>{escape(item['description'])}</p>{points}<div class="seo-actions">{case_action}{instagram_action}{telegram_action}</div></div>
         </article>''')
     body = f'''<p class="breadcrumbs"><a href="../">Главная</a> / Журнал разработки</p>
     <section class="seo-hero"><p class="seo-kicker">Build with Yan · Dev journal</p><h1>Показываю не только результат, но и путь к нему.</h1><p class="seo-lead">Проекты, open-source инструменты, ошибки и решения между «есть идея» и «оно работает». На сайте остаются лёгкие обложки и текст; оригинальные видео открываются в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../cases/build-with-yan-skills/">Свежий open-source кейс</a><a class="seo-button" href="{CONFIG['telegram']}" target="_blank" rel="noopener noreferrer">Канал Build with Yan</a></div></section>
     <section class="journal-list" aria-label="Записи журнала">{"".join(cards)}</section>
-    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Четыре локальные WebP-обложки весят меньше 50 КБ вместе, а видео загружается только после перехода в Instagram.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
+    <section class="seo-section"><h2>Контент без потери скорости.</h2><p>На странице нет Instagram SDK, внешних iframe и автоматической загрузки роликов. Используются только сжатые локальные WebP-обложки, а видео и материалы Telegram загружаются после перехода по ссылке.</p><div class="seo-actions"><a class="seo-button primary" href="../projects/">Посмотреть проекты</a><a class="seo-button" href="../contact/">Обсудить задачу</a></div></section>'''
     return document(title, description, "Build with Yan, журнал разработчика, разработка проектов, open source, Agent Skills, foxnaim", url, 1, schema, body)
 
 
 def article_page(slug, data):
     url = abs_url(f"articles/{slug}")
     schema = schema_base(url, data["title"], data["description"])
-    schema["@graph"].append({"@type": "Article", "headline": data["title"], "description": data["description"], "author": {"@id": abs_url() + "#person"}, "datePublished": date.today().isoformat(), "dateModified": date.today().isoformat(), "mainEntityOfPage": url})
+    published = data.get("published", "2026-09-02")
+    modified = data.get("modified", published)
+    schema["@graph"].append({"@type": "Article", "headline": data["title"], "description": data["description"], "author": {"@id": abs_url() + "#person"}, "datePublished": published, "dateModified": modified, "mainEntityOfPage": url})
     sections = []
     for heading, paragraphs, bullets in data["sections"]:
         paragraphs_html = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraphs)

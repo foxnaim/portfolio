@@ -27,6 +27,7 @@
 - [TazaOrder](https://foxnaim.github.io/portfolio/cases/tazaorder/) — Telegram commerce · Live demo
 - [Tact](https://foxnaim.github.io/portfolio/cases/tact/) — SaaS prototype · Source code
 - [Build with Yan Skills](https://foxnaim.github.io/portfolio/cases/build-with-yan-skills/) — Open Source · Agent Skills
+- [Двойная отправка формы](https://foxnaim.github.io/portfolio/cases/double-submit/) — QA · Надёжность
 - [NeuroNotes](https://foxnaim.github.io/portfolio/cases/neuronotes/) — Productivity prototype · Source code
 
 ## Услуги

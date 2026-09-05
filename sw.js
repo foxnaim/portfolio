@@ -1,13 +1,13 @@
 "use strict";
 
-const CACHE_VERSION = "foxnaim-v9";
+const CACHE_VERSION = "foxnaim-v10";
 const CORE = [
   "./",
   "./offline.html",
-  "./styles.css?v=16",
+  "./styles.css?v=17",
   "./seo-pages.css?v=12",
-  "./main.js?v=14",
-  "./i18n.js?v=4",
+  "./main.js?v=15",
+  "./i18n.js?v=5",
   "./analytics-config.js?v=1",
   "./analytics.js?v=1",
   "./pwa.js?v=1",

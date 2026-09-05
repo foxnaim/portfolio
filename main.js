@@ -54,6 +54,62 @@ const selectorRecommendations = {
   }
 };
 
+const selectorEstimateRules = {
+  goals: {
+    web: { min: 150000, max: 300000, weeks: [1, 2] },
+    crm: { min: 800000, max: 1400000, weeks: [4, 8] },
+    ai: { min: 200000, max: 500000, weeks: [1, 5] },
+    mvp: { min: 450000, max: 900000, weeks: [3, 5] }
+  },
+  stage: {
+    idea: { min: 40000, max: 80000, weeks: 1 },
+    prototype: { min: 0, max: 0, weeks: 0 },
+    process: { min: 60000, max: 120000, weeks: 1 },
+    legacy: { min: 160000, max: 280000, weeks: 2 }
+  },
+  audience: {
+    clients: { min: 0, max: 0, weeks: 0 },
+    team: { min: 80000, max: 140000, weeks: 1 },
+    both: { min: 140000, max: 260000, weeks: 2 },
+    public: { min: 100000, max: 200000, weeks: 1 }
+  },
+  integration: {
+    none: { min: 0, max: 0, weeks: 0 },
+    telegram: { min: 100000, max: 180000, weeks: 1 },
+    crm: { min: 180000, max: 320000, weeks: 2 },
+    payments: { min: 250000, max: 450000, weeks: 2 },
+    multiple: { min: 350000, max: 650000, weeks: 3 }
+  },
+  time: {
+    fast: { multiplier: 1.18, maxWeeks: 2 },
+    mvp: { multiplier: 1.08, maxWeeks: 5 },
+    system: { multiplier: 1.03, maxWeeks: 8 },
+    flexible: { multiplier: 1, maxWeeks: Infinity }
+  }
+};
+
+function roundEstimate(value) {
+  return Math.ceil(value / 10000) * 10000;
+}
+
+function calculateSelectorEstimate(goal, values) {
+  const base = selectorEstimateRules.goals[goal];
+  const stage = selectorEstimateRules.stage[values.stage];
+  const audience = selectorEstimateRules.audience[values.audience];
+  const integration = selectorEstimateRules.integration[values.integration];
+  const timing = selectorEstimateRules.time[values.time];
+  const additions = [stage, audience, integration];
+  const extraWeeks = additions.reduce((sum, item) => sum + item.weeks, 0);
+  const min = roundEstimate((base.min + additions.reduce((sum, item) => sum + item.min, 0)) * timing.multiplier);
+  const max = roundEstimate((base.max + additions.reduce((sum, item) => sum + item.max, 0)) * timing.multiplier);
+  return {
+    min,
+    max,
+    weeks: [base.weeks[0] + Math.floor(extraWeeks / 2), base.weeks[1] + extraWeeks],
+    targetIsTight: timing.maxWeeks < base.weeks[1] + extraWeeks
+  };
+}
+
 function localeData() {
   return window.PortfolioI18n?.data?.();
 }
@@ -249,6 +305,7 @@ const selectorResultCopy = document.querySelector("#selector-result-copy");
 const selectorResultScope = document.querySelector("#selector-result-scope");
 const selectorBudget = document.querySelector("#selector-budget");
 const selectorTimeline = document.querySelector("#selector-timeline");
+const selectorEstimateReason = document.querySelector("#selector-estimate-reason");
 const selectorDetail = document.querySelector("#selector-detail");
 const selectorContact = document.querySelector("#selector-contact");
 let selectedGoal = "";
@@ -265,7 +322,9 @@ function selectorValues() {
 
 function selectorBrief() {
   if (!selectedGoal) return "";
-  if (window.PortfolioI18n?.formatBrief) return window.PortfolioI18n.formatBrief(selectedGoal, selectorValues());
+  const values = selectorValues();
+  const estimate = calculateSelectorEstimate(selectedGoal, values);
+  if (window.PortfolioI18n?.formatBrief) return window.PortfolioI18n.formatBrief(selectedGoal, values, estimate);
   const recommendation = activeRecommendations()[selectedGoal];
   return `Привет! Хочу обсудить ${recommendation.brief}. Сейчас: ${selectorStage.selectedOptions[0].textContent}. Пользователи: ${selectorAudience.selectedOptions[0].textContent}. Интеграция: ${selectorIntegration.selectedOptions[0].textContent}. Срок: ${selectorTimeButtons.find(button => button.dataset.selectorTime === selectedTime)?.textContent}.`;
 }
@@ -273,10 +332,12 @@ function selectorBrief() {
 function updateSelector() {
   if (!selectedGoal) return;
   const recommendation = activeRecommendations()[selectedGoal];
+  const values = selectorValues();
+  const estimate = calculateSelectorEstimate(selectedGoal, values);
   selectorResult.hidden = false;
   selectorResultTitle.textContent = recommendation.label;
   selectorResultCopy.textContent = window.PortfolioI18n?.formatResult
-    ? window.PortfolioI18n.formatResult(selectedGoal, selectorValues())
+    ? window.PortfolioI18n.formatResult(selectedGoal, values)
     : recommendation.description;
   const scope = window.PortfolioI18n?.scope
     ? window.PortfolioI18n.scope(selectedGoal, selectorIntegration.value)
@@ -286,8 +347,17 @@ function updateSelector() {
     item.textContent = copy;
     return item;
   }));
-  selectorBudget.textContent = recommendation.budget;
-  selectorTimeline.textContent = recommendation.timeline;
+  selectorBudget.textContent = window.PortfolioI18n?.formatBudget
+    ? window.PortfolioI18n.formatBudget(estimate.min, estimate.max)
+    : recommendation.budget;
+  selectorTimeline.textContent = window.PortfolioI18n?.formatTimeline
+    ? window.PortfolioI18n.formatTimeline(estimate.weeks, values.time, estimate.targetIsTight)
+    : recommendation.timeline;
+  if (selectorEstimateReason) {
+    selectorEstimateReason.textContent = window.PortfolioI18n?.estimateReason
+      ? window.PortfolioI18n.estimateReason(values)
+      : "";
+  }
   selectorDetail.href = documentPath(recommendation.page);
   selectorDetail.dataset.offer = selectedGoal;
 }
@@ -315,7 +385,9 @@ selectorTimeButtons.forEach(button => {
 selectorContact.addEventListener("click", () => {
   const brief = selectorBrief();
   if (brief) document.querySelector("#project-brief").value = brief;
-  track("selector_completed", { goal: selectedGoal || "unknown", timeline: selectedTime });
+  const values = selectorValues();
+  const estimate = selectedGoal ? calculateSelectorEstimate(selectedGoal, values) : null;
+  track("selector_completed", { goal: selectedGoal || "unknown", ...values, budget_min: estimate?.min, budget_max: estimate?.max });
 });
 
 const video = document.querySelector(".bg-video");
