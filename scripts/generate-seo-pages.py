@@ -433,6 +433,54 @@ JOURNAL = [
         "case": "../cases/build-with-yan-skills/",
         "points": ["MVP начинается с проверяемой идеи", "Секреты и дубли закрываются до релиза", "Бриф, AI-skill и автоматизация проверяются по сценариям"],
     },
+    {
+        "slug": "youtube-ai-experiment",
+        "title": "Американский YouTube с AI: открытый эксперимент без обещаний лёгких денег",
+        "description": "Семидневный эксперимент для англоязычной аудитории: десять первых тем, производство видео с AI, ручная проверка и честный разбор данных, ошибок и выводов.",
+        "date": "2026-09-06",
+        "label": "AI-контент · YouTube · Reel",
+        "image": "youtube-ai-experiment",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/Dc82rWDtMJ5/",
+        "telegram": True,
+        "case": "",
+        "points": ["Сначала аудитория и задача, затем инструменты", "Первые десять тем проверяются как гипотезы", "AI ускоряет производство, финальная проверка остаётся ручной"],
+    },
+    {
+        "slug": "youtube-sim-card-myth",
+        "title": "SIM-карта США не приносит просмотры на YouTube",
+        "description": "Эксперимент показывает, что рост зависит от аудитории, пользы темы, естественного английского, подачи и удержания зрителя, а не от страны SIM-карты.",
+        "date": "2026-09-07",
+        "label": "YouTube · Эксперимент · Reel",
+        "image": "youtube-sim-card-myth",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/Dc_PL2ZNz6o/",
+        "telegram": True,
+        "case": "",
+        "points": ["Понятная проблема конкретной аудитории", "Естественная подача для англоязычного зрителя", "Удержание показывает, где улучшать следующий ролик"],
+    },
+    {
+        "slug": "content-release-gate",
+        "title": "Монтаж готов — почему ролик всё ещё может не выйти",
+        "description": "Перед публикацией ролик проходит семь проверок: вопрос аудитории, источники, собственная мысль, сценарий, права на визуал, техническое качество и финальный просмотр человеком.",
+        "date": "2026-09-07",
+        "label": "Контент · Release gate · Reel",
+        "image": "content-release-gate",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/Dc_PVgqNOfK/",
+        "telegram": True,
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["Факты и источники проверяются до публикации", "Права на визуал и техническое качество входят в критерии готовности", "За итоговый материал отвечает человек, даже если AI ускорил работу"],
+    },
+    {
+        "slug": "ai-cartoon-pipeline",
+        "title": "AI-мультфильм для YouTube: от истории до монтажа",
+        "description": "Рабочий процесс начинается с истории и сценария, продолжается генерацией сцен, звуком и монтажом, а завершается проверкой узнаваемости героя и целостности сюжета.",
+        "date": "2026-09-07",
+        "label": "AI-видео · Анимация · Reel",
+        "image": "ai-cartoon-pipeline",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdA1KnSNCAP/",
+        "telegram": True,
+        "case": "",
+        "points": ["История и сценарий задают основу ролика", "Сцены, звук и монтаж собираются в единый процесс", "Постоянство героя и логика сюжета проверяются отдельно"],
+    },
 ]
 
 CASE_DETAILS = {
@@ -727,7 +775,7 @@ def articles_page():
 def journal_page():
     url = abs_url("journal")
     title = "Build with Yan — журнал разработки Яна Павлова"
-    description = "Короткие разборы проектов, open-source инструментов, ошибок и решений Яна Павлова. Материалы из Instagram и Telegram без тяжёлых виджетов."
+    description = "Короткие разборы проектов, AI-видео, YouTube-экспериментов, open-source инструментов и решений Яна Павлова. Материалы из Instagram и Telegram без тяжёлых виджетов."
     schema = schema_base(url, title, description)
     schema["@graph"].append({
         "@type": "Blog",
@@ -750,7 +798,7 @@ def journal_page():
             for item in JOURNAL
         ],
     })
-    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026", "2026-09-05": "5 сентября 2026"}
+    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026", "2026-09-05": "5 сентября 2026", "2026-09-06": "6 сентября 2026", "2026-09-07": "7 сентября 2026"}
     cards = []
     for index, item in enumerate(reversed(JOURNAL)):
         featured = index == 0
