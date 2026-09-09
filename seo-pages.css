@@ -305,6 +305,7 @@ h1 { max-width: 930px; margin: 0; font-size: clamp(42px, 7vw, 86px); line-height
   .article-section p { font-size: 15px; }
   .journal-entry { grid-template-columns: 1fr; scroll-margin-top: 118px; }
   .journal-cover { min-height: 0; aspect-ratio: 9 / 16; }
+  .journal-entry.is-featured .journal-cover { width: min(100%, 390px); justify-self: center; }
   .journal-copy { padding: 34px 24px 46px; }
   .journal-entry.is-compact { grid-template-columns: 88px minmax(0,1fr); gap: 18px; padding: 24px 0; }
   .journal-entry.is-compact .journal-cover { min-height: 0; aspect-ratio: 9 / 16; }
