@@ -5,6 +5,7 @@ from html import escape
 import json
 from pathlib import Path
 from urllib.parse import urlparse
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "site.config.json").read_text())
@@ -12,6 +13,7 @@ SITE = CONFIG["siteUrl"].rstrip("/")
 BASE = urlparse(SITE).path.rstrip("/") + "/"
 BRAND = CONFIG["brand"]
 PERSON_NAME = CONFIG["personName"]
+CHANGED_OUTPUTS = set()
 
 PAGES = {
     "services/web-development": {
@@ -493,6 +495,81 @@ JOURNAL = [
         "case": "",
         "points": ["Каждая идея получает отдельную карточку и понятный статус", "AI-skills помогают со сценарием, раскадровкой и проверкой", "Черновики остаются под ручным контролем перед публикацией"],
     },
+    {
+        "slug": "youtube-ai-skills",
+        "title": "11 AI-skills для американского YouTube",
+        "description": "Собрал в Telegram одиннадцать AI-skills и короткий видео-пример для производства англоязычного YouTube-контента. Файлы можно брать за основу, проверять и адаптировать под свой процесс.",
+        "date": "2026-09-09",
+        "label": "AI Skills · YouTube · Reel",
+        "image": "youtube-ai-skills",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdD0ZNEtnUe/",
+        "telegram": True,
+        "telegram_action": True,
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["Одиннадцать заготовок для разных этапов", "Короткий видео-пример рабочего процесса", "Файлы можно дорабатывать под свою задачу"],
+    },
+    {
+        "slug": "character-consistency",
+        "title": "Как сохранить одного персонажа в AI-мультфильме",
+        "description": "Красивого кадра недостаточно: между сценами нужно сохранить цвет корпуса, форму и характерные детали героя, а затем сравнить раскадровку и убедиться, что персонаж не «поплыл».",
+        "date": "2026-09-10",
+        "label": "AI-видео · Раскадровка · Reel",
+        "image": "character-consistency",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdGp_7htARm/",
+        "telegram": True,
+        "telegram_action": True,
+        "case": "",
+        "points": ["Фиксируем цвет, форму и характерные детали", "Меняем действие и фон без смены героя", "Сравниваем соседние кадры до анимации"],
+    },
+    {
+        "slug": "ollama-local-ai",
+        "title": "Ollama: локальный AI-помощник, когда облачный лимит закончился",
+        "description": "Локальная модель через Ollama может продолжить часть работы на компьютере, но это отдельный инструмент со своими возможностями, скоростью и требованиями к железу, а не «бесплатный Claude».",
+        "date": "2026-09-24",
+        "label": "Локальный AI · Ollama · Reel",
+        "image": "ollama-local-ai",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdqYPudNaxJ/",
+        "telegram": True,
+        "telegram_action": True,
+        "case": "",
+        "points": ["Модель работает локально на вашем компьютере", "Скорость зависит от модели и доступного железа", "Telegram-разбор показывает установку и подключение"],
+    },
+    {
+        "slug": "mac-caffeinate-render",
+        "title": "Как не дать Mac уснуть во время рендера",
+        "description": "Команда caffeinate удерживает Mac и экран от автоматического сна во время долгой задачи. Важно помнить: флаг -s действует при подключённом питании, а блокировку экрана команда не отключает.",
+        "date": "2026-09-24",
+        "label": "macOS · Терминал · Reel",
+        "image": "mac-caffeinate-render",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdqYmq6N7oH/",
+        "telegram": False,
+        "case": "",
+        "points": ["Запускаем caffeinate перед долгой задачей", "Останавливаем процесс сочетанием Ctrl+C", "Флаг -s требует подключённого питания"],
+    },
+    {
+        "slug": "ai-design-skill-test",
+        "title": "Как проверить AI-skill «профессиональный дизайнер»",
+        "description": "Честная проверка требует одинаковой задачи, одной модели и тех же условий со skill и без него. Затем сравниваются иерархия, читаемость текста и понятность следующего действия.",
+        "date": "2026-09-24",
+        "label": "AI Skills · UI/UX · Reel",
+        "image": "ai-design-skill-test",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdqY4RzNSBu/",
+        "telegram": False,
+        "case": "../cases/build-with-yan-skills/",
+        "points": ["Одна модель и одна задача в двух вариантах", "Сравниваем иерархию, текст и понятность действия", "Это метод теста, а не опубликованный результат A/B-проверки"],
+    },
+    {
+        "slug": "voice-to-tasks-concept",
+        "title": "Из голосовых сообщений — в задачи, сроки и вопросы",
+        "description": "Концепт AI-сервиса разбирает проектные голосовые на черновик задач, сроков и вопросов. Если дедлайн не назван, система уточняет его, а задачи создаются только после подтверждения человеком.",
+        "date": "2026-09-24",
+        "label": "Концепт · AI-автоматизация · Reel",
+        "image": "voice-to-tasks-concept",
+        "instagram": "https://www.instagram.com/yan._.pavlov/reel/DdqZLfdNVF5/",
+        "telegram": True,
+        "case": "",
+        "points": ["Распознаём задачи, правки, сроки и открытые вопросы", "Неизвестные дедлайны уточняются, а не придумываются", "Человек подтверждает список перед созданием задач"],
+    },
 ]
 
 CASE_DETAILS = {
@@ -810,14 +887,14 @@ def journal_page():
             for item in JOURNAL
         ],
     })
-    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026", "2026-09-05": "5 сентября 2026", "2026-09-06": "6 сентября 2026", "2026-09-07": "7 сентября 2026", "2026-09-08": "8 сентября 2026"}
+    display_dates = {"2026-08-31": "31 августа 2026", "2026-09-01": "1 сентября 2026", "2026-09-05": "5 сентября 2026", "2026-09-06": "6 сентября 2026", "2026-09-07": "7 сентября 2026", "2026-09-08": "8 сентября 2026", "2026-09-09": "9 сентября 2026", "2026-09-10": "10 сентября 2026", "2026-09-24": "24 сентября 2026"}
     cards = []
     for index, item in enumerate(reversed(JOURNAL)):
         featured = index == 0
         points = f'<ul class="article-list">{"".join(f"<li>{escape(point)}</li>" for point in item["points"])}</ul>' if featured else ""
         case_action = f'<a class="seo-button primary" href="{item["case"]}">{"Открыть подробный кейс" if featured else "Открыть кейс"}</a>' if item["case"] else ""
         instagram_action = f'<a class="seo-button" href="{item["instagram"]}" target="_blank" rel="noopener noreferrer">Смотреть в Instagram</a>' if featured or not item["case"] else ""
-        telegram_action = f'<a class="seo-button" href="{CONFIG["telegram"]}" target="_blank" rel="noopener noreferrer">Материалы в Telegram</a>' if item.get("telegram") and featured else ""
+        telegram_action = f'<a class="seo-button" href="{CONFIG["telegram"]}" target="_blank" rel="noopener noreferrer">Материалы в Telegram</a>' if item.get("telegram") and (featured or item.get("telegram_action")) else ""
         entry_class = "journal-entry is-featured" if featured else "journal-entry is-compact"
         cards.append(f'''<article class="{entry_class}" id="{escape(item['slug'], quote=True)}">
           <a class="journal-cover" href="{item['instagram']}" target="_blank" rel="noopener noreferrer" aria-label="Смотреть Reel: {escape(item['title'], quote=True)}"><img src="../assets/journal/{item['image']}.webp?v=2" width="360" height="640" loading="lazy" decoding="async" alt="Обложка Reel: {escape(item['title'], quote=True)}"><span>REEL ↗</span></a>
@@ -1101,10 +1178,34 @@ def simple_page(slug, data, body_extra):
 def write(path, content):
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists() and target.read_text(encoding="utf-8") == content:
+        return False
     target.write_text(content, encoding="utf-8")
+    CHANGED_OUTPUTS.add(path)
+    return True
+
+
+def sitemap_lastmods():
+    target = ROOT / "sitemap.xml"
+    if not target.exists():
+        return {}
+    try:
+        root = ElementTree.parse(target).getroot()
+    except ElementTree.ParseError:
+        return {}
+    namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    result = {}
+    for entry in root.findall("s:url", namespace):
+        location = entry.findtext("s:loc", default="", namespaces=namespace)
+        lastmod = entry.findtext("s:lastmod", default="", namespaces=namespace)
+        if location and lastmod:
+            result[location] = lastmod
+    return result
 
 
 def main():
+    CHANGED_OUTPUTS.clear()
+    previous_lastmods = sitemap_lastmods()
     for slug, data in PAGES.items():
         write(f"{slug}/index.html", service_page(slug, data))
     for slug, data in CASES.items():
@@ -1129,9 +1230,18 @@ def main():
     write("process/index.html", process_page())
     write("about/index.html", about_page())
     write("contact/index.html", contact_page())
-    urls = [abs_url()] + [abs_url(slug) for slug in PAGES] + [abs_url("pricing"), abs_url("solutions"), abs_url("demo-lab"), abs_url("compare"), abs_url("projects"), abs_url("journal"), abs_url("process"), abs_url("about"), abs_url("partners"), abs_url("contact"), abs_url("articles"), abs_url("resources"), abs_url("en"), abs_url("kz")] + [abs_url(f"solutions/{slug}") for slug in SALES_PAGES] + [abs_url(f"cases/{slug}") for slug in CASES] + [abs_url(f"articles/{slug}") for slug in ARTICLES] + [abs_url(f"resources/{slug}") for slug in RESOURCES]
+    url_paths = [(abs_url(), "index.html")]
+    url_paths += [(abs_url(slug), f"{slug}/index.html") for slug in PAGES]
+    url_paths += [(abs_url(slug), f"{slug}/index.html") for slug in ("pricing", "solutions", "demo-lab", "compare", "projects", "journal", "process", "about", "partners", "contact", "articles", "resources", "en", "kz")]
+    url_paths += [(abs_url(f"solutions/{slug}"), f"solutions/{slug}/index.html") for slug in SALES_PAGES]
+    url_paths += [(abs_url(f"cases/{slug}"), f"cases/{slug}/index.html") for slug in CASES]
+    url_paths += [(abs_url(f"articles/{slug}"), f"articles/{slug}/index.html") for slug in ARTICLES]
+    url_paths += [(abs_url(f"resources/{slug}"), f"resources/{slug}/index.html") for slug in RESOURCES]
     today = date.today().isoformat()
-    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{escape(url)}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{'1.0' if url == abs_url() else '0.8'}</priority></url>\n" for url in urls) + "</urlset>\n"
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
+        f"  <url><loc>{escape(url)}</loc><lastmod>{today if path in CHANGED_OUTPUTS else previous_lastmods.get(url, today)}</lastmod><changefreq>monthly</changefreq><priority>{'1.0' if url == abs_url() else '0.8'}</priority></url>\n"
+        for url, path in url_paths
+    ) + "</urlset>\n"
     write("sitemap.xml", sitemap)
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {abs_url('sitemap.xml').rstrip('/')}\n")
     llms = f'''# {PERSON_NAME} / {BRAND}
@@ -1176,7 +1286,7 @@ def main():
     index_now_key = CONFIG.get("indexNowKey")
     if index_now_key:
         write(f"{index_now_key}.txt", index_now_key + "\n")
-    print(f"Generated {len(urls)} canonical URLs for {SITE}")
+    print(f"Generated {len(url_paths)} canonical URLs for {SITE}")
 
 
 if __name__ == "__main__":
